@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مفكك الأسئلة · طريق المئة</title>
+<meta name="description" content="مفكك الأسئلة: كيف تفهم صيغ أسئلة النصوص في اختبارات الوزارة وتكتب الجواب كما يريده المصحح. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="مفكك الأسئلة · طريق المئة">
+<meta property="og:description" content="مفكك الأسئلة: كيف تفهم صيغ أسئلة النصوص في اختبارات الوزارة وتكتب الجواب كما يريده المصحح. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.cmds{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.cmd{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.cmd .w{font-family:var(--display);font-size:1.12rem;color:var(--accent);word-spacing:.18em}
+.cmd .len{font-size:.84rem;font-weight:700;color:var(--gold)}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
+.howto div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:10px}
+.howto b{font-family:var(--display);color:var(--accent);font-size:1.4rem;line-height:1.2}
+.card{scroll-margin-top:120px}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع">
+    <a href="index.html">الرئيسية</a>
+    <a href="decoder.html" aria-current="page">مفكك الأسئلة</a>
+    <a href="texts.html">النصوص</a>
+    <a href="summaries.html">الملخصات</a>
+    <a href="memorize.html">الحفظ</a>
+    <a href="cards.html">البطاقات</a>
+    <a href="schools.html">المذاهب والمناهج</a>
+    <a href="reading.html">النص الخارجي والقراءة</a>
+    <a href="bank.html">بنك الأسئلة</a>
+    <a href="exams.html">اختبارات تجريبية</a>
+    <a href="glossary.html">القاموس</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">الخطوة 2 من طريق المئة</p>
+  <h1>مفكك الأسئلة</h1>
+  <div class="brief"><b class="t">باختصار</b>
+    <p>في أسئلة النصوص، أغلب الطلاب يفهمون الأبيات لكن يخسرون الدرجة لأنهم ما عرفوا <b>ماذا يريد السؤال</b>. اختبارات الوزارة تكرر نفس 12 نوعًا من الأسئلة كل سنة. هنا كل نوع مشروح: معناه ببساطة، وكيف تجاوب، ومثال محلول، وإجابة خاطئة مقابل إجابة صحيحة.</p>
+  </div>
+  <div class="howto">
+    <div><b>1</b><p>اقرأ <b>«يعني ببساطة»</b> لتفهم المطلوب.</p></div>
+    <div><b>2</b><p>تابع <b>المثال المحلول</b> خطوة خطوة.</p></div>
+    <div><b>3</b><p>حل <b>«جرّب بنفسك»</b> قبل أن تفتح الجواب.</p></div>
+  </div>
+  <p class="lede">أي كلمة لم تفهمها (مثل <a class="term" href="glossary.html#makniya">استعارة مكنية</a> أو <a class="term" href="glossary.html#qarina">قرينة</a>) اضغط عليها أو ابحث عنها في <a href="glossary.html">القاموس</a>.</p>
+  <div class="motto" data-motto><p>كل سؤال تحلّه الآن، سؤال لن يفاجئك في الاختبار.</p></div>
+</header>
+</div>
+
+<nav class="jump" aria-label="الانتقال إلى نوع السؤال">
+  <div class="wrap"><div class="rail">
+    <a href="#cmds">أول كلمة</a>
+    <a href="#s1">1 الجذر</a><a href="#s2">2 معنى الكلمة</a><a href="#s3">3 الدلالة</a><a href="#s4">4 الصورة</a>
+    <a href="#s5">5 العلاقة</a><a href="#s6">6 دلّل</a><a href="#s7">7 صنّف</a><a href="#s8">8 العاطفة</a>
+    <a href="#s9">9 البديع</a><a href="#s10">10 الأسلوب</a><a href="#s11">11 الخصائص</a><a href="#s12">12 الحوار والقصة</a>
+    <a href="#rules">كيف يصحح</a>
+  </div></div>
+</nav>
+
+<div class="wrap">
+<main>
+<div data-dl="مفكك الأسئلة"></div>
+
+<section class="block" id="cmds">
+  <h2>اعرف المطلوب من أول كلمة في السؤال</h2>
+  <p>أول كلمة في السؤال تقول لك كم تكتب. هذا أول شيء تنتبه له.</p>
+  <div class="cmds">
+    <div class="cmd"><span class="w">ظلّل · أكمل الفراغ</span><span class="len">تكتب: كلمة واحدة</span><p>لا تشرح أبدًا.</p></div>
+    <div class="cmd"><span class="w">استخرج · دلّل · اكتب العبارة</span><span class="len">تكتب: كلمات من النص كما هي</span><p>انسخ من النص. لا تكتب بأسلوبك.</p></div>
+    <div class="cmd"><span class="w">سمِّ · حدّد · ما نوع</span><span class="len">تكتب: اسمًا واحدًا</span><p>مثل: فخر، طباق، رومانسي، سبب ونتيجة.</p></div>
+    <div class="cmd"><span class="w">وضّح · اشرح · بيّن</span><span class="len">تكتب: سطرًا أو سطرين</span><p>الاسم أولًا، ثم كلمات من النص تثبته.</p></div>
+    <div class="cmd"><span class="w">علّل · لماذا</span><span class="len">تبدأ بكلمة: لأنّ</span><p>السبب فقط.</p></div>
+    <div class="cmd"><span class="w">ما دلالة · ما أثر</span><span class="len">تبدأ بكلمة: تدلّ على</span><p>ماذا أضافت الكلمة للنص.</p></div>
+  </div>
+</section>
+
+<!-- 1 الجذر -->
+<article class="card" id="s1">
+  <header><span class="num">1</span><h2>«ما الجذر المعجمي لكلمة...؟»</h2><span class="tag hot">يأتي في كل اختبار تقريبًا</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">اكتب الحروف الأصلية للكلمة، عادة ثلاثة حروف. هذه أسهل درجة في الورقة.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>احذف الحروف الزائدة: «ال»، وحروف أول الفعل (أ، ن، ي، ت)، والضمائر في آخر الكلمة (تُ، وا، ه، ها).</p></li>
+        <li><p>إذا بقي حرف مشدد (عليه شدّة) فاكتبه حرفين: تلّ ← ت ل ل.</p></li>
+        <li><p>إذا بقيت ألف في الوسط أو الآخر، فهي في الأصل واو أو ياء. اعرفها من الفعل المضارع: بلا ← يبلو ← بلو.</p></li>
+        <li><p>الهمزة حرف أصلي، لا تحذفها: أطفئوا ← طفأ.</p></li>
+      </ol>
+    </div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2020/2021</span>«وتلك التي أهتمّ منها» الجذر الثلاثي لكلمة (أهتمّ) هو: هتم / أهم / همم / أهت</div>
+      <ol>
+        <li><span class="s">الخطوة 1</span><p>نحذف الهمزة في أولها (حرف المضارع): هتمّ.</p></li>
+        <li><span class="s">الخطوة 2</span><p>التاء هنا زائدة، لأن الفعل أصله «همّ» ثم صار «اهتمّ». نحذفها: همّ.</p></li>
+        <li><span class="s">الخطوة 3</span><p>الميم مشددة، فنكتبها ميمين: ه م م.</p></li>
+      </ol>
+      <div class="final"><span class="label">الجواب</span><b>همم</b> <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ هذا الجواب يضيّع الدرجة</span><p><b>هتم</b></p><p class="why">لأنه ترك التاء الزائدة. هذا الخيار وُضع في الاختبار ليوقع الطالب المستعجل.</p></div>
+      <div class="yes"><span class="label">✓ هذا الجواب يأخذ الدرجة</span><p><b>همم</b></p><p class="why">حذف الزوائد، وفكّ الشدة.</p></div>
+    </div>
+    <details class="fold"><summary>كلمات جاءت في الاختبارات السابقة</summary>
+      <div class="tbl"><table>
+        <thead><tr><th>الكلمة</th><th>الجذر</th><th>السنة</th></tr></thead>
+        <tbody>
+          <tr><td>أُنبئتُ</td><td>نبأ</td><td>2022/23</td></tr>
+          <tr><td>أطفئوا</td><td>طفأ</td><td>2021/22</td></tr>
+          <tr><td>وتلّه للجبين</td><td>تلل</td><td>2018/19</td></tr>
+          <tr><td>البلاء</td><td>بلو</td><td>2018/19</td></tr>
+          <tr><td>البيان</td><td>بين</td><td>2021/22</td></tr>
+          <tr><td>استئصال</td><td>أصل</td><td>2022/23</td></tr>
+          <tr><td>الكنائن</td><td>كنن</td><td>2020/21</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <details class="fold try"><summary>جرّب بنفسك: ما جذر «استهموا» في حديث السفينة؟</summary>
+      <div class="ans">نحذف الألف والسين والتاء في أولها، ونحذف «وا» في آخرها، فيبقى: <b>سهم</b>.</div>
+    </details>
+  </div>
+</article>
+
+<!-- 2 معنى الكلمة -->
+<article class="card" id="s2">
+  <header><span class="num">2</span><h2>«مفرد / جمع / مضاد / معنى الكلمة...»</h2><span class="tag hot">مرة أو مرتين في كل اختبار</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">اكتب كلمة واحدة فقط. وإذا سألك عن معنى كلمة، فالمطلوب معناها في هذا البيت بالذات.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>اكتب جوابك.</p></li>
+        <li><p>ضعه مكان الكلمة في البيت واقرأ البيت. إذا كان المعنى مفهومًا وصحيحًا، فجوابك صحيح.</p></li>
+      </ol>
+    </div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2018/2019</span>«وردَتْ مطايا الراغبين وعُرّيتْ جيادُك». تركيب «عُرّيت جيادك» يشير إلى: باعها صاحبها / سُرقت / مات صاحبها / ماتت</div>
+      <ol>
+        <li><span class="s">الخطوة 1</span><p>المعنى الظاهر: الخيل صارت بلا سرج ولا فارس.</p></li>
+        <li><span class="s">الخطوة 2</span><p>متى تبقى الخيل بلا فارس؟ عندما يموت صاحبها. والشاعر يتكلم عن غياب النعمان.</p></li>
+      </ol>
+      <div class="final"><span class="label">الجواب</span><b>مات صاحبها</b> <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>سؤال: مفرد «الوشاة»؟ الجواب: «الذين ينقلون الكلام بين الناس ليفسدوا»</p><p class="why">هذا شرح، والمطلوب كلمة واحدة.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p><b>الواشي</b></p></div>
+    </div>
+    <details class="fold"><summary>كلمات جاءت في الاختبارات السابقة</summary>
+      <div class="tbl"><table>
+        <thead><tr><th>السؤال</th><th>الجواب</th></tr></thead>
+        <tbody>
+          <tr><td>مفرد الوشاة</td><td>الواشي</td></tr>
+          <tr><td>مفرد الأعنّة</td><td>عِنان</td></tr>
+          <tr><td>جمع ريبة</td><td>رِيَب</td></tr>
+          <tr><td>جمع سبيل</td><td>سُبُل</td></tr>
+          <tr><td>كلمة بمعنى الانقياد لأمر الله (الصافات)</td><td>أسلما</td></tr>
+          <tr><td>«عنصر يتحدّر منه الرجل»: يتحدّر تعني</td><td>ينتسب إليه</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <details class="fold try"><summary>جرّب بنفسك: ما معنى «يبارين» في «يبارين الأعنّة مصعدات»؟</summary>
+      <div class="ans"><b>يسابقن وينافسن</b>. الخيل سريعة جدًا كأنها تسابق اللجام الذي في فمها.</div>
+    </details>
+  </div>
+</article>
+
+<!-- 3 الدلالة -->
+<article class="card" id="s3">
+  <header><span class="num">3</span><h2>«ما دلالة...؟»</h2><span class="tag hot">في كل اختبار، وأكثر من مرة</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">ماذا أضافت هذه الكلمة للنص؟ أي إحساس أو معنى زائد أعطته؟ هو لا يسألك عن معناها.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>اسأل نفسك: لو حذفنا هذه الكلمة أو غيّرناها، ماذا سينقص من النص؟</p></li>
+        <li><p>اكتب: «تدلّ على...» ثم الشيء الذي سينقص.</p></li>
+        <li><p>اربطه بموقف الشاعر في جملة قصيرة.</p></li>
+      </ol>
+    </div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2018/2019</span>ما الدلالة التي أضافها لفظ «يا أبتِ» في سياق الآيات؟</div>
+      <ol>
+        <li><span class="s">الخطوة 1</span><p>لو قال إسماعيل «افعل ما تؤمر» بدون «يا أبت»، يبقى المعنى، لكن يذهب الحنان والرقة.</p></li>
+        <li><span class="s">الخطوة 2</span><p>إذن «يا أبتِ» أضافت الحنان والاستعطاف.</p></li>
+      </ol>
+      <div class="final"><span class="label">الجواب</span>أضافت <b>الاستعطاف والترقيق والتحنّن</b>. <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>«يا أبتِ يعني يا أبي، ينادي إسماعيل أباه»</p><p class="why">هذا معنى الكلمة، والسؤال عن دلالتها.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>«تدل على الاستعطاف والحنان من الابن لأبيه»</p></div>
+    </div>
+    <details class="fold"><summary>دلالات جاهزة تتكرر كثيرًا (احفظها)</summary>
+      <div class="tbl"><table>
+        <thead><tr><th>إذا سألك عن...</th><th>فالدلالة غالبًا</th></tr></thead>
+        <tbody>
+          <tr><td>ضمير «نا» (نحن): خيلنا، جيادنا</td><td>الفخر بالجماعة والاعتزاز بالقوم</td></tr>
+          <tr><td>ضمير المتكلم المفرد (أنا)</td><td>الذاتية، وإبراز معاناة الشاعر نفسه</td></tr>
+          <tr><td>النداء: يا أبتِ، يا بنيّ</td><td>الاستعطاف والحنان (نموذج الوزارة)</td></tr>
+          <tr><td>تكرار جملة</td><td>التأكيد. مثال الوزارة: تكرار «كذلك نجزي المحسنين» = تأكيد علو مكانة إبراهيم، أو تأكيد جزاء المحسنين</td></tr>
+          <tr><td>كلمة مصغّرة: الفُويسقة</td><td>التحقير</td></tr>
+          <tr><td>وزن «استفعل»: استقوا</td><td>الطلب (طلبوا الماء)</td></tr>
+          <tr><td>كثرة حروف الهمس (ت ك ف هـ ش س)</td><td>الانكسار والضعف، لأنه يعتذر (نموذج الوزارة)</td></tr>
+          <tr><td>كثرة الأفعال</td><td>الحركة والتغيّر</td></tr>
+          <tr><td>كثرة الجمل الاسمية</td><td>الثبات والاستقرار</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <details class="fold try"><summary>جرّب بنفسك: حسان قال «عدمنا خيلنا» و«جيادنا» بضمير «نا». ما دلالة ذلك؟</summary>
+      <div class="ans">تدل على <b>الفخر الجماعي</b>: الشاعر يفخر بقومه المسلمين كلهم، لا بنفسه وحده.</div>
+    </details>
+  </div>
+</article>
+
+<!-- 4 الصورة -->
+<article class="card" id="s4">
+  <header><span class="num">4</span><h2>«وضّح الصورة البيانية» و«ما أثرها؟»</h2><span class="tag hot">في كل اختبار</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">الشاعر شبّه شيئًا بشيء. قل: ما هو الشيء، وبماذا شبّهه، ولماذا. وإذا سأل عن الأثر: ماذا استفاد النص من هذا التشبيه؟</p></div>
+    <div><span class="label">كيف تجاوب: جملة واحدة تكفي لـ«وضّح»</span>
+      <ol class="steps-list">
+        <li><p>اكتب: شبّه الشاعر <b>(هذا)</b> بـ<b>(ذاك)</b> في <b>(الصفة المشتركة)</b>.</p></li>
+        <li><p>إذا سألك عن النوع، أضف: تشبيه بليغ، أو استعارة مكنية... (انظر الجدول تحت).</p></li>
+        <li><p>إذا سألك عن الأثر، أضف: أثرها توضيح المعنى وتقويته، وتجعلنا نتخيله. واربطه بغرض النص.</p></li>
+      </ol>
+    </div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2018/2019 (النابغة)</span>وردت صورة بيانية في قوله «وبحرَ عطاءٍ». أ. وضّحها. ب. ما أثرها في المعنى؟</div>
+      <ol>
+        <li><span class="s">الخطوة 1</span><p>من يقصد بـ«بحر العطاء»؟ يقصد الملك النعمان.</p></li>
+        <li><span class="s">الخطوة 2</span><p>ما الصفة المشتركة بين النعمان والبحر؟ الكثرة واتساع العطاء.</p></li>
+        <li><span class="s">الخطوة 3</span><p>الأثر: الشاعر يعتذر، فهو يمدح الملك ليرضى عنه.</p></li>
+      </ol>
+      <div class="final"><span class="label">الجواب</span>أ. شبّه الملك النعمان بالبحر في العطاء والجود. ب. التقرب من الملك طلبًا للعفو، أو مدحه لاستعطافه. <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>«استعارة مكنية»</p><p class="why">السؤال قال «وضّح». كتبت النوع فقط، ولم تقل من شُبّه بماذا.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>«شبّه الملك النعمان بالبحر في كثرة العطاء والجود»</p></div>
+    </div>
+    <details class="fold"><summary>كيف أعرف نوع الصورة؟</summary>
+      <div class="tbl"><table>
+        <thead><tr><th>النوع</th><th>كيف تعرفه</th><th>مثال من كتابك</th></tr></thead>
+        <tbody>
+          <tr><td><a class="term" href="glossary.html#baligh">تشبيه بليغ</a></td><td>الشيئان مذكوران، بدون «مثل» أو «كـ»</td><td>المؤمن مرآة المؤمن · بحر عطاء</td></tr>
+          <tr><td><a class="term" href="glossary.html#tamthili">تشبيه تمثيلي</a></td><td>موقف كامل يُشبَّه بموقف كامل</td><td>مثل القائم على حدود الله كمثل قوم في سفينة</td></tr>
+          <tr><td><a class="term" href="glossary.html#makniya">استعارة مكنية</a></td><td>شيء عادي أُعطي صفة لا تكون له</td><td>الأسل الظماء: رماح عطشى · اشتعل الرأس شيبًا</td></tr>
+          <tr><td><a class="term" href="glossary.html#tasrihiya">استعارة تصريحية</a></td><td>ذُكر الشيء المشبّه به فقط</td><td>بحري لا تكدّره الدلاء: البحر = شعره</td></tr>
+          <tr><td><a class="term" href="glossary.html#kinaya">كناية</a></td><td>جملة يُقصد بها معنى آخر يُفهم منها</td><td>عُرّيت جيادك = مات صاحبها</td></tr>
+        </tbody>
+      </table></div>
+      <p class="why" style="margin-top:8px">ملاحظة: نموذج الوزارة يقبل أحيانًا أكثر من نوع. في «بحر عطاء» قبل: تشبيه بليغ، أو استعارة مكنية.</p>
+    </details>
+    <details class="fold try"><summary>جرّب بنفسك: وضّح الصورة في «الأسل الظماء»</summary>
+      <div class="ans">شبّه الشاعر الرماح بإنسان عطشان يشتهي الدماء. (النوع: استعارة مكنية.) أثرها: تُظهر شدة القتال وشوق المسلمين للقاء العدو، وهذا يخدم الفخر. <span class="src ana">تحليلية</span></div>
+    </details>
+  </div>
+</article>
+
+<!-- 5 العلاقة -->
+<article class="card" id="s5">
+  <header><span class="num">5</span><h2>«ما العلاقة بين البيتين؟»</h2><span class="tag hot">في أغلب الاختبارات</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">كيف يرتبط البيت الثاني بالأول؟ الجواب واحد من 7 أسماء فقط، اختر منها.</p></div>
+    <p class="srcnote bkn">🔗 للشرح الكامل مع الكلمات الدالة على كل علاقة وتدريب من 16 سؤالًا، افتح صفحة <a href="relations.html">العلاقات بين الجمل</a>.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>اسم العلاقة</th><th>متى تختارها</th></tr></thead>
+      <tbody>
+        <tr><td><b>سبب ونتيجة</b></td><td>الأول حصل، فحصل الثاني بسببه</td></tr>
+        <tr><td><b>تعليل</b></td><td>الثاني يقول لماذا حصل الأول (فيه غالبًا: لأنّ، فإنّ)</td></tr>
+        <tr><td><b>إجمال وتفصيل</b></td><td>الأول كلام مختصر، والثاني يشرحه بالتفصيل</td></tr>
+        <tr><td><b>استدراك</b></td><td>الثاني فيه «لكنّ» ويصحح فكرة الأول</td></tr>
+        <tr><td><b>توكيد</b></td><td>الثاني يكرر معنى الأول ليقويه</td></tr>
+        <tr><td><b>توضيح وتفسير</b></td><td>الثاني يشرح كلمة غامضة في الأول</td></tr>
+        <tr><td><b>تضاد</b></td><td>الثاني عكس الأول</td></tr>
+      </tbody>
+    </table></div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2018/2019 (النابغة)</span>العلاقة بين البيت الخامس والسادس علاقة سبب ونتيجة. اشرح ذلك.<br><span class="q">«رأيتك ترعاني بعين بصيرة · وتبعث حرّاسًا عليّ وناظرا»</span><br><span class="q">«وذلك من قول أتاك أقوله · ومن دسّ أعدائي إليك المآبرا»</span></div>
+      <ol>
+        <li><span class="s">الخطوة 1</span><p>ماذا حصل؟ الملك أرسل حراسًا يراقبون الشاعر.</p></li>
+        <li><span class="s">الخطوة 2</span><p>لماذا؟ البيت الثاني يقول: بسبب كلام الأعداء ووشايتهم.</p></li>
+      </ol>
+      <div class="final"><span class="label">الجواب</span>سبب بعث الملك الحراس لمراقبة الشاعر هو وشاية الأعداء. <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>شرح كل بيت لوحده، بدون ذكر اسم العلاقة.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>ابدأ باسم العلاقة: «علاقة سبب ونتيجة؛ فـ...»</p></div>
+    </div>
+    <details class="fold try"><summary>جرّب بنفسك: ما علاقة جملة «لأنّ أعظم أنواع الظلم هو ظلم الإنسان لنفسه» بما قبلها؟</summary>
+      <div class="ans"><b>تعليل</b>. الجملة تقول سبب ما قبلها، وفيها كلمة «لأنّ».</div>
+    </details>
+  </div>
+</article>
+
+<!-- 6 دلّل -->
+<article class="card" id="s6">
+  <header><span class="num">6</span><h2>«دلّل» · «استخرج» · «استدلّ بقرينة»</h2><span class="tag hot">أكثر نوع يتكرر</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">أعطني كلمات من النص تثبت الفكرة. انسخها كما هي. لا تشرح.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>ابحث في النص عن الكلمات التي فيها الفكرة.</p></li>
+        <li><p>انسخها بين قوسين « ».</p></li>
+        <li><p>إذا قال «قرينتين» فاكتب اثنتين بالضبط. كل واحدة عليها نصف درجة.</p></li>
+      </ol>
+    </div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2018/2019 (الصافات)</span>بمَ اتسم الحوار بين إبراهيم وابنه؟ استدلّ على ذلك بقرينتين لفظيتين.</div>
+      <ol>
+        <li><span class="s">الخطوة 1</span><p>الحوار كان هادئًا ولطيفًا مع أن الموقف مخيف (الذبح).</p></li>
+        <li><span class="s">الخطوة 2</span><p>ما الكلمات التي تدل على اللطف؟ «يا بنيّ»، «يا أبتِ».</p></li>
+      </ol>
+      <div class="final"><span class="label">الجواب</span>اتسم بالهدوء واللطف رغم عظم الموقف. القرينتان: «يا بنيّ»، «يا أبتِ». <span class="src">(نموذج الوزارة، ويقبل أيضًا: «فانظر ماذا ترى»، «ستجدني»)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>«إبراهيم كلّم ابنه بلطف وأخذ رأيه»</p><p class="why">هذا كلامك أنت، وليس من النص.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>«يا بنيّ»، «فانظر ماذا ترى»</p></div>
+    </div>
+    <details class="fold try"><summary>جرّب بنفسك: دلّل من قصيدة حسان على أن الله أيّد النبي ﷺ</summary>
+      <div class="ans"><span class="q">«وجبريلٌ أمينُ الله فينا · وروحُ القدس ليس له كفاءُ»</span> أو <span class="q">«وقال الله قد أرسلت عبدًا»</span></div>
+    </details>
+  </div>
+</article>
+
+<!-- 7 صنّف -->
+<article class="card" id="s7">
+  <header><span class="num">7</span><h2>«صنّف الألفاظ في الجدول»</h2><span class="tag hot">في أغلب الاختبارات</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">طلع من الأبيات كلمات تنتمي لمجموعة معيّنة، وضعها في مكانها في الجدول.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>خذ الكلمات من الأبيات المكتوبة في الورقة فقط، لا من حفظك.</p></li>
+        <li><p>اكتب العدد المطلوب بالضبط. كل كلمة عليها نصف درجة غالبًا.</p></li>
+      </ol>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>المجموعة</th><th>كيف تعرفها</th><th>أمثلة من النصوص</th></tr></thead>
+      <tbody>
+        <tr><td>ألفاظ إسلامية</td><td>كلمات جاءت مع الإسلام</td><td>رسول الله، القرآن، جبريل، الوحي، العفو، اعتمرنا، الفتح، نبي الهدى</td></tr>
+        <tr><td>ألفاظ جاهلية</td><td>من حياة الصحراء القديمة</td><td>البيداء، الأطلال، سيف مهنّد، جنح الظلام، الروامس</td></tr>
+        <tr><td>ألفاظ الحرب</td><td>القتال والسلاح والخيل</td><td>النقع (الغبار)، الأسل (الرماح)، الأعنّة، الجياد، الجلاد</td></tr>
+        <tr><td>ألفاظ الطبيعة</td><td>سماء، نبات، ماء، حيوان</td><td>الشمس، الكواكب، البحر، الغيث، الهراس (نبات شوكي)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>كتابة «الصلاة» كلفظ إسلامي، وهي غير موجودة في الأبيات.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>«الوحي»، «نبي الهدى»: موجودتان في الأبيات. <span class="src">(نموذج الوزارة 2018/19)</span></p></div>
+    </div>
+  </div>
+</article>
+
+<!-- 8 العاطفة -->
+<article class="card" id="s8">
+  <header><span class="num">8</span><h2>«ما العاطفة المسيطرة؟»</h2><span class="tag hot">في أغلب الاختبارات</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">ما الشعور الذي يحسه الشاعر؟ اكتب اسم الشعور، وانسخ كلمات من النص تدل عليه.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>اسأل: الشاعر خائف؟ حزين؟ فخور؟ يرجو شيئًا؟</p></li>
+        <li><p>اكتب: «العاطفة (اسمها)، ويدل عليها قوله: «...»».</p></li>
+      </ol>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>النص</th><th>العاطفة</th></tr></thead>
+      <tbody>
+        <tr><td>بانت سعاد (حين يخاطب الرسول ﷺ)</td><td>الخوف والرجاء</td></tr>
+        <tr><td>النابغة، وعدي بن زيد</td><td>الخوف، والاستعطاف، والحزن</td></tr>
+        <tr><td>حسان: عفت ذات الأصابع</td><td>الفخر والحماسة</td></tr>
+        <tr><td>جبران وشعراء الرومانسية</td><td>الحزن، والحنين، والشكوى</td></tr>
+      </tbody>
+    </table></div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>«عاطفة صادقة وقوية»</p><p class="why">هذا وصف للعاطفة، والمطلوب اسمها.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>«الخوف، ويدل عليه: «نُبّئتُ أنّ أبا قابوس أوعدني»»</p></div>
+    </div>
+  </div>
+</article>
+
+<!-- 9 البديع -->
+<article class="card" id="s9">
+  <header><span class="num">9</span><h2>«حدّد المحسّن البديعي واذكر نوعه»</h2><span class="tag hot">مرة في أغلب الاختبارات</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">ابحث عن كلمتين متضادتين، أو جمل تنتهي بنفس الحرف. سمّها، واكتب الكلمات.</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th>الاسم</th><th>كيف تعرفه</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td><a class="term" href="glossary.html#tibaq">طباق</a></td><td>كلمتان متضادتان</td><td>زانه / شانه · أعالنهم / أبطن</td></tr>
+        <tr><td><a class="term" href="glossary.html#muqabala">مقابلة</a></td><td>جملتان متضادتان</td><td>إن يتركوهم هلكوا / إن أخذوا على أيديهم نجوا</td></tr>
+        <tr><td><a class="term" href="glossary.html#saj">سجع</a></td><td>جمل تنتهي بنفس الحرف</td><td>أوكوا السقاء / وغطّوا الإناء</td></tr>
+      </tbody>
+    </table></div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2018/2019</span>«وهمّين: همًّا مستكنًّا وظاهرا». المحسن البديعي بين كلمتي (مستكنًّا - ظاهرًا) هو...</div>
+      <ol><li><span class="s">الخطوة 1</span><p>مستكنّ = مخفي. ظاهر = واضح. كلمتان متضادتان.</p></li></ol>
+      <div class="final"><span class="label">الجواب</span><b>الطباق</b> <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <details class="fold try"><summary>جرّب بنفسك: «أوكوا السقاء، وغطّوا الإناء». ما المحسن البديعي؟</summary>
+      <div class="ans"><b>السجع</b>: الجملتان تنتهيان بنفس الحرف (السقاء / الإناء)، فيعطي نغمًا جميلًا.</div>
+    </details>
+  </div>
+</article>
+
+<!-- 10 الأسلوب -->
+<article class="card" id="s10">
+  <header><span class="num">10</span><h2>«الأسلوب وغرضه» (استفهام، نهي، أمر...)</h2><span class="tag hot">مرة في أغلب الاختبارات</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">الشاعر سأل سؤالًا أو أمر أو نهى، لكنه لا يقصد السؤال الحقيقي. ماذا كان يقصد؟</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>سمِّ الأسلوب: استفهام (فيه ؟)، أمر (افعل)، نهي (لا تفعل)، نداء (يا).</p></li>
+        <li><p>اسأل نفسك: هل الشاعر ينتظر جوابًا فعلًا؟ إذا لا، فماذا يريد؟ يتعجب؟ يلوم؟ يترجّى؟</p></li>
+      </ol>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>الجملة</th><th>الأسلوب</th><th>ماذا يقصد</th></tr></thead>
+      <tbody>
+        <tr><td>أتقتلون رجلًا أن يقول ربي الله</td><td>استفهام</td><td>الإنكار واللوم: لا يصح أن تقتلوه</td></tr>
+        <tr><td>أتهجوه ولستَ له بكفء</td><td>استفهام</td><td>الإنكار والتحقير</td></tr>
+        <tr><td>أحظّي كان سلسلةً وقيدًا</td><td>استفهام</td><td>التعجب والحسرة</td></tr>
+        <tr><td>فلا تتركنّي بالوعيد</td><td>نهي</td><td>الاستعطاف والرجاء</td></tr>
+        <tr><td>عدمنا خيلنا إن لم تروها</td><td>دعاء على النفس</td><td>الثقة بالنصر</td></tr>
+      </tbody>
+    </table></div>
+    <p class="srcnote ana"><b>تحليلية:</b> الأغراض في هذا الجدول من إعدادنا، مبنية على شرح الكتاب. راجعها مع معلمك.</p>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>«استفهام»</p><p class="why">ذكرت النوع ونسيت الغرض.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>«استفهام غرضه الإنكار»</p></div>
+    </div>
+  </div>
+</article>
+
+<!-- 11 الخصائص -->
+<article class="card" id="s11">
+  <header><span class="num">11</span><h2>«استنتج خصيصة من خصائص...»</h2><span class="tag hot">مرة أو مرتين في كل اختبار</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">في الكتاب قائمة صفات لكل نوع من الشعر. اختر منها الصفة التي تراها في الأبيات، واكتبها بكلمات الكتاب.</p></div>
+    <div><span class="label">كيف تجاوب</span>
+      <ol class="steps-list">
+        <li><p>اعرف نوع الشعر: اعتذار؟ صدر الإسلام؟</p></li>
+        <li><p>اختر من القائمة تحت صفة تجد لها كلمة في الأبيات.</p></li>
+        <li><p>اكتب الصفة بكلمات الكتاب، ثم الكلمة من البيت.</p></li>
+      </ol>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>النوع</th><th>صفاته كما في الكتاب</th></tr></thead>
+      <tbody>
+        <tr><td>شعر الاعتذار</td><td>1. مفرداته ومعانيه وصوره مستمدة من الطبيعة<br>2. الواقعية والوضوح والبساطة في الألفاظ<br>3. يصف الملك بالكرم والشجاعة والنجدة<br>4. يرتبط بأغراض أخرى، مثل المدح والحكمة</td></tr>
+        <tr><td>شعر صدر الإسلام</td><td>1. بقي على شكل الشعر الجاهلي، وتغيرت المعاني فقط<br>2. أغلبه مقطوعات قصيرة<br>3. يأخذ الهجاء والفخر من الجاهلية، ويعيّر الكفار بالشرك<br>4. الإيجاز<br>5. يُقال بعفوية دون تكلّف<br>6. ظهور الألفاظ والمعاني الإسلامية</td></tr>
+      </tbody>
+    </table></div>
+    <div class="worked">
+      <div class="qbox"><span class="label">مثال محلول · اختبار 2020/2021 (النابغة)</span>استنتج خصيصتين من خصائص شعر الاعتذار في الأبيات السابقة.</div>
+      <div class="final"><span class="label">الجواب</span>1. مفرداته ومعانيه وصوره مستمدة من الطبيعة ومكوناتها. 2. يمتاز بالواقعية والوضوح والبساطة في ألفاظه. <span class="src">(نموذج إجابة الوزارة)</span></div>
+    </div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>صفة صحيحة لكنها ليست في الأبيات المعطاة.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>صفة من القائمة، ولها دليل في الأبيات.</p></div>
+    </div>
+  </div>
+</article>
+
+<!-- 12 الحوار والقصة -->
+<article class="card" id="s12">
+  <header><span class="num">12</span><h2>الحوار · عناصر القصة · عناصر الخطاب</h2><span class="tag hot">في نصوص القرآن والاعتذار</span></header>
+  <div class="body">
+    <div><span class="label">يعني ببساطة</span><p class="plain">أسئلة عن طريقة الكلام في النص: من يتكلم مع من؟ كيف كان الكلام؟ وأين المشكلة في القصة وأين حلها؟</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th>السؤال</th><th>الجواب المعتمد</th></tr></thead>
+      <tbody>
+        <tr><td>بمَ اتسم الحوار بين إبراهيم وابنه؟</td><td>بالهدوء واللطف رغم عظم الموقف <span class="src">(الوزارة)</span></td></tr>
+        <tr><td>العقدة في قصة الذبح (أصعب لحظة)</td><td>«فلما أسلما وتلّه للجبين» <span class="src">(الوزارة)</span></td></tr>
+        <tr><td>الحل (كيف انتهت المشكلة)</td><td>«وفديناه بذبح عظيم» <span class="src">(الوزارة)</span></td></tr>
+        <tr><td>لماذا استعمل الشاعر الحوار في الاعتذار؟</td><td>يخلق جوًا من الحوار يساعد على الاعتذار، ويستعطف المخاطَب <span class="src">(الوزارة)</span></td></tr>
+        <tr><td>عناصر الخطاب</td><td>من يتكلم (الشاعر)، ومن يُكلَّم (الملك)، والموضوع (الاعتذار)</td></tr>
+        <tr><td>مراحل حوار مؤمن آل فرعون</td><td>عرض القضية، ثم الأدلة، ثم النتائج</td></tr>
+      </tbody>
+    </table></div>
+    <div class="vs">
+      <div class="no"><span class="label">✗ يضيّع الدرجة</span><p>العقدة: «إني أرى في المنام أني أذبحك»</p><p class="why">هذه بداية المشكلة. العقدة أصعب لحظة، قبل الحل مباشرة.</p></div>
+      <div class="yes"><span class="label">✓ يأخذ الدرجة</span><p>العقدة: «فلما أسلما وتلّه للجبين»</p></div>
+    </div>
+  </div>
+</article>
+
+<section class="block" id="rules">
+  <h2>كيف يصحح المصحح</h2>
+  <p>هذه القواعد من نماذج الإجابة الرسمية للوزارة:</p>
+  <div class="cmds">
+    <div class="cmd"><span class="w">درجة لكل جواب</span><p>وإذا طلب شيئين، فلكل واحد نصف درجة.</p></div>
+    <div class="cmd"><span class="w">يقبل أكثر من جواب</span><p>إذا كان جوابك صحيحًا بكلمات مختلفة، يُقبل غالبًا.</p></div>
+    <div class="cmd"><span class="w">كلمات الكتاب</span><p>في الصفات والمراحل والعيوب، اكتب بكلمات الكتاب نفسها.</p></div>
+    <div class="cmd"><span class="w">الدليل منسوخ</span><p>في «دلّل» و«استخرج»، الدرجة على كلمات النص.</p></div>
+    <div class="cmd"><span class="w">العدد بالضبط</span><p>اكتب العدد المطلوب، وابدأ بأوضح جواب.</p></div>
+    <div class="cmd"><span class="w">الحفظ بالترتيب</span><p>أكثر من خطأين في البيت الواحد تضيع درجته.</p></div>
+  </div>
+</section>
+
+</main>
+<footer class="site"><b>علامات المصدر:</b> «نموذج إجابة الوزارة» منقول حرفيًا من نماذج الإجابة الرسمية · «تحليلية» من إعدادنا، مبنية على الكتاب ونماذج الوزارة، ويراجعها المعلم.</footer>
+</div>
+<script src="dlx.js"></script>
+<script src="tm.js"></script>
+</body>
+</html>

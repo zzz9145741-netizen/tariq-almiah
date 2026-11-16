@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بطاقات الدروس · العلوم الإسلامية (1)</title>
+<meta name="description" content="بطاقات دروس العلوم الإسلامية (1): القرآن الكريم والحديث الشريف والسيرة النبوية، 26 درسًا مع معاني الكلمات وأفكار القدرات العليا. العلوم الإسلامية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="بطاقات الدروس · العلوم الإسلامية (1)">
+<meta property="og:description" content="بطاقات دروس العلوم الإسلامية (1): القرآن الكريم والحديث الشريف والسيرة النبوية، 26 درسًا مع معاني الكلمات وأفكار القدرات العليا. العلوم الإسلامية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="isl.css">
+<style>
+.units{display:flex;flex-direction:column;gap:18px}
+.unit h2{font-size:1.2rem;margin-bottom:8px}
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:8px}
+.lgrid a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.lgrid a:hover{border-color:var(--accent)}
+.lgrid .no{flex:0 0 2em;height:2em;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.85rem;font-variant-numeric:tabular-nums}
+.lgrid .seen{margin-inline-start:auto;color:var(--good);font-size:.75rem;font-weight:700}
+.sec{display:flex;flex-direction:column;gap:10px}
+.sec>h3{font-size:1.05rem;color:var(--accent)}
+.voc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:6px}
+.voc div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:.95rem}
+.voc b{color:var(--accent);margin-inline-end:6px}
+.keys{display:flex;flex-direction:column;gap:8px}
+.keys div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.keys b{display:block;font-size:.85rem;color:var(--muted);margin-bottom:2px}
+.hot li{background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:10px;padding:8px 12px;list-style:none}
+.hot{padding:0}
+.vsg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px}
+.vsg div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.vsg b{display:block;color:var(--accent)}
+.wit{display:flex;flex-direction:column;gap:8px}
+.wit div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.wit .ref{font-size:.78rem;color:var(--muted);font-family:var(--body)}
+.nav2{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+</style>
+</head>
+<body data-tool="isl-lessons">
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع"><a href="isl-lessons.html" aria-current="page">بطاقات الدروس</a></nav>
+</div></header>
+
+<div class="wrap">
+<main>
+<section id="list">
+  <header class="hero">
+    <p class="eyebrow">العلوم الإسلامية (1) · أفهم الدروس</p>
+    <h1>بطاقات الدروس</h1>
+    <div class="brief"><b class="t">باختصار</b><p>لكل درس من الدروس الستة والعشرين بطاقة فيها ما يحتاجه الاختبار من الكتاب: النص ومعاني كلماته، والنقاط التي تُحفظ، وأفكار القدرات العليا، والمفاهيم التي يُخلط بينها، وآيات تشهد للفكرة. كل بطاقة قابلة للتنزيل، ومنها تنتقل إلى أسئلة الوزارة على الدرس نفسه.</p></div>
+  </header>
+  <div class="units" id="units"></div>
+</section>
+
+<section id="lesson" hidden></section>
+</main>
+<footer class="site">المحتوى من كتاب العلوم الإسلامية (1) للصف الثاني عشر، الفصل الأول (ط1، 1446هـ/2024م)، ورقم الصفحة مذكور في كل بطاقة. نص الآيات بالرسم العثماني من مصدر قرآني موثّق. معاني الكلمات من ملف معاني الكلمات المعتمد لدى المعلم.</footer>
+</div>
+
+<script src="isl-lessons-data.js"></script>
+<script src="isl-ayat.js"></script>
+<script src="isl-bank-data.js"></script>
+<script>
+(function(){
+var L=window.ISL_LESSONS,U=window.ISL_UNITS,A=window.ISL_AYAT,B=window.ISL_BANK;
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function visited(n){try{return localStorage.getItem("isl.seen."+n)==="1"}catch(e){return false}}
+function markSeen(n){try{localStorage.setItem("isl.seen."+n,"1")}catch(e){}}
+function ayahs(s,a,b){var o="";for(var i=a;i<=b;i++){var t=A.surahs[s]&&A.surahs[s][i];if(t)o+=esc(t)+' <span class="an">'+i+'</span> '}return o}
+function witness(ref){var m=ref.split(":"),s=m[0],r=m[1].split("-"),a=+r[0],b=+(r[1]||r[0]),txt="";for(var i=a;i<=b;i++){var t=A.extra[s+":"+i];if(t)txt+=esc(t)+' <span class="an">'+i+'</span> '}if(!txt)return "";return '<div><p class="ayah" style="font-size:1.15rem">'+txt+'</p><span class="ref">'+esc(A.names[s]||"")+' '+esc(m[1])+'</span></div>'}
+function renderList(){var h="";U.forEach(function(u){h+='<div class="unit"><h2>'+esc(u.t)+' <span class="src">'+esc(u.n)+'</span></h2><div class="lgrid">';L.filter(function(l){return l.u===u.k}).forEach(function(l){h+='<a href="#l'+l.n+'"><span class="no">'+l.n+'</span><span>'+esc(l.t)+'</span>'+(visited(l.n)?'<span class="seen">✔</span>':'')+'</a>'});h+='</div></div>'});$("units").innerHTML=h}
+function renderLesson(n){var l=L.filter(function(x){return x.n===n})[0];if(!l)return show("list");
+ var qs=B.filter(function(q){return q.l===n}),idx=L.indexOf(l),prev=L[idx-1],next=L[idx+1];
+ var h='<button type="button" class="back" id="toList">→ كل الدروس</button>';
+ h+='<header class="hero"><p class="eyebrow">'+esc(U.filter(function(u){return u.k===l.u})[0].t)+' · الدرس '+l.n+' · الكتاب ص '+esc(l.p)+'</p><h1>'+esc(l.t)+'</h1>';
+ if(l.idea)h+='<div class="brief"><b class="t">الفكرة في جملة</b><p>'+esc(l.idea)+'</p></div>';
+ h+='</header><div data-dl="'+esc("الدرس "+l.n+" "+l.t)+'" data-dl-src="#lessonBody"></div><div id="lessonBody" style="display:flex;flex-direction:column;gap:22px">';
+ if(l.s){h+='<div class="sec"><h3>النص: '+esc(A.names[l.s]||"")+' '+l.a[0]+'–'+l.a[1]+'</h3><p class="ayah">'+ayahs(l.s,l.a[0],l.a[1])+'</p></div>'}
+ if(l.had){h+='<div class="sec"><h3>نص الحديث (مطلوب حفظه بالسند والمتن)</h3><p class="hadith">'+esc(l.had)+'</p></div>'}
+ if(l.voc&&l.voc.length){h+='<div class="sec"><h3>معاني الكلمات</h3><div class="voc">'+l.voc.map(function(v){return '<div><b>'+esc(v[0])+'</b>'+esc(v[1])+'</div>'}).join("")+'</div></div>'}
+ h+='<div class="sec"><h3>ما يجب أن تعرفه</h3><div class="keys">'+l.key.map(function(k){return '<div><b>'+esc(k[0])+'</b>'+esc(k[1])+'</div>'}).join("")+'</div></div>';
+ if(l.vs&&l.vs.length){h+='<div class="sec"><h3>لا تخلط بينها</h3><div class="vsg">'+l.vs.map(function(v){return '<div><b>'+esc(v[0])+'</b>'+esc(v[1])+'</div>'}).join("")+'</div></div>'}
+ if(l.hot&&l.hot.length){h+='<div class="sec"><h3>أفكار القدرات العليا في هذا الدرس</h3><ul class="hot">'+l.hot.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></div>'}
+ if(l.w&&l.w.length){var wh=l.w.map(witness).join("");if(wh)h+='<div class="sec"><h3>آيات تشهد للفكرة</h3><p class="src">آيات ذكرها الكتاب في الدرس نفسه. الوزارة قد تأتي بآية من خارج النص على الفكرة نفسها.</p><div class="wit">'+wh+'</div></div>'}
+ h+='</div>';
+ h+='<div class="sec"><h3>أسئلة الوزارة على هذا الدرس</h3><p>'+qs.length+' سؤالًا جاءت في الاختبارات السابقة، مقسمة إلى سهلة ومتوسطة وقدرات عليا، مع إجاباتها.</p><a class="btn" href="isl-bank.html#l'+n+'">افتح أسئلة الدرس '+n+'</a></div>';
+ h+='<nav class="nav2" aria-label="التنقل بين الدروس">'+(prev?'<a class="back" href="#l'+prev.n+'">→ '+esc(prev.t)+'</a>':'<span></span>')+(next?'<a class="back" href="#l'+next.n+'">'+esc(next.t)+' ←</a>':'')+'</nav>';
+ $("lesson").innerHTML=h;$("toList").onclick=function(){location.hash=""};markSeen(n);
+ if(window.TMDLX)window.TMDLX.mount($("lesson").querySelector("[data-dl]"));
+ show("lesson")}
+function show(w){$("list").hidden=w!=="list";$("lesson").hidden=w!=="lesson";window.scrollTo(0,0)}
+function route(){var m=(location.hash||"").match(/^#l(\d+)$/);if(m)renderLesson(+m[1]);else{renderList();show("list")}}
+window.addEventListener("hashchange",route);route();
+})();
+</script>
+<script src="dlx.js"></script>
+<script src="tm.js"></script>
+</body>
+</html>

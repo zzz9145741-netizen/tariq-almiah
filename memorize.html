@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الحفظ · طريق المئة</title>
+<meta name="description" content="حفظ مقاطع اللغة العربية (1) المقررة مع تدريب تفاعلي وتصحيح كلمة كلمة. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="الحفظ · طريق المئة">
+<meta property="og:description" content="حفظ مقاطع اللغة العربية (1) المقررة مع تدريب تفاعلي وتصحيح كلمة كلمة. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.pick{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:10px}
+.pick button{font:inherit;text-align:right;background:var(--paper);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;display:flex;flex-direction:column;gap:2px}
+.pick button b{font-family:var(--display);font-size:1.05rem;word-spacing:.18em}
+.pick button span{color:var(--muted);font-size:.88rem}
+.pick button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.panel>header{padding:14px 18px;background:var(--accent-soft);display:flex;flex-direction:column;gap:4px}
+.panel>header h2{font-size:1.25rem;border:0;padding:0}
+.panel>header p{color:var(--muted);font-size:.92rem}
+.modes{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--line)}
+.modes button{flex:0 0 auto;font:inherit;font-size:.92rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.modes button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.pbody{padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.hint{font-size:.92rem;color:var(--muted);background:var(--bg);border-radius:10px;padding:8px 12px}
+.lines{display:flex;flex-direction:column;gap:8px;font-family:var(--quote);font-size:1.3rem;line-height:2}
+.ln{display:grid;grid-template-columns:2.2em 1fr;gap:8px;align-items:baseline;padding:4px 6px;border-radius:8px}
+.ln .no{font-family:var(--body);font-size:.75rem;color:var(--accent);font-weight:700}
+.ln .tx{display:flex;flex-wrap:wrap;gap:0 .35em}
+.ln .sep{display:block;width:100%;height:0}
+@media (min-width:700px){.ln.poem .sep{display:inline-block;width:2.2em}}
+.ln.cue{background:var(--bg)}
+.ln.cue .no::after{content:" (البداية)";font-weight:400;color:var(--muted)}
+.w{cursor:default}
+.w.hid{cursor:pointer;color:transparent;border-bottom:2px dotted var(--accent);min-width:1.4em;border-radius:2px;background:var(--accent-soft)}
+.w.fl{cursor:pointer;color:var(--accent)}
+.w.shown{color:var(--ink);background:var(--gold-soft);border-radius:4px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;padding:8px 16px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn.ghost{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+textarea{font-family:var(--quote);font-size:1.2rem;line-height:1.9;width:100%;min-height:220px;border:2px solid var(--line);border-radius:12px;padding:12px;background:var(--paper);color:var(--ink);resize:vertical}
+textarea:focus{border-color:var(--accent);outline:none}
+.res{display:flex;flex-direction:column;gap:10px}
+.score{display:flex;gap:10px;flex-wrap:wrap}
+.score div{flex:1 1 140px;background:var(--bg);border-radius:10px;padding:10px 12px;text-align:center}
+.score b{display:block;font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.ok{color:var(--good)}.bad{color:var(--bad)}
+.w.miss{color:var(--bad);text-decoration:underline wavy;text-underline-offset:6px}
+.w.hit{color:var(--good)}
+.ln.lost{background:var(--bad-soft)}
+.sched{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.sched label{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 4px;font-size:.85rem;text-align:center;cursor:pointer}
+.sched input{width:20px;height:20px;accent-color:var(--accent)}
+.cues{display:flex;flex-direction:column;gap:6px}
+.cues li{font-size:.95rem}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع">
+    <a href="index.html">الرئيسية</a>
+    <a href="decoder.html">مفكك الأسئلة</a>
+    <a href="texts.html">النصوص</a>
+    <a href="summaries.html">الملخصات</a>
+    <a href="memorize.html" aria-current="page">الحفظ</a>
+    <a href="cards.html">البطاقات</a>
+    <a href="schools.html">المذاهب والمناهج</a>
+    <a href="reading.html">النص الخارجي والقراءة</a>
+    <a href="bank.html">بنك الأسئلة</a>
+    <a href="exams.html">اختبارات تجريبية</a>
+    <a href="glossary.html">القاموس</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">الخطوة 5 من طريق المئة · السؤال الثالث (5 درجات)</p>
+  <h1>الحفظ</h1>
+  <div class="brief"><b class="t">باختصار</b>
+    <p>في كل اختبار سؤال حفظ بخمس درجات: يعطيك بيتًا أو آية، وتكتب ما بعدها بالترتيب. هنا المقاطع الستة المطلوبة كلها، مطابقة للكتاب، ومعها أدوات تساعدك تحفظ بسرعة وتتأكد من حفظك قبل الاختبار.</p>
+  </div>
+  <div class="motto" data-motto><p>درجة تحصّلها اليوم أهون من ندم بعد النتيجة.</p></div>
+</header>
+
+<main>
+
+<section class="block">
+  <h2>كيف تحفظ بأقل وقت</h2>
+  <ol class="steps-list">
+    <li><p><b>افهم أولًا:</b> اقرأ شرح المقطع في <a href="texts.html">ملفات النصوص</a>. ما تفهمه تحفظه أسرع.</p></li>
+    <li><p><b>قسّم:</b> احفظ بيتين أو آيتين، ثم أضف ما بعدهما. لا تحفظ المقطع دفعة واحدة.</p></li>
+    <li><p><b>استرجع ولا تعد القراءة:</b> استعمل «الحرف الأول» ثم «أخفِ وتذكّر». محاولة التذكر هي التي تثبّت الحفظ.</p></li>
+    <li><p><b>اكتب كما في الاختبار:</b> في «اكتب واختبر» تكتب من ذاكرتك، ويصحح لك الموقع كلمة كلمة.</p></li>
+    <li><p><b>راجع على أيام متباعدة:</b> اليوم، ثم بعد يومين، ثم 4 أيام، ثم أسبوع، ثم أسبوعين. علّم كل مراجعة في جدول المقطع.</p></li>
+  </ol>
+  <div class="vs">
+    <div class="no"><span class="label">✗ كيف تضيع درجة البيت</span><p>تغيير ترتيب الأبيات، أو أكثر من خطأين في البيت الواحد. هذا من نموذج إجابة الوزارة.</p></div>
+    <div class="yes"><span class="label">✓ كيف تأخذها كاملة</span><p>الترتيب صحيح، والكلمات بلفظ الكتاب. والتشكيل لا يُشترط.</p></div>
+  </div>
+</section>
+
+<section class="block" id="pick">
+  <h2>اختر المقطع</h2>
+  <div class="pick" id="pickList"></div>
+</section>
+
+<section class="panel" id="panel" aria-live="polite">
+  <header><h2 id="pTitle">إبراهيم الخليل</h2><p id="pSub"></p></header>
+  <div class="modes" role="group" aria-label="طريقة التدريب">
+    <button type="button" data-mode="read" aria-pressed="true">اقرأ</button>
+    <button type="button" data-mode="first">الحرف الأول</button>
+    <button type="button" data-mode="hide">أخفِ وتذكّر</button>
+    <button type="button" data-mode="write">اكتب واختبر</button>
+  </div>
+  <div class="pbody">
+    <p class="hint" id="hint"></p>
+    <div class="row" id="tools"></div>
+    <div class="lines" id="lines"></div>
+    <div id="writeBox" hidden>
+      <label for="answer" class="label">اكتب المقطع من ذاكرتك (بعد سطر «البداية»):</label>
+      <textarea id="answer" placeholder="ابدأ الكتابة هنا..."></textarea>
+      <div class="row" style="margin-top:8px"><button type="button" class="btn" id="check">صحّح لي</button><button type="button" class="btn ghost" id="clear">امسح وابدأ من جديد</button></div>
+      <div class="res" id="result" hidden></div>
+    </div>
+    <div>
+      <span class="label">جاء في اختبارات الوزارة</span>
+      <ul class="cues" id="cues"></ul>
+    </div>
+    <div>
+      <span class="label">جدول المراجعة (يُحفظ على جهازك)</span>
+      <div class="sched" id="sched"></div>
+    </div>
+  </div>
+</section>
+
+<div class="motto" data-motto><p>أنت أقرب إلى المئة مما تظن.</p></div>
+</main>
+<footer class="site">النصوص مطابقة لصفحات الكتاب المدرسي. قاعدة التصحيح من نموذج إجابة الوزارة: «يشترط الترتيب، وإذا أخطأ الطالب أكثر من خطأين في البيت الواحد تسقط درجة البيت».</footer>
+</div>
+
+<script>
+(function(){
+var P=[
+ {id:"saffat",t:"إبراهيم الخليل",s:"سورة الصافات · الآيات 83 إلى 98 · الكتاب ص 12",k:"quran",
+  cue:null,
+  L:["وَإِنَّ مِن شِيعَتِهِ لَإِبْرَاهِيمَ","إِذْ جَاءَ رَبَّهُ بِقَلْبٍ سَلِيمٍ","إِذْ قَالَ لِأَبِيهِ وَقَوْمِهِ مَاذَا تَعْبُدُونَ","أَئِفْكًا آلِهَةً دُونَ اللَّهِ تُرِيدُونَ","فَمَا ظَنُّكُم بِرَبِّ الْعَالَمِينَ","فَنَظَرَ نَظْرَةً فِي النُّجُومِ","فَقَالَ إِنِّي سَقِيمٌ","فَتَوَلَّوْا عَنْهُ مُدْبِرِينَ","فَرَاغَ إِلَىٰ آلِهَتِهِمْ فَقَالَ أَلَا تَأْكُلُونَ","مَا لَكُمْ لَا تَنطِقُونَ","فَرَاغَ عَلَيْهِمْ ضَرْبًا بِالْيَمِينِ","فَأَقْبَلُوا إِلَيْهِ يَزِفُّونَ","قَالَ أَتَعْبُدُونَ مَا تَنْحِتُونَ","وَاللَّهُ خَلَقَكُمْ وَمَا تَعْمَلُونَ","قَالُوا ابْنُوا لَهُ بُنْيَانًا فَأَلْقُوهُ فِي الْجَحِيمِ","فَأَرَادُوا بِهِ كَيْدًا فَجَعَلْنَاهُمُ الْأَسْفَلِينَ"],
+  n0:83, cues:["2022/2023: من «وإن من شيعته لإبراهيم» إلى «فقال إني سقيم» (83 إلى 89)","2021/2022: ما بعد «إذ جاء ربه بقلب سليم» إلى «فأقبلوا إليه يزفون» (84 إلى 94)"]},
+ {id:"tahur",t:"الطهور شطر الإيمان",s:"حديث شريف · رواه مسلم · يُحفظ كاملًا · الكتاب ص 41",k:"hadith",
+  cue:"عن أبي مالك الأشعري قال: قال رسول الله ﷺ:",
+  L:["الطُّهُورُ شَطْرُ الإِيمَانِ","وَالْحَمْدُ لِلَّهِ تَمْلَأُ الْمِيزَانَ","وَسُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ تَمْلَآنِ أَوْ تَمْلَأُ مَا بَيْنَ السَّمَاوَاتِ وَالْأَرْضِ","وَالصَّلَاةُ نُورٌ","وَالصَّدَقَةُ بُرْهَانٌ","وَالصَّبْرُ ضِيَاءٌ","وَالْقُرْآنُ حُجَّةٌ لَكَ أَوْ عَلَيْكَ","كُلُّ النَّاسِ يَغْدُو فَبَائِعٌ نَفْسَهُ فَمُعْتِقُهَا أَوْ مُوبِقُهَا"],
+  n0:1, cues:["2022/2023 (الدور الثاني): اكتب الحديث كاملًا"]},
+ {id:"hassan",t:"عفت ذات الأصابع",s:"حسان بن ثابت · الأبيات 6 إلى 11 · الكتاب ص 58",k:"poem",
+  cue:["لِشَعْثاءَ الَّتي قَدْ تَيَّمَتْهُ","فَلَيْسَ لِقَلْبِهِ مِنْها شِفاءُ"],
+  L:[["عَدِمْنا خَيْلَنا إِنْ لَمْ تَرَوْها","تُثيرُ النَّقْعَ مَوْعِدُها كَداءُ"],["يُبارينَ الأَعِنَّةَ مُصْعِداتٍ","عَلى أَكْتافِها الأَسَلُ الظِّماءُ"],["تَظَلُّ جِيادُنا مُتَمَطِّراتٍ","تُلَطِّمُهُنَّ بِالخُمُرِ النِّساءُ"],["فَإِمّا تُعْرِضوا عَنّا اعْتَمَرْنا","وَكانَ الفَتْحُ وَانْكَشَفَ الغِطاءُ"],["وَإِلّا فَاصْبِروا لِجِلادِ يَوْمٍ","يُعِزُّ اللهُ فيهِ مَنْ يَشاءُ"],["وَجِبْريلٌ أَمينُ اللهِ فينا","وَروحُ القُدْسِ لَيْسَ لَهُ كِفاءُ"]],
+  n0:6, cues:["2018/2019: الأبيات الخمسة التي تلي «لشعثاء التي قد تيمته» (6 إلى 10)","2019/2020: الأبيات الخمسة التي تلي «عدمنا خيلنا إن لم تروها» (7 إلى 11)"]},
+ {id:"banat",t:"بانت سعاد",s:"كعب بن زهير · الأبيات 18 إلى 22 · الكتاب ص 67 و68",k:"poem",
+  cue:["لَذاكَ أَهْيَبُ عِنْدي إِذْ أُكَلِّمُهُ","وَقيلَ إِنَّكَ مَسْبورٌ وَمَسْؤولُ"],
+  L:[["إِنَّ الرَّسولَ لَسَيْفٌ يُسْتَضاءُ بِهِ","مُهَنَّدٌ مِنْ سُيوفِ اللهِ مَسْلولُ"],["في عُصْبَةٍ مِنْ قُرَيْشٍ قالَ قائِلُهُمْ","بِبَطْنِ مَكَّةَ لَمّا أَسْلَموا زولوا"],["زالوا فَما زالَ أَنْكاسٌ وَلا كُشُفٌ","عِنْدَ اللِّقاءِ وَلا ميلٌ مَعازيلُ"],["شُمُّ العَرانينِ أَبْطالٌ لَبوسُهُمُ","مِنْ نَسْجِ داوُدَ في الهَيْجا سَرابيلُ"],["بيضٌ سَوابِغُ قَدْ شُكَّتْ لَها حَلَقٌ","كَأَنَّها حَلَقُ القَفْعاءِ مَجْدولُ"]],
+  n0:18, cues:["لم يأتِ حفظًا في الاختبارات التي بين أيدينا، لكنه مقرر في الكتاب"]},
+ {id:"nabigha",t:"أتاني أبيت اللعن",s:"النابغة الذبياني · الأبيات 1 إلى 7 · الكتاب ص 78",k:"poem",
+  cue:null,
+  L:[["أَتاني أَبَيْتَ اللَّعْنَ أَنَّكَ لُمْتَني","وَتِلْكَ الَّتي أَهْتَمُّ مِنْها وَأَنْصَبُ"],["فَبِتُّ كَأَنَّ العائِداتِ فَرَشْنَ لي","هَراسًا بِهِ يُعْلى فِراشي وَيُقْشَبُ"],["حَلَفْتُ فَلَمْ أَتْرُكْ لِنَفْسِكَ رِيبَةً","وَلَيْسَ وَراءَ اللهِ لِلْمَرْءِ مَذْهَبُ"],["لَئِنْ كُنْتَ قَدْ بُلِّغْتَ عَنّي وِشايَةً","لَمُبْلِغُكَ الواشي أَغَشُّ وَأَكْذَبُ"],["وَلَكِنَّني كُنْتُ امْرَأً لِيَ جانِبٌ","مِنَ الأَرْضِ فيهِ مُسْتَرادٌ وَمَطْلَبُ"],["مُلوكٌ وَإِخْوانٌ إِذا ما أَتَيْتُهُمْ","أُحَكَّمُ في أَمْوالِهِمْ وَأُقَرَّبُ"],["كَفِعْلِكَ في قَوْمٍ أَراكَ اصْطَفَيْتَهُمْ","فَلَمْ تَرَهُمْ في شُكْرِ ذَلِكَ أَذْنَبوا"]],
+  n0:1, cues:["2020/2021: الأبيات الخمسة التي تلي «أتاني أبيت اللعن أنك لمتني» (2 إلى 6)"]},
+ {id:"adi",t:"أرقت لمكفهر",s:"عدي بن زيد · الأبيات 21 إلى 25 · الكتاب ص 88",k:"poem",
+  cue:["يُحاذِرْنَ الوُشاةَ عَلى عَدِيٍّ","وَما قَرَفوا عَلَيْهِ مِنَ الذُّنوبِ"],
+  L:[["فَإِنْ أَخْطَأْتُ أَوْ أَوْهَمْتُ أَمْرًا","فَقَدْ يَهِمُ المُصافي بِالحَبيبِ"],["وَإِنْ أُظْلَمْ فَقَدْ عاقَبْتُموني","وَإِنْ أَظْلِمْ فَذَلِكَ مِنْ نَصيبي"],["وَإِنْ أَهْلِكْ تَجِدْ فَقْدي وَتُخْذَلْ","إِذا التَقَتِ العَوالي في الخُطوبِ"],["فَهَلْ لَكَ أَنْ تَدارَكَ ما لَدَيْنا","وَلا تُغْلَبْ عَلى الرُّشْدِ المُصيبِ"],["وَإِنّي قَدْ وَكَلْتُ اليَوْمَ أَمْري","إِلى رَبٍّ قَريبٍ مُسْتَجيبِ"]],
+  n0:21, cues:["لم يأتِ حفظًا في الاختبارات التي بين أيدينا، لكنه مقرر في الكتاب"]}
+];
+var HINT={read:"اقرأ المقطع بصوت مسموع مرتين أو ثلاثًا، وانتبه لأول كلمة في كل سطر: هي التي تذكّرك بالسطر.",
+ first:"تظهر أول حروف كل كلمة فقط. اقرأ المقطع كاملًا من ذاكرتك، واضغط على أي كلمة نسيتها لتظهر.",
+ hide:"اختر كم تخفي من الكلمات، ثم حاول تذكّرها. اضغط على أي كلمة مخفية لتظهر. ارفع النسبة كلما تحسّن حفظك.",
+ write:"هذا مثل سؤال الاختبار تمامًا. اكتب المقطع من ذاكرتك بدون تشكيل، ثم اضغط «صحّح لي». يقارن الموقع كلمة كلمة."};
+var cur=P[0], mode="read", hidePct=40;
+var $=function(id){return document.getElementById(id)};
+function norm(s){return s.replace(/[ً-ٰٟـ]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").replace(/ؤ/g,"و").replace(/ئ/g,"ي").replace(/[^ء-ي\s]/g," ").replace(/\s+/g," ").trim();}
+function words(line){return (Array.isArray(line)?line.join(" "):line).split(/\s+/).filter(Boolean);}
+function store(k,v){k="tm."+(function(){try{var s=JSON.parse(localStorage.getItem("tm.session")||"null");return s&&s.user?String(s.user).toLowerCase():"guest"}catch(e){return "guest"}})()+"."+k;try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null}}
+function firstOf(w){var m=w.match(/^([ء-ي][ً-ٰٟ]*)/);var bare=w.replace(/[ً-ٰٟ]/g,"");var lead=bare.slice(0,bare.startsWith("ال")||bare.startsWith("وال")||bare.startsWith("فال")?(bare.startsWith("ال")?3:4):1);return lead+"…";}
+function renderPick(){var box=$("pickList");box.innerHTML="";P.forEach(function(p){var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed",p===cur?"true":"false");b.innerHTML="<b>"+p.t+"</b><span>"+p.s.split(" · ").slice(0,2).join(" · ")+"</span>";b.onclick=function(){cur=p;$("answer").value="";$("result").hidden=true;render();renderPick();document.getElementById("panel").scrollIntoView({behavior:"smooth",block:"start"});};box.appendChild(b);});}
+function lineEl(line,no,cls){var d=document.createElement("div");d.className="ln"+(cur.k==="poem"?" poem":"")+(cls?" "+cls:"");var n=document.createElement("span");n.className="no";n.textContent=no;var tx=document.createElement("span");tx.className="tx";
+ var parts=Array.isArray(line)?line:[line];parts.forEach(function(part,pi){if(pi>0){var s=document.createElement("span");s.className="sep";tx.appendChild(s);}part.split(/\s+/).forEach(function(w){var e=document.createElement("span");e.className="w";e.textContent=w;e.dataset.w=w;tx.appendChild(e);});});
+ d.appendChild(n);d.appendChild(tx);return d;}
+function render(){
+ $("pTitle").textContent=cur.t;$("pSub").textContent=cur.s;$("hint").textContent=HINT[mode];
+ document.querySelectorAll(".modes button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.mode===mode?"true":"false");});
+ var box=$("lines");box.innerHTML="";
+ if(cur.cue){box.appendChild(lineEl(cur.cue,"",'cue'));}
+ cur.L.forEach(function(l,i){box.appendChild(lineEl(l,cur.n0+i));});
+ var tools=$("tools");tools.innerHTML="";
+ var ws=box.querySelectorAll(".ln:not(.cue) .w");
+ if(mode==="first"){ws.forEach(function(e){e.classList.add("fl");e.textContent=firstOf(e.dataset.w);e.onclick=function(){e.textContent=e.dataset.w;e.classList.remove("fl");e.classList.add("shown");};});}
+ if(mode==="hide"){[20,40,60,100].forEach(function(p){var b=document.createElement("button");b.type="button";b.className="btn"+(p===hidePct?"":" ghost");b.textContent=p===100?"أخفِ الكل":"أخفِ "+p+"٪";b.onclick=function(){hidePct=p;render();};tools.appendChild(b);});
+  var seed=1;ws.forEach(function(e,i){seed=(seed*9301+49297)%233280;var r=seed/233280;if(hidePct===100||r<hidePct/100){e.classList.add("hid");e.onclick=function(){e.classList.remove("hid");e.classList.add("shown");};}});}
+ $("writeBox").hidden=mode!=="write";
+ box.hidden=(mode==="write");
+ if(mode==="write"){var c=document.createElement("div");c.className="lines";if(cur.cue){c.appendChild(lineEl(cur.cue,"","cue"));}else{c.innerHTML='<p class="hint" style="font-family:var(--body);font-size:.92rem">اكتب المقطع من أوله.</p>';}tools.appendChild(c);}
+ var cl=$("cues");cl.innerHTML="";cur.cues.forEach(function(c){var li=document.createElement("li");li.textContent=c;cl.appendChild(li);});
+ renderSched();}
+function renderSched(){var s=$("sched");s.innerHTML="";["اليوم","بعد يومين","بعد 4 أيام","بعد أسبوع","بعد أسبوعين"].forEach(function(lbl,i){var id="s-"+cur.id+"-"+i;var l=document.createElement("label");l.setAttribute("for",id);var c=document.createElement("input");c.type="checkbox";c.id=id;c.checked=store(id)==="1";c.onchange=function(){store(id,c.checked?"1":"0");};l.appendChild(c);l.appendChild(document.createTextNode(lbl));s.appendChild(l);});}
+function check(){
+ var typed=norm($("answer").value).split(" ").filter(Boolean);
+ if(!typed.length){$("answer").focus();window.TM&&TM.toast("اكتب المقطع أول، بعدين نصحّح لك ✍️");return}
+ var ref=[];cur.L.forEach(function(l,li){words(l).forEach(function(w){ref.push({w:w,n:norm(w),li:li});});});
+ var a=ref.map(function(r){return r.n}),b=typed,n=a.length,m=b.length;
+ var dp=[];for(var i=0;i<=n;i++){dp.push(new Array(m+1).fill(0));}
+ for(i=n-1;i>=0;i--)for(var j=m-1;j>=0;j--)dp[i][j]=a[i]===b[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+ i=0;j=0;var hit=new Array(n).fill(false),extra=0;
+ while(i<n&&j<m){if(a[i]===b[j]){hit[i]=true;i++;j++;}else if(dp[i+1][j]>=dp[i][j+1]){i++;}else{j++;extra++;}}
+ extra+=m-j;
+ var errs=new Array(cur.L.length).fill(0);ref.forEach(function(r,k){if(!hit[k])errs[r.li]++;});
+ var lost=errs.filter(function(e){return e>2}).length;
+ var box=document.createElement("div");box.className="lines";
+ cur.L.forEach(function(l,li){var d=lineEl(l,cur.n0+li,errs[li]>2?"lost":"");box.appendChild(d);});
+ var k=0;box.querySelectorAll(".w").forEach(function(e){e.classList.add(hit[k]?"hit":"miss");k++;});
+ var res=$("result");res.innerHTML="";res.hidden=false;
+ var total=cur.L.length,okL=total-lost;
+ var sc=document.createElement("div");sc.className="score";
+ sc.innerHTML='<div><b class="'+(lost?'bad':'ok')+'">'+okL+' / '+total+'</b>أسطر تأخذ درجتها</div><div><b>'+hit.filter(Boolean).length+' / '+n+'</b>كلمة صحيحة</div><div><b>'+extra+'</b>كلمة زائدة أو خطأ</div>';
+ res.appendChild(sc);
+ var msg=document.createElement("p");msg.className="hint";
+ msg.textContent=lost===0?"ممتاز! كل الأسطر تأخذ درجتها. راجع المقطع بعد يومين لتثبّته.":"الأسطر المظللة بالأحمر فيها أكثر من خطأين، فتضيع درجتها. الكلمات الحمراء هي التي نسيتها أو كتبتها خطأ. احفظها ثم جرّب مرة ثانية.";
+ res.appendChild(msg);res.appendChild(box);
+ if(window.TM){TM.best("memo%:"+cur.id,Math.round(okL/total*100));if(lost===0){TM.complete("memo:"+cur.id,25,"حفظك ميّة الميّة! 🧠🔥",$("check"));var all=P.every(function(p){return TM.isDone("memo:"+p.id)});TM.badge("memo");if(all)TM.badge("memoall")}else if(okL/total>=.6){TM.sound.correct();TM.toast("قريب! "+okL+" من "+total+" أسطر صح. شوية بعد 💪","good")}else{TM.wrong()}}
+ var note=document.createElement("p");note.className="srcnote";note.textContent="التصحيح يتجاهل التشكيل والهمزات. في الاختبار الحقيقي اكتب الهمزات صحيحة.";res.appendChild(note);
+ res.scrollIntoView({behavior:"smooth",block:"start"});}
+document.querySelectorAll(".modes button").forEach(function(b){b.onclick=function(){mode=b.dataset.mode;render();};});
+$("check").onclick=check;
+$("clear").onclick=function(){$("answer").value="";$("result").hidden=true;$("answer").focus();};
+renderPick();render();
+})();
+</script>
+<script src="tm.js"></script>
+</body>
+</html>

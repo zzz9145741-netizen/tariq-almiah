@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مفاتيح الأسئلة العليا · العلوم الإسلامية (1)</title>
+<meta name="description" content="مفاتيح الأسئلة العليا في العلوم الإسلامية (1): علّل، ما دلالة، ما رأيك، كيف ترد، مع أمثلة من نماذج الوزارة. العلوم الإسلامية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="مفاتيح الأسئلة العليا · العلوم الإسلامية (1)">
+<meta property="og:description" content="مفاتيح الأسئلة العليا في العلوم الإسلامية (1): علّل، ما دلالة، ما رأيك، كيف ترد، مع أمثلة من نماذج الوزارة. العلوم الإسلامية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="isl.css">
+<style>
+.card{scroll-margin-top:120px}
+.tpl{border:2px solid var(--accent);border-radius:12px;padding:10px 14px}
+.tpl .label{color:var(--accent)}
+.exs{display:flex;flex-direction:column;gap:8px}
+.ex{background:var(--bg);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:4px}
+.ex .q{font-weight:600;font-family:var(--body);font-size:1rem}
+.ex .a{color:var(--good)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.rules div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.rules b{display:block;color:var(--accent);font-family:var(--display)}
+</style>
+</head>
+<body data-tool="isl-keys">
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع"><a href="isl-keys.html" aria-current="page">مفاتيح الأسئلة العليا</a></nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">العلوم الإسلامية (1) · أتقن طريقة الإجابة</p>
+  <h1>مفاتيح الأسئلة العليا</h1>
+  <div class="brief"><b class="t">باختصار</b><p>أول كلمة في السؤال تخبرك بما يريده المصحح. هنا الصيغ التي تتكرر في اختبارات الوزارة، ولكل صيغة: ماذا يريد المصحح، وقالب الجواب، وأمثلة حقيقية مع إجاباتها من نماذج الوزارة.</p></div>
+</header>
+</div>
+
+<nav class="jump" aria-label="الصيغ"><div class="wrap"><div class="rail" id="rail"><a href="#rules">قواعد التصحيح</a></div></div></nav>
+
+<div class="wrap">
+<main>
+<section class="block" id="rules">
+  <h2>كيف يصحح المصحح (من نماذج الإجابة الرسمية)</h2>
+  <div class="rules">
+    <div><b>«تُقبل الإجابة بما يفيد المعنى»</b>لا يُشترط لفظ الكتاب حرفيًا في الشرح والتعليل، لكن لا بد من الفكرة المفتاحية.</div>
+    <div><b>«يُكتفى باثنين»</b>إذا طُلب عدد، فاكتب العدد المطلوب بالضبط، وابدأ بأوضح ما تعرف.</div>
+    <div><b>الموقف = حكم + تعليل</b>في «ما رأيك» و«ما التوجيه» تُوزّع الدرجة: درجة للحكم ودرجة للتعليل.</div>
+    <div><b>الحفظ بالمقطع</b>«لكل مقطع درجة» في الآيات والأحاديث؛ فالترتيب والدقة يحفظان الدرجة.</div>
+  </div>
+</section>
+<div id="cards" style="display:flex;flex-direction:column;gap:26px"></div>
+</main>
+<footer class="site">الأمثلة وإجاباتها منقولة من نماذج الإجابة الرسمية للعلوم الإسلامية (1). القوالب مستخرجة من صياغة تلك الإجابات.</footer>
+</div>
+
+<script src="isl-bank-data.js"></script>
+<script>
+(function(){
+var B=window.ISL_BANK.filter(function(q){return q.w});
+var K=[
+ {id:"k1",t:"علّل · لماذا · ما الحكمة من",rx:/^(علل|لم |لماذا|ما الحكمة|بين حكمتين)/,want:"السبب فقط، مربوطًا بالدرس.",tpl:"لأنّ ... (السبب من الدرس).",tip:"لا تعِد كتابة السؤال. ابدأ مباشرة بـ«لأنّ» أو «حتى» أو «للدلالة على»."},
+ {id:"k2",t:"ما دلالة · ما الذي يشير إليه",rx:/(دلالة|يشير إليه|يستنتج من|يفهم منها)/,want:"المعنى الذي أضافته العبارة، لا شرح الكلمات.",tpl:"تدل على ... (الفكرة)، لأن ...",tip:"اسأل نفسك: ماذا يريد النص أن يعلمني بهذه العبارة؟"},
+ {id:"k3",t:"ما القيمة المستفادة",rx:/القيمة المستفادة/,want:"قيمة واحدة مختصرة (كلمة أو عبارة).",tpl:"(القيمة): الإنابة والتوبة · تجنب اتباع الهوى · التفكر في خلق الله...",tip:"الجواب قصير جدًا في النموذج. لا تطل."},
+ {id:"k4",t:"ما رأيك · ماذا كان عليه أن يفعل",rx:/(ما رأيك|ماذا كان عليه)/,want:"حكم واضح، ثم التصرف الصحيح أو السبب.",tpl:"تصرف صحيح / غير صحيح؛ لأن ... · كان عليه أن ...",tip:"لا تكتب «يمكن» أو «حسب الظروف». احكم بوضوح."},
+ {id:"k5",t:"ما التوجيه المناسب · قدم نصيحة · بم تنصح",rx:/(توجيه|نصيحة|نصيحتك|أنصح|تنصح)/,want:"ماذا تقول له بالضبط، مع السبب من الدرس.",tpl:"أنصحه بـ ...؛ لأن ... (ويحسن ذكر الدليل).",tip:"ابدأ بفعل: «أنصحه»، «أحذره»، «أبين له»."},
+ {id:"k6",t:"كيف تطبق · كيف تستفيد · كيف تتصرف",rx:/^(كيف تطبق|كيف تستفيد|كيف تتصرف|من خلال دراستك.*كيف تطبق)/,want:"أفعال عملية محددة في حياتك، مأخوذة من فكرة الدرس.",tpl:"أقوم بـ ... وأتجنب ... (أفعال يمكن رؤيتها).",tip:"اكتب أفعالًا لا أفكارًا: «أدعو زملائي»، «أترك اختياره»."},
+ {id:"k7",t:"كيف ترد · بم ترد · ناقش",rx:/(ترد|ناقش)/,want:"تصحيح الفكرة الخاطئة بحجة من الدرس.",tpl:"هذا فهم خطأ؛ بل ... (الصواب)، لأن ... (الدليل).",tip:"الرد = رفض + الصواب + الحجة."},
+ {id:"k8",t:"كيف توظف الدليل",rx:/توظف/,want:"تطبيق الدليل على المسألة: من قدر على كذا قادر على كذا.",tpl:"أن الله الذي ... قادر على ...",tip:"قياس الإعادة على البدء: إحياء الأرض ← بعث الموتى."},
+ {id:"k9",t:"بيّن الفرق · قارن",rx:/(الفرق|قارن)/,want:"تعريف كل طرف، أو جدول بالعناصر المطلوبة.",tpl:"(الأول): ... · (الثاني): ...",tip:"اكتب كل طرف في سطر مستقل حتى يرى المصحح الفرق."},
+ {id:"k10",t:"صحّح ما تحته خط",rx:/^صح\/خطأ/,want:"إن كانت خطأ فاكتب الكلمة الصحيحة مكان ما تحته خط فقط.",tpl:"خطأ، الصواب: (كلمة واحدة).",tip:"الكلمة التي تحتها خط هي التي تُصحح، لا الجملة كلها."}
+];
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+var rail=$("rail"),out=$("cards"),used={};
+K.forEach(function(k,n){var exs=B.filter(function(q){return k.rx.test(q.q)&&!used[q.q]}).slice(0,3);exs.forEach(function(q){used[q.q]=1});
+ var a=document.createElement("a");a.href="#"+k.id;a.textContent=k.t.split(" · ")[0];rail.appendChild(a);
+ var h='<article class="card" id="'+k.id+'"><header><span class="num">'+(n+1)+'</span><h2>'+esc(k.t)+'</h2></header><div class="body">';
+ h+='<div><span class="label">ماذا يريد المصحح</span><p class="plain">'+esc(k.want)+'</p></div>';
+ h+='<div class="tpl"><span class="label">قالب الجواب</span><p>'+esc(k.tpl)+'</p></div>';
+ if(exs.length)h+='<div><span class="label">من اختبارات الوزارة ونماذجها</span><div class="exs">'+exs.map(function(q){return '<div class="ex"><span class="sw y">'+esc(q.y)+'</span><p class="q">'+esc(q.q)+'</p><p class="a">'+esc(q.a)+'</p></div>'}).join("")+'</div></div>';
+ h+='<p class="srcnote">'+esc(k.tip)+'</p></div></article>';out.insertAdjacentHTML("beforeend",h)});
+})();
+</script>
+<script src="tm.js"></script>
+</body>
+</html>

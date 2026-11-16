@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>طريق المئة</title>
+<meta name="description" content="طريق المئة: موقع مذاكرة مجاني لطلبة الصف الثاني عشر في معاهد العلوم الإسلامية بسلطنة عمان. شرح دروس اللغة العربية (1) والعلوم الإسلامية (1)، وأسئلة الوزارة السابقة مع نماذج الإجابة، وأدوات حفظ واختبارات تجريبية.">
+<meta property="og:title" content="طريق المئة">
+<meta property="og:description" content="طريق المئة: موقع مذاكرة مجاني لطلبة الصف الثاني عشر في معاهد العلوم الإسلامية بسلطنة عمان. شرح دروس اللغة العربية (1) والعلوم الإسلامية (1)، وأسئلة الوزارة السابقة مع نماذج الإجابة، وأدوات حفظ واختبارات تجريبية.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Layout: بطاقة ترحيب، ثم «ماذا تريد الآن؟» بأربعة أبواب، ثم الأقسام الأربعة بأدواتها، ثم شكل الاختبار */
+.hero-x{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;align-items:center;padding-block:8px 4px}
+@media (max-width:760px){.hero-x{grid-template-columns:1fr}}
+.title100{font-family:var(--display);font-size:clamp(2.3rem,8vw,3.6rem);line-height:1.15;margin:0;word-spacing:.15em}
+.title100 em{font-style:normal;color:var(--accent)}
+.title100 .sub{display:block;font-size:.5em;color:var(--ink);margin-top:4px}
+.welcome{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.welcome h2{font-size:1.2rem}
+.wstats{display:flex;gap:8px;flex-wrap:wrap}
+.wstats span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-weight:700;font-size:.9rem}
+
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+@media (max-width:520px){.doors{grid-template-columns:1fr 1fr}.door{padding:12px}.door span:not(.e):not(.cnt){font-size:.82rem}}
+.door{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s}
+.door:hover{border-color:var(--accent)}
+.door .open{font-size:.8rem;color:var(--accent);font-weight:700}
+.panel{padding-top:10px}
+#exam>h2{font-size:1.3rem;padding-top:14px;border-top:1px solid var(--line)}
+.panel>header h2{font-size:1.6rem}
+.panel>header{border-bottom:0;padding-bottom:0}
+.panel .close-p{align-self:flex-start;margin-bottom:4px;font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:3px 12px;cursor:pointer}
+.door .e{font-size:1.5rem}
+.door b{font-family:var(--display);font-size:1.12rem;word-spacing:.15em}
+.door span{color:var(--muted);font-size:.9rem;line-height:1.7}
+.door .cnt{color:var(--accent);font-weight:700;font-size:.8rem}
+
+.sec{display:flex;flex-direction:column;gap:12px;scroll-margin-top:80px}
+.sec>header{display:flex;flex-direction:column;gap:2px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sec>header h2{font-size:1.35rem;display:flex;align-items:center;gap:8px}
+.sec>header p{color:var(--muted);font-size:.95rem}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.tl{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.tl:hover{border-color:var(--accent)}
+.tl .e{flex:0 0 auto;font-size:1.4rem;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--bg)}
+.tl .tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tl h3{font-size:1.04rem}
+.tl p{color:var(--muted);font-size:.88rem;line-height:1.7}
+.tl .seen{font-size:.74rem;color:var(--good);font-weight:700}
+
+.first{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.first ol{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px;flex-direction:row}
+.first li a{display:inline-block;text-decoration:none;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:.9rem}
+.first li a:hover{border-color:var(--accent)}
+.first li+li::before{content:"←";color:var(--muted);margin-inline-end:6px}
+
+.marks{display:flex;height:42px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.marks div{display:grid;place-items:center;font-weight:700;font-size:.88rem;min-width:0;color:var(--ink);border-inline-start:1px solid var(--paper)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px}
+.legend div{display:flex;gap:10px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.legend i{flex:0 0 12px;height:12px;border-radius:3px;margin-top:.5em}
+.m1{background:color-mix(in srgb,var(--accent) 30%,var(--paper))}.m2{background:color-mix(in srgb,var(--accent) 22%,var(--paper))}.m3{background:color-mix(in srgb,var(--accent) 12%,var(--paper))}.m4{background:color-mix(in srgb,var(--accent) 26%,var(--paper))}.m5{background:color-mix(in srgb,var(--accent) 17%,var(--paper))}.m6{background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
+
+.credit{text-align:center;display:flex;flex-direction:column;gap:4px;padding:18px 16px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.credit .who{font-family:var(--display);font-size:1.15rem;word-spacing:.15em}
+.credit .sup{color:var(--muted)}
+.credit .sup b{color:var(--ink)}
+.credit .contact{font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:center;gap:2px 6px;user-select:all}
+.credit .contact span{user-select:text}
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.subj{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;border-inline-start:5px solid var(--sc)}
+.subj:hover{border-color:var(--sc)}
+.subj.ar{--sc:#8f5a1e}.subj.isl{--sc:#4d6b45}
+.subj .e{font-size:1.8rem}
+.subj b{font-family:var(--display);font-size:1.3rem;word-spacing:.15em}
+.subj span{color:var(--muted);font-size:.92rem}
+.subj .cnt{color:var(--sc);font-weight:700;font-size:.82rem}
+.doors.isl .door:hover{border-color:#4d6b45}
+.back{display:inline-flex;align-items:center;gap:6px;font:inherit;font-weight:600;font-size:.9rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 14px;cursor:pointer;align-self:flex-start;text-decoration:none}
+.hero-x.one{grid-template-columns:1fr}
+.view{display:flex;flex-direction:column;gap:14px;scroll-margin-top:80px}
+</style>
+</head>
+<body>
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع"><a href="index.html" aria-current="page">الرئيسية</a></nav>
+</div></header>
+
+<div class="wrap">
+<p class="basmala">بسم الله الرحمن الرحيم</p>
+<p class="salawat">قبل أن تبدأ: صلِّ على النبي ﷺ 🤍</p>
+
+<section class="hero-x one">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <p class="eyebrow">الصف الثاني عشر · الفصل الأول · لطلبة معاهد العلوم الإسلامية</p>
+    <h1 class="title100">طريق <em>المئة</em> <span class="sub">طريقك إلى الدرجة الكاملة</span></h1>
+    <p class="lede">كل ما تحتاجه للدرجة الكاملة في مكان واحد. بُني بعد قراءة كتب المواد كاملة واختبارات الوزارة السابقة مع نماذج إجاباتها؛ فكل ما هنا يأتي فعلًا في الاختبار.</p>
+  </div>
+
+</section>
+
+<main>
+<section class="view" id="home" data-view>
+  <h2 style="font-size:1.35rem">اختر المادة</h2>
+  <div class="subjects">
+    <a class="subj ar" href="#ar1"><span class="e">✒️</span><b>اللغة العربية (1)</b><span>النصوص، والأدب والنقد، والقراءة، والحفظ.</span><span class="cnt">11 أداة</span></a>
+    <a class="subj isl" href="#isl1"><span class="e">📗</span><b>العلوم الإسلامية (1)</b><span>القرآن الكريم، والحديث الشريف، والسيرة النبوية.</span><span class="cnt">6 أدوات</span></a>
+  </div>
+  <div class="welcome" id="welcome">
+    <h2 id="wTitle">أهلًا وسهلًا بك 👋</h2>
+    <p id="wText">أنشئ حسابًا في ثوانٍ لتُحفظ نقاطك وتقدّمك، أو تابع ضيفًا.</p>
+    <div class="wstats" id="wStats" hidden></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" id="wBtn" href="login.html">أنشئ حسابًا / سجّل الدخول</a><a class="btn ghost" id="wBtn2" href="#home">تابع ضيفًا</a></div>
+  </div>
+</section>
+<div class="motto" data-motto><p>المئة ليست حظًّا، بل خطة، وأنت تسير عليها الآن.</p></div>
+
+<section class="view" id="ar1" data-view hidden>
+  <button type="button" class="back" data-back="home">→ كل المواد</button>
+  <header class="hero" style="padding-top:8px"><p class="eyebrow">الصف الثاني عشر · الفصل الأول · لطلبة معاهد العلوم الإسلامية</p><h1>اللغة العربية (1)</h1><p class="lede">بُني بعد قراءة الكتاب كاملًا واثني عشر اختبارًا سابقًا للوزارة مع نماذج إجاباتها.</p></header>
+  <h2 style="font-size:1.25rem">ماذا تريد الآن؟</h2>
+  <div class="doors">
+    <a class="door" href="#ar1-learn"><span class="e">📘</span><b>أفهم الدروس</b><span>شرح النصوص الثمانية، والملخصات، والمذاهب والمناهج.</span><span class="cnt">4 أدوات · اضغط للفتح</span></a>
+    <a class="door" href="#ar1-skill"><span class="e">🧭</span><b>أتقن طريقة الإجابة</b><span>كيف تفهم السؤال وتكتب الجواب كما يريده المصحح.</span><span class="cnt">3 أدوات · اضغط للفتح</span></a>
+    <a class="door" href="#ar1-memo"><span class="e">🧠</span><b>أحفظ وأثبّت</b><span>مقاطع الحفظ المطلوبة، وبطاقات المراجعة السريعة.</span><span class="cnt">أداتان · اضغط للفتح</span></a>
+    <a class="door" href="#ar1-test"><span class="e">📝</span><b>أستعد للاختبار</b><span>بنك الأسئلة والاختبارات التجريبية بشكل الوزارة.</span><span class="cnt">أداتان · اضغط للفتح</span></a>
+  </div>
+  <div class="first">
+    <b>أول مرة هنا؟ هذا ترتيب مقترح:</b>
+    <ol>
+      <li><a href="#ar1-test">شكل الاختبار</a></li>
+      <li><a href="decoder.html">مفكك الأسئلة</a></li>
+      <li><a href="texts.html">شرح النصوص</a></li>
+      <li><a href="summaries.html">الملخصات</a></li>
+      <li><a href="memorize.html">الحفظ</a></li>
+      <li><a href="bank.html">بنك الأسئلة</a></li>
+      <li><a href="exams.html">اختبار تجريبي</a></li>
+    </ol>
+  </div>
+
+</section>
+<section class="sec panel" id="ar1-learn" data-view hidden>
+  <header><h2>📘 أفهم الدروس</h2><p>شرح المنهج نفسه. ابدأ من هنا إذا كان الدرس جديدًا عليك.</p></header>
+  <div class="tools">
+    <a class="tl" href="texts.html" data-k="texts"><span class="e">📜</span><span class="tx"><h3>شرح النصوص الثمانية</h3><p>كل آية وبيت بكلام بسيط، وكل ما يمكن أن يُسأل عنه. قابل للتنزيل.</p></span></a>
+    <a class="tl" href="summaries.html" data-k="summaries"><span class="e">🗺️</span><span class="tx"><h3>الملخصات</h3><p>كل درس أدب ونقد في خريطة واحدة، مع جداول مقارنة. قابلة للتنزيل.</p></span></a>
+    <a class="tl" href="schools.html" data-k="schools"><span class="e">🎭</span><span class="tx"><h3>المذاهب والمناهج</h3><p>علامات كل مذهب ومنهج، وتدريب على نصوص حقيقية.</p></span></a>
+    <a class="tl" href="glossary.html" data-k="glossary"><span class="e">📚</span><span class="tx"><h3>قاموس المصطلحات</h3><p>كل مصطلح بكلام بسيط ومثال من الكتاب.</p></span></a>
+  </div>
+</section>
+<section class="sec panel" id="ar1-skill" data-view hidden>
+  <header><h2>🧭 أتقن طريقة الإجابة</h2><p>تفهم الدرس لكن تخسر درجات؟ هذه الأدوات تعلّمك ماذا يريد السؤال.</p></header>
+  <div class="tools">
+    <a class="tl" href="decoder.html" data-k="decoder"><span class="e">🔍</span><span class="tx"><h3>مفكك الأسئلة</h3><p>اثنا عشر نوعًا من الأسئلة تتكرر كل سنة، ولكل نوع طريقة إجابة.</p></span></a>
+    <a class="tl" href="relations.html" data-k="relations"><span class="e">🔗</span><span class="tx"><h3>العلاقات بين الجمل</h3><p>التعليل والسبب والنتيجة والتفصيل والإجمال، مع تدريب.</p></span></a>
+    <a class="tl" href="reading.html" data-k="reading"><span class="e">📖</span><span class="tx"><h3>النص الخارجي والقراءة</h3><p>خطوات ثابتة لأي نص جديد، وتدريب بنموذج الوزارة.</p></span></a>
+  </div>
+</section>
+<section class="sec panel" id="ar1-memo" data-view hidden>
+  <header><h2>🧠 أحفظ وأثبّت</h2><p>للحفظ المطلوب وللمراجعة السريعة قبل النوم أو في الطريق.</p></header>
+  <div class="tools">
+    <a class="tl" href="memorize.html" data-k="memorize"><span class="e">🧠</span><span class="tx"><h3>الحفظ</h3><p>مقاطع الحفظ الستة، وتدريب تفاعلي، وتصحيح كلمة كلمة.</p></span></a>
+    <a class="tl" href="cards.html" data-k="cards"><span class="e">🃏</span><span class="tx"><h3>بطاقات المراجعة</h3><p>87 بطاقة للأدب والنقد بعبارة الكتاب، تعود إليك حتى تتقنها.</p></span></a>
+  </div>
+</section>
+<section class="sec panel" id="ar1-test" data-view hidden>
+  <header><h2>📝 أستعد للاختبار</h2><p>اختبر نفسك قبل الاختبار الحقيقي، واعرف أين تحتاج إلى مراجعة.</p></header>
+  <div class="tools">
+    <a class="tl" href="bank.html" data-k="bank"><span class="e">🏦</span><span class="tx"><h3>بنك الأسئلة</h3><p>96 سؤالًا بثلاثة مستويات، واختبار سريع. قابل للتنزيل.</p></span></a>
+    <a class="tl" href="exams.html" data-k="exams"><span class="e">⏱️</span><span class="tx"><h3>اختبارات تجريبية</h3><p>اختباران كاملان بشكل الوزارة، بمؤقت وتصحيح ونتيجة.</p></span></a>
+  </div>
+  <p class="srcnote">مراجعة ليلة الاختبار: نزّل <a href="summaries.html">الملخصات</a>، ثم راجع <a href="cards.html">البطاقات</a> التي لم تتقنها، ثم حلّ <a href="bank.html">اختبارًا سريعًا</a>.</p>
+<div class="block" id="ar1-exam" style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+  <h2>الاختبار في دقيقة</h2>
+  <p>ثلاث ساعات، وستة أسئلة، والمجموع <b>70 درجة</b>، تتوزع هكذا:</p>
+  <div class="marks" role="img" aria-label="توزيع 70 درجة على أقسام الاختبار">
+    <div class="m1" style="flex:10">10</div><div class="m2" style="flex:10">10</div><div class="m3" style="flex:5">5</div><div class="m4" style="flex:15">15</div><div class="m5" style="flex:15">15</div><div class="m6" style="flex:15">15</div>
+  </div>
+  <div class="legend">
+    <div><i class="m1"></i><p><b>النص الداخلي · 10</b><br>أبيات أو آيات من نص درسته، وأسئلة عليها.</p></div>
+    <div><i class="m2"></i><p><b>النص الخارجي · 10</b><br>نص لم تدرسه، لكنه من نوع نص درسته.</p></div>
+    <div><i class="m3"></i><p><b>الحفظ · 5</b><br>تكتب خمسة أبيات أو آيات بالترتيب.</p></div>
+    <div><i class="m4"></i><p><b>الأدب · 15</b><br>القرآن، والحديث، وشعر صدر الإسلام، والاعتذار.</p></div>
+    <div><i class="m5"></i><p><b>القراءة · 15</b><br>مقال جديد، وأسئلة فهم عليه.</p></div>
+    <div><i class="m6"></i><p><b>النقد · 15</b><br>المذاهب الأدبية والمناهج النقدية.</p></div>
+  </div>
+  <div class="brief"><b class="t">معلومة توفّر وقتك</b><p>التعبير (المحضر والتقرير) لم يأتِ في أي اختبار نهائي. ودروس القراءة في الكتاب لا تُسأل بنفسها، لأن الاختبار يأتي بمقال جديد.</p></div>
+</div>
+</section>
+
+<section class="view" id="isl1" data-view hidden>
+  <button type="button" class="back" data-back="home">→ كل المواد</button>
+  <header class="hero" style="padding-top:8px"><p class="eyebrow">الصف الثاني عشر · الفصل الأول · لطلبة معاهد العلوم الإسلامية</p><h1>العلوم الإسلامية (1)</h1><p class="lede">القرآن الكريم والحديث الشريف والسيرة النبوية: 26 درسًا، وأسئلة الوزارة من 2014/2015 إلى 2025/2026 مع نماذج إجاباتها.</p></header>
+  <h2 style="font-size:1.25rem">ماذا تريد الآن؟</h2>
+  <div class="doors isl">
+    <a class="door" href="#isl1-learn"><span class="e">📗</span><b>أفهم الدروس</b><span>بطاقة لكل درس من الدروس الستة والعشرين.</span><span class="cnt">أداة واحدة · اضغط للفتح</span></a>
+    <a class="door" href="#isl1-skill"><span class="e">🧭</span><b>أتقن طريقة الإجابة</b><span>مفاتيح الأسئلة العليا، ومدرّب المواقف.</span><span class="cnt">أداتان · اضغط للفتح</span></a>
+    <a class="door" href="#isl1-memo"><span class="e">🧠</span><b>أحفظ وأثبّت</b><span>سورة النور كاملة، والأحاديث الثمانية بالسند والمتن.</span><span class="cnt">أداة واحدة · اضغط للفتح</span></a>
+    <a class="door" href="#isl1-test"><span class="e">📝</span><b>أستعد للاختبار</b><span>تجميعة أسئلة الوزارة، واختبار تجريبي، وشكل الاختبار.</span><span class="cnt">أداتان · اضغط للفتح</span></a>
+  </div>
+  <div class="first"><b>أول مرة هنا؟ هذا ترتيب مقترح:</b><ol><li><a href="#isl1-test">شكل الاختبار</a></li><li><a href="isl-lessons.html">بطاقات الدروس</a></li><li><a href="isl-keys.html">مفاتيح الأسئلة</a></li><li><a href="isl-situations.html">مدرّب المواقف</a></li><li><a href="isl-memorize.html">الحفظ</a></li><li><a href="isl-bank.html">تجميعة الأسئلة</a></li><li><a href="isl-exam.html">اختبار تجريبي</a></li></ol></div>
+</section>
+<section class="sec panel" id="isl1-learn" data-view hidden>
+  <header><h2>📗 أفهم الدروس</h2><p>العلوم الإسلامية (1): كل ما تحتاجه من الكتاب، درسًا درسًا.</p></header>
+  <div class="tools"><a class="tl" href="isl-lessons.html" data-k="isl-lessons"><span class="e">📗</span><span class="tx"><h3>بطاقات الدروس</h3><p>26 بطاقة: النص ومعاني كلماته، وما يجب أن تعرفه، وأفكار القدرات العليا، وآيات تشهد للفكرة. قابلة للتنزيل.</p></span></a></div>
+</section>
+<section class="sec panel" id="isl1-skill" data-view hidden>
+  <header><h2>🧭 أتقن طريقة الإجابة</h2><p>العلوم الإسلامية (1): تحفظ الدرس لكن تخسر في «علّل» و«ما التوجيه»؟ ابدأ هنا.</p></header>
+  <div class="tools">
+   <a class="tl" href="isl-keys.html" data-k="isl-keys"><span class="e">🔍</span><span class="tx"><h3>مفاتيح الأسئلة العليا</h3><p>عشر صيغ تتكرر: علّل، ما دلالة، ما رأيك، كيف ترد... مع أمثلة من نماذج الوزارة.</p></span></a>
+   <a class="tl" href="isl-situations.html" data-k="isl-situations"><span class="e">🧭</span><span class="tx"><h3>مدرّب المواقف</h3><p>مواقف من اختبارات الوزارة: اعرف الدرس، ثم الحكم والتعليل.</p></span></a>
+  </div>
+</section>
+<section class="sec panel" id="isl1-memo" data-view hidden>
+  <header><h2>🧠 أحفظ وأثبّت</h2><p>العلوم الإسلامية (1): السؤال الأول 16 درجة كلها حفظ.</p></header>
+  <div class="tools"><a class="tl" href="isl-memorize.html" data-k="isl-memorize"><span class="e">🧠</span><span class="tx"><h3>الحفظ</h3><p>سورة النور في مقاطع قصيرة، والأحاديث الثمانية بالسند والمتن، مع تصحيح كلمة كلمة.</p></span></a></div>
+</section>
+<section class="sec panel" id="isl1-test" data-view hidden>
+  <header><h2>📝 أستعد للاختبار</h2><p>العلوم الإسلامية (1): أسئلة الوزارة الحقيقية مع إجاباتها.</p></header>
+  <div class="tools">
+   <a class="tl" href="isl-bank.html" data-k="isl-bank"><span class="e">🗂️</span><span class="tx"><h3>تجميعة أسئلة الوزارة</h3><p>نحو 300 سؤال لكل الدروس: سهلة ومتوسطة وقدرات عليا، مع نماذج الحل. قابلة للتنزيل.</p></span></a>
+   <a class="tl" href="isl-exam.html" data-k="isl-exam"><span class="e">⏱️</span><span class="tx"><h3>اختبار تجريبي</h3><p>بشكل الوزارة: 70 درجة، ثلاث ساعات، وتصحيح بنموذج الإجابة.</p></span></a>
+  </div>
+  <div class="block" style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+   <h2>الاختبار في دقيقة</h2>
+   <p>ثلاث ساعات، وخمسة أسئلة، والمجموع <b>70 درجة</b>، تتوزع هكذا (من نماذج الإجابة الرسمية):</p>
+   <div class="marks" role="img" aria-label="توزيع 70 درجة"><div class="m1" style="flex:16">16</div><div class="m2" style="flex:16">16</div><div class="m4" style="flex:14">14</div><div class="m5" style="flex:14">14</div><div class="m6" style="flex:10">10</div></div>
+   <div class="legend">
+    <div><i class="m1"></i><p><b>الحفظ · 16</b><br>مقطعان من سورة النور (5+5)، وحديثان بالسند والمتن (3+3).</p></div>
+    <div><i class="m2"></i><p><b>الموضوعي · 16</b><br>أكمل، واختر، وصح أو خطأ مع تصحيح ما تحته خط.</p></div>
+    <div><i class="m4"></i><p><b>القرآن الكريم · 14</b><br>تعريف، وشرح، وتعليل، ودلالة، ورد على منكري البعث.</p></div>
+    <div><i class="m5"></i><p><b>الحديث الشريف · 14</b><br>علم الرواية، والأحاديث التربوية، ومواقف «التوجيه مع التعليل».</p></div>
+    <div><i class="m6"></i><p><b>السيرة النبوية · 10</b><br>الوسطية، والزواج، والمرأة، والطفل، والبيئة.</p></div>
+   </div>
+   <div class="brief"><b class="t">معلومة توفّر وقتك</b><p>أسئلة كثيرة تتكرر حرفيًا بين السنوات، مثل «وترى كل أمة جاثية» و«خص الأنعام بالذكر». حلّ تجميعة الأسئلة كاملة قبل الاختبار.</p></div>
+  </div>
+</section>
+
+
+<section class="sec" id="me" data-keep>
+  <header><h2>👤 حسابي</h2><p>تقدّمك ونقاطك، وبلّغنا إن وجدت خطأ.</p></header>
+  <div class="tools">
+    <a class="tl" href="profile.html"><span class="e">🏆</span><span class="tx"><h3>لوحتي وتقدّمي</h3><p>نقاطك، ومستواك، وأوسمتك، والعد التنازلي للاختبار.</p></span></a>
+    <a class="tl" href="feedback.html"><span class="e">🐞</span><span class="tx"><h3>بلّغ عن خطأ</h3><p>وجدت خطأ؟ أرسله مع صورة.</p></span></a>
+  </div>
+</section>
+
+<section class="credit" aria-label="إعداد الموقع" data-keep>
+  <p class="sup">أُنشئ الموقع بواسطة الطالب</p>
+  <p class="who">زيد بن سلطان بن عامر الحجري</p>
+  <p class="contact"><span>للتواصل:</span> <span dir="ltr">zxzx9145741@gmail.com</span> · <span dir="ltr">+968 92930319</span></p>
+</section>
+</main>
+<footer class="site">مبني على كتب المواد للصف الثاني عشر (الفصل الأول)، وامتحانات دبلوم التعليم العام والعلوم الإسلامية السابقة ونماذج إجاباتها. · <a href="review.html">للمعلم: قائمة المراجعة</a> · <a href="admin.html">لوحة المدير</a></footer>
+</div>
+
+<script src="tm.js"></script>
+<script>
+(function(){
+var TMok=!!window.TM;
+var s=TMok?TM.Auth.current():null,p=TMok?TM.Prog.load():{visits:{}},L=TMok?TM.levelOf(p.xp):{name:""};
+if(TMok&&s){var $=function(id){return document.getElementById(id)};
+ $("wTitle").textContent=TM.pick(TM.lines.hi)+" يا "+s.user+" 👋";
+ $("wText").textContent=s.admin?"أهلًا بالمشرف ⚙️ في لوحتك البلاغات وإعدادات الموقع.":"أكمل من حيث توقفت؛ قليلٌ كل يوم، والمئة قادمة 🏁";
+ $("wStats").hidden=!!s.admin;$("wStats").innerHTML="<span>"+p.xp+" نقطة ✨</span><span>"+TM.esc(L.name)+"</span><span>"+(p.streak||0)+" يوم 🔥</span>";
+ $("wBtn").textContent=s.admin?"لوحة المدير":"لوحتي";$("wBtn").href=s.admin?"admin.html":"profile.html";$("wBtn2").textContent="أكمل المذاكرة";}
+// التنقل بثلاثة مستويات في نفس الصفحة: المادة ← أقسامها ← أدوات القسم
+var heroEls=document.querySelectorAll(".hero-x,.salawat,.basmala"),views=[].slice.call(document.querySelectorAll("[data-view]"));
+function parentOf(id){var m=id.match(/^(ar1|isl1)-/);return m?m[1]:"home"}
+views.forEach(function(v){if(v.classList.contains("panel")){var p=parentOf(v.id),b=document.createElement("button");b.type="button";b.className="back";b.textContent="→ أقسام "+(p==="isl1"?"العلوم الإسلامية (1)":"اللغة العربية (1)");b.onclick=function(){location.hash=p};v.insertBefore(b,v.firstChild)}});
+document.querySelectorAll("[data-back]").forEach(function(b){b.onclick=function(){location.hash=b.getAttribute("data-back")}});
+function show(id){if(!views.some(function(v){return v.id===id}))id="home";
+ views.forEach(function(v){v.hidden=v.id!==id});
+ var isHome=id==="home";heroEls.forEach(function(e){e.hidden=!isHome});
+ document.querySelectorAll("[data-keep],main>.motto").forEach(function(e){e.hidden=!isHome});
+ if(!isHome)window.scrollTo(0,0)}
+window.addEventListener("hashchange",function(){show((location.hash||"").slice(1))});
+show((location.hash||"").slice(1));
+// علامة «زرتها» على الأدوات التي فتحها الطالب
+document.querySelectorAll(".tl[data-k]").forEach(function(a){var k=a.getAttribute("data-k");if((p.visits&&p.visits[k])>0){var m=document.createElement("span");m.className="seen";m.textContent="✔ زرتها";a.querySelector(".tx").appendChild(m)}});
+})();
+</script>
+</body>
+</html>

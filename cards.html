@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بطاقات الأدب والنقد · طريق المئة</title>
+<meta name="description" content="بطاقات مراجعة الأدب والنقد في اللغة العربية (1) بعبارة الكتاب. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="بطاقات الأدب والنقد · طريق المئة">
+<meta property="og:description" content="بطاقات مراجعة الأدب والنقد في اللغة العربية (1) بعبارة الكتاب. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.decks{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.decks button{flex:0 0 auto;font:inherit;font-size:.92rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:flex;gap:6px;align-items:center}
+.decks button small{color:var(--muted);font-variant-numeric:tabular-nums}
+.decks button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.decks button[aria-pressed="true"] small{color:var(--accent-ink)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.seg button{font:inherit;font-size:.9rem;padding:6px 14px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.prog{display:flex;flex-direction:column;gap:4px;min-width:200px;flex:1 1 220px}
+.prog .track{height:10px;border-radius:999px;background:var(--line);overflow:hidden;display:flex}
+.prog .track i{display:block;height:100%}
+.prog .b3{background:var(--good)}.prog .b2{background:var(--gold)}
+.prog small{color:var(--muted);font-variant-numeric:tabular-nums}
+.stage{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.flash{background:var(--paper);border:2px solid var(--line);border-radius:18px;min-height:280px;display:flex;flex-direction:column;cursor:pointer;overflow:hidden}
+.flash:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.flash .top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.flash .deckname{font-size:.85rem;color:var(--accent);font-weight:700}
+.flash .count{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.flash .q{font-family:var(--display);word-spacing:.18em;font-size:clamp(1.25rem,4.5vw,1.6rem);line-height:1.6;padding:22px 18px;text-align:center;flex:1;display:grid;place-items:center}
+.flash .a{padding:16px 18px;border-top:2px dashed var(--accent);background:var(--accent-soft);white-space:pre-line;font-size:1.05rem;line-height:1.9}
+.flash .meta{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-top:1px solid var(--line)}
+.flash .tap{color:var(--muted);font-size:.88rem;text-align:center;padding:0 16px 14px}
+.chip{font-size:.76rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.chip.bk{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.chip.ex{background:var(--gold-soft);color:var(--gold);border-color:transparent}
+.chip.k{background:var(--good-soft);color:var(--good);border-color:transparent}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acts button{font:inherit;font-weight:700;font-size:1.02rem;padding:12px;border-radius:14px;border:0;cursor:pointer}
+.acts .no{background:var(--bad-soft);color:var(--bad)}
+.acts .yes{background:var(--good-soft);color:var(--good)}
+.acts .flip{grid-column:1/-1;background:var(--accent);color:var(--accent-ink)}
+.small{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.small button{font:inherit;font-size:.88rem;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer}
+.done{background:var(--good-soft);border-radius:14px;padding:22px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.done b{font-family:var(--display);font-size:1.4rem;color:var(--good)}
+.list{display:flex;flex-direction:column;gap:8px}
+.list details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.list summary{cursor:pointer;font-weight:600;list-style:none}
+.list summary::-webkit-details-marker{display:none}
+.list summary::before{content:"＋ ";color:var(--accent)}
+.list details[open] summary::before{content:"－ "}
+.list .ans{white-space:pre-line;margin-top:8px}
+.list h3{font-size:1.1rem;margin-top:10px;color:var(--accent)}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;background:var(--bad-soft);border-radius:12px;padding:10px}
+.confirm button{font:inherit;padding:6px 14px;border-radius:999px;border:0;cursor:pointer}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع">
+    <a href="index.html">الرئيسية</a>
+    <a href="decoder.html">مفكك الأسئلة</a>
+    <a href="texts.html">النصوص</a>
+    <a href="summaries.html">الملخصات</a>
+    <a href="memorize.html">الحفظ</a>
+    <a href="cards.html" aria-current="page">البطاقات</a>
+    <a href="schools.html">المذاهب والمناهج</a>
+    <a href="reading.html">النص الخارجي والقراءة</a>
+    <a href="bank.html">بنك الأسئلة</a>
+    <a href="exams.html">اختبارات تجريبية</a>
+    <a href="glossary.html">القاموس</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">الخطوة 6 من طريق المئة · الأدب والنقد (30 درجة)</p>
+  <h1>بطاقات الأدب والنقد</h1>
+  <div class="brief"><b class="t">باختصار</b>
+    <p>سؤال الأدب وسؤال النقد عليهما 30 درجة، وأغلب أسئلتهما حفظ وفهم لمعلومات الكتاب: الخصائص، والأعلام، والمراحل، والمآخذ. هنا 87 بطاقة: سؤال على وجه، وجوابه بعبارة الكتاب على الوجه الآخر.</p>
+    <p><b>كيف تستعملها:</b> اقرأ السؤال، وحاول تجاوب في رأسك أو بصوت مسموع. ثم اكشف الجواب، وقل بصدق: عرفتها أو ما عرفتها. البطاقات التي لم تعرفها ترجع لك أكثر حتى تتقنها.</p>
+  </div>
+  <div class="motto" data-motto><p>كل سؤال تحلّه الآن، سؤال لن يفاجئك في الاختبار.</p></div>
+</header>
+
+<main>
+<section class="block">
+  <div class="decks" id="decks" role="group" aria-label="اختر الدرس"></div>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="طريقة العرض">
+      <button type="button" data-view="cards" aria-pressed="true">بطاقات</button>
+      <button type="button" data-view="list" aria-pressed="false">قائمة للقراءة</button>
+    </div>
+    <div class="seg" role="group" aria-label="أي البطاقات">
+      <button type="button" data-filter="all" aria-pressed="true">كلها</button>
+      <button type="button" data-filter="hard" aria-pressed="false">التي لم أعرفها</button>
+      <button type="button" data-filter="exam" aria-pressed="false">جاءت في الاختبار</button>
+    </div>
+  </div>
+  <div class="prog"><div class="track"><i class="b3" id="pb3"></i><i class="b2" id="pb2"></i></div><small id="ptext"></small></div>
+</section>
+
+<section class="stage" id="stage" aria-live="polite"></section>
+<section class="list" id="list" hidden></section>
+
+<div class="small"><button type="button" id="resetBtn">ابدأ من جديد (امسح تقدّمي)</button></div>
+<div id="confirmBox"></div>
+
+<p class="srcnote">كل الإجابات من الكتاب المدرسي، وبجانب كل بطاقة رقم صفحات الدرس. البطاقات المعلّمة «بعبارة نموذج الوزارة» جاءت إجابتها بهذا اللفظ في نموذج إجابة رسمي. تقدّمك يُحفظ على جهازك فقط.</p>
+<div class="motto" data-motto><p>من جدّ وجد، ومن زرع حصد.</p></div>
+</main>
+<footer class="site">من موقع طريق المئة · اللغة العربية (1) للصف الثاني عشر</footer>
+</div>
+
+<script src="cards-data.js"></script>
+<script>
+(function(){
+var C=window.CARDS,D=window.DECKS,deck="all",view="cards",filter="all",queue=[],pos=0,open=false;
+var $=function(id){return document.getElementById(id)};
+var CU=(function(){try{var s=JSON.parse(localStorage.getItem("tm.session")||"null");return s&&s.user?String(s.user).toLowerCase():"guest"}catch(e){return "guest"}})();
+function ck(i){return "tm.p."+CU+".card."+i}
+function get(i){try{var v=localStorage.getItem(ck(i));if(v==null){v=localStorage.getItem("card-"+i)}return parseInt(v||"0",10)}catch(e){return 0}}
+function set(i,v){try{localStorage.setItem(ck(i),String(v))}catch(e){}}
+var mem={};function box(i){return i in mem?mem[i]:(mem[i]=get(i))}
+function setBox(i,v){mem[i]=v;set(i,v)}
+function range(c){var m={quran:"15–19",hadith:"37–40",itidhar:"82–86"};if(m[c.d])return m[c.d];if(c.d==="sadr")return c.p===59?"59":"62–66";if(c.d==="madhahib")return c.p<30?"21–26":"42–47";return c.p<80?"69–73":"89–95";}
+function deckName(id){for(var i=0;i<D.length;i++)if(D[i].id===id)return D[i].t;return""}
+function inDeck(c){return deck==="all"||c.d===deck}
+function pool(){var out=[];C.forEach(function(c,i){if(!inDeck(c))return;if(filter==="hard"&&box(i)!==1)return;if(filter==="exam"&&!c.x)return;out.push(i);});return out;}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a}
+function build(){var p=pool();var low=shuffle(p.filter(function(i){return box(i)<3})),hi=shuffle(p.filter(function(i){return box(i)>=3}));low.sort(function(a,b){return box(a)-box(b)});queue=low.concat(hi);pos=0;open=false;}
+function renderDecks(){var el=$("decks");el.innerHTML="";var all=[{id:"all",t:"كل الدروس"}].concat(D);all.forEach(function(d){var n=C.filter(function(c){return d.id==="all"||c.d===d.id}).length;var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed",d.id===deck?"true":"false");b.innerHTML=d.t+" <small>"+n+"</small>";b.onclick=function(){deck=d.id;build();renderAll();};el.appendChild(b);});}
+function renderProg(){var ids=[];C.forEach(function(c,i){if(inDeck(c))ids.push(i)});var n=ids.length,b3=ids.filter(function(i){return box(i)>=3}).length,b2=ids.filter(function(i){return box(i)===2}).length,b1=ids.filter(function(i){return box(i)===1}).length;
+ $("pb3").style.width=(n?b3/n*100:0)+"%";$("pb2").style.width=(n?b2/n*100:0)+"%";
+ $("ptext").textContent="أتقنت "+b3+" من "+n+" · في الطريق "+b2+" · تحتاج مراجعة "+b1;}
+function chips(c){var h='<span class="chip bk">الكتاب ص '+range(c)+'</span>';if(c.x)h+='<span class="chip ex">جاء في: '+c.x+'</span>';if(c.k)h+='<span class="chip k">بعبارة نموذج الوزارة</span>';return h}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function renderStage(){var st=$("stage");st.innerHTML="";
+ if(!queue.length){st.innerHTML='<div class="done"><b>لا توجد بطاقات هنا</b><p>'+(filter==="hard"?"ممتاز! لا توجد بطاقات لم تعرفها في هذا الدرس.":"اختر درسًا آخر.")+'</p></div>';return;}
+ if(pos>=queue.length){st.innerHTML='<div class="done"><b>أنهيت المجموعة!</b><p>البطاقات التي لم تعرفها ستظهر لك أولًا في المرة القادمة. راجعها بعد يومين.</p><button type="button" class="btn" id="again">ابدأ الجولة مرة ثانية</button></div>';$("again").onclick=function(){build();renderAll();};return;}
+ var i=queue[pos],c=C[i];
+ var card=document.createElement("div");card.className="flash";card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label","البطاقة، اضغط لكشف الجواب");
+ card.innerHTML='<div class="top"><span class="deckname">'+deckName(c.d)+'</span><span class="count">'+(pos+1)+' / '+queue.length+'</span></div><div class="q">'+esc(c.q)+'</div>'+(open?'<div class="a">'+esc(c.a)+'</div><div class="meta">'+chips(c)+'</div>':'<p class="tap">جاوب في رأسك أولًا، ثم اضغط لتكشف الجواب</p>');
+ card.onclick=function(){if(!open){open=true;renderStage();}};
+ card.onkeydown=function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();if(!open){open=true;renderStage();}}};
+ st.appendChild(card);
+ var acts=document.createElement("div");acts.className="acts";
+ if(!open){acts.innerHTML='<button type="button" class="flip" id="flipBtn">اكشف الجواب</button>';}
+ else{acts.innerHTML='<button type="button" class="no" id="noBtn">✗ ما عرفتها</button><button type="button" class="yes" id="yesBtn">✓ عرفتها</button>';}
+ st.appendChild(acts);
+ if(!open){$("flipBtn").onclick=function(){open=true;renderStage();};}
+ else{$("yesBtn").onclick=function(){var nb=Math.min(3,Math.max(1,box(i))+1);setBox(i,nb);if(window.TM){TM.correct("cardk:"+i+":"+nb,2,$("yesBtn"));var m=0;C.forEach(function(c,j){if(box(j)>=3)m++});if(m>=25)TM.badge("card25");if(m>=C.length)TM.badge("cardall")}next();};$("noBtn").onclick=function(){setBox(i,1);window.TM&&TM.wrong($("noBtn"));next();};}}
+function next(){pos++;open=false;renderStage();renderProg();renderDecks();}
+function renderList(){var el=$("list");el.innerHTML="";D.forEach(function(d){if(deck!=="all"&&deck!==d.id)return;var h=document.createElement("h3");h.textContent=d.t;el.appendChild(h);
+ C.forEach(function(c,i){if(c.d!==d.id)return;if(filter==="hard"&&box(i)!==1)return;if(filter==="exam"&&!c.x)return;var det=document.createElement("details");det.innerHTML='<summary>'+esc(c.q)+'</summary><div class="ans">'+esc(c.a)+'</div><div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">'+chips(c)+'</div>';el.appendChild(det);});});}
+function renderAll(){renderDecks();renderProg();
+ document.querySelectorAll("[data-view]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.view===view?"true":"false")});
+ document.querySelectorAll("[data-filter]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.filter===filter?"true":"false")});
+ $("stage").hidden=view!=="cards";$("list").hidden=view!=="list";
+ if(view==="cards")renderStage();else renderList();}
+document.querySelectorAll("[data-view]").forEach(function(b){b.onclick=function(){view=b.dataset.view;renderAll();}});
+document.querySelectorAll("[data-filter]").forEach(function(b){b.onclick=function(){filter=b.dataset.filter;build();renderAll();}});
+$("resetBtn").onclick=function(){var cb=$("confirmBox");cb.innerHTML='<div class="confirm"><span>سيُمسح تقدّمك في كل البطاقات. متأكد؟</span><button type="button" id="cYes" style="background:var(--bad);color:#fff">نعم، امسح</button><button type="button" id="cNo">إلغاء</button></div>';
+ $("cNo").onclick=function(){cb.innerHTML=""};$("cYes").onclick=function(){C.forEach(function(c,i){setBox(i,0)});cb.innerHTML="";build();renderAll();};};
+build();renderAll();
+})();
+</script>
+<script src="tm.js"></script>
+</body>
+</html>

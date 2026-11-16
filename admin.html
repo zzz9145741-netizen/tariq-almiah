@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لوحة المدير · طريق المئة</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input[type=text],input[type=tel],input[type=date]{font:inherit;padding:9px 12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);min-width:0}
+.st{font-size:.9rem;font-weight:700}
+.st.ok{color:var(--good)}.st.bad{color:var(--bad)}.st.mid{color:var(--gold)}
+.rep{border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.rep.done{opacity:.6}
+.rep img{max-width:100%;max-height:300px;border-radius:10px;border:1px solid var(--line);align-self:flex-start}
+.rep .meta{display:flex;gap:6px;flex-wrap:wrap;font-size:.8rem}
+.rep .meta span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:0 8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px;border-top:4px solid var(--c)}
+.kpi b{display:block;font-family:var(--display);font-size:1.7rem;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body data-tool="admin">
+<header class="topbar"><div class="wrap"><a class="brand" href="index.html">طريق المئة</a><nav><a href="admin.html" aria-current="page">لوحة المدير</a></nav></div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">خاص بالمشرف</p>
+  <h1><span class="emo">⚙️</span>لوحة المدير</h1>
+  <div class="brief" id="gate" hidden><b class="t">هذه الصفحة للمشرف فقط</b><p>سجّل دخولك بحساب المدير أولًا.</p><a class="btn" href="login.html" style="align-self:flex-start">تسجيل الدخول</a></div>
+  <p class="srcnote" id="cloudSt">جاري الاتصال بقاعدة بيانات الموقع…</p>
+</header>
+
+<main id="main" hidden>
+<section class="kpis">
+  <div class="kpi" style="--c:var(--c-indigo)"><b id="kAcc">0</b><span>حسابات في قاعدة البيانات</span></div>
+  <div class="kpi" style="--c:var(--c-coral)"><b id="kRep">0</b><span>بلاغات جديدة</span></div>
+  <div class="kpi" style="--c:var(--c-green)"><b id="kAct">0</b><span>نشطين آخر 7 أيام</span></div>
+  <div class="kpi" style="--c:var(--c-sun)"><b id="kLocal">0</b><span>حسابات على هذا الجهاز</span></div>
+</section>
+
+<section class="block">
+  <h2>الإعدادات</h2>
+  <form class="panel" id="cfgForm">
+    <label for="wa"><b>رقم واتساب لاستقبال البلاغات</b> <small class="lede">(مع رمز الدولة، مثل 9689XXXXXXX)</small></label>
+    <div class="row"><input type="tel" id="wa" inputmode="numeric" placeholder="9689XXXXXXX" style="flex:1 1 220px"><button class="btn" type="submit">احفظ</button></div>
+    <p class="st" id="cfgSt"></p>
+  </form>
+</section>
+
+<section class="block">
+  <h2>البلاغات 🐞</h2>
+  <p class="srcnote">تظهر هنا البلاغات المرسلة «مباشرة». بلاغات واتساب تصلك على الرقم أعلاه.</p>
+  <div class="row"><button class="btn ghost" type="button" id="showDone">أظهر المنجزة أيضًا</button></div>
+  <div id="reps" class="block"></div>
+</section>
+
+<section class="block">
+  <h2>الطلاب وتقدّمهم</h2>
+  <div class="tbl"><table><thead><tr><th>الاسم</th><th>النقاط</th><th>المستوى</th><th>أيام متتالية</th><th>آخر نشاط</th><th>أوسمة</th><th>إيميل</th></tr></thead><tbody id="stu"><tr><td colspan="7">لا يوجد بعد.</td></tr></tbody></table></div>
+  <p class="srcnote">تظهر هنا الحسابات التي حُفظت في قاعدة البيانات. الطالب الذي يفتح الموقع برابط عام يُحفظ حسابه وتقدّمه على جهازه فقط.</p>
+</section>
+
+<section class="block">
+  <h2>أدوات المشرف</h2>
+  <div class="row"><a class="btn" href="review.html">قائمة مراجعة المعلم 📋</a><a class="btn ghost" href="index.html">الموقع 🏠</a><button class="btn ghost" type="button" id="out">تسجيل خروج</button></div>
+</section>
+</main>
+<footer class="site">لوحة المدير · طريق المئة</footer>
+</div>
+
+<script src="tm.js"></script>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+if(!TM.Auth.isAdmin()){$("gate").hidden=false;$("cloudSt").hidden=true;return}
+$("main").hidden=false;
+$("out").onclick=function(){TM.Auth.logout();location.href="login.html"};
+var acc=TM.LS.get("tm.accounts2",{});$("kLocal").textContent=Object.keys(acc).length;
+var showDone=false,reports=[];
+TM.cloud.ready.then(function(c){
+ if((c.user||c.fb)&&!c.admin){$("main").hidden=true;$("gate").hidden=false;$("gate").querySelector("p").textContent="هذه اللوحة لصاحب الموقع فقط. سجّل الدخول بحساب المدير.";$("cloudSt").hidden=true;return}
+ if(!c.db){$("cloudSt").className="srcnote ana";$("cloudSt").textContent="قاعدة البيانات غير متصلة. تأكد من الاتصال بالإنترنت ومن ملف إعدادات Firebase.";return}
+ $("cloudSt").textContent=c.write===false?"متصل بقاعدة البيانات (قراءة فقط في هذا العرض).":"متصل بقاعدة البيانات ✅";
+ TM.config().then(function(x){$("wa").value=(x&&x.whatsapp)||""});
+ loadReps();loadStudents();});
+$("cfgForm").onsubmit=function(e){e.preventDefault();var n=$("wa").value.replace(/[^0-9]/g,"");TM.config().then(function(x){x=Object.assign({},x,{whatsapp:n,updated:Date.now()});return TM.setConfig(x)}).then(function(ok){$("cfgSt").className="st "+(ok?"ok":"bad");$("cfgSt").textContent=ok?"تم الحفظ ✅ البلاغات بتوصل لهذا الرقم.":"ما قدرنا نحفظ. تأكد أنك فاتح الموقع بحسابك (صاحب الموقع) في claude.ai.";ok&&TM.sound.correct()})};
+function loadReps(){var db=TM.cloud.db;db.collection("feedback").get().then(function(q){reports=[];q.docs.forEach(function(d){var data=d.data()||{};(data.reports||[]).forEach(function(r,i){reports.push({doc:d.id,i:i,r:r})})});reports.sort(function(a,b){return b.r.at-a.r.at});drawReps()}).catch(function(){$("reps").innerHTML='<p class="st bad">ما قدرنا نقرأ البلاغات.</p>'})}
+function drawReps(){var el=$("reps");el.innerHTML="";var n=0;reports.forEach(function(x){if(x.r.status!=="done")n++;if(!showDone&&x.r.status==="done")return;var d=document.createElement("div");d.className="rep"+(x.r.status==="done"?" done":"");d.innerHTML='<div class="meta"><span class="ty"></span><span class="pg"></span><span>'+new Date(Number(x.r.at)||0).toLocaleString("ar-OM")+'</span><span class="nm"></span></div><p class="ds"></p>'+(/^[0-9a-f]{32}$/.test(String(x.r.img||""))?'<img alt="صورة البلاغ" loading="lazy" src="/_blob/'+x.r.img+'">':'')+'<div class="row"><button class="btn ghost" type="button">'+(x.r.status==="done"?"أرجعه جديد":"تم الإصلاح ✅")+'</button></div>';
+ d.querySelector(".ty").textContent=x.r.type;d.querySelector(".pg").textContent=x.r.page;d.querySelector(".nm").textContent=x.r.name||x.r.user||"بدون اسم";d.querySelector(".ds").textContent=x.r.desc;
+ d.querySelector("button").onclick=function(){var ref=TM.cloud.db.doc("feedback/"+x.doc);ref.get().then(function(sn){var data=JSON.parse(JSON.stringify(sn.data()||{reports:[]}));var r=data.reports.filter(function(y){return y.at===x.r.at})[0];if(r)r.status=r.status==="done"?"new":"done";return ref.set(data)}).then(loadReps).catch(function(){})};el.appendChild(d)});
+ $("kRep").textContent=n;if(!el.children.length)el.innerHTML='<p class="lede">لا توجد بلاغات '+(showDone?"":"جديدة ")+'حتى الآن 🎉</p>';}
+$("showDone").onclick=function(){showDone=!showDone;this.textContent=showDone?"أخفِ المنجزة":"أظهر المنجزة أيضًا";drawReps()};
+function loadStudents(){var db=TM.cloud.db;db.collection("vault").get().then(function(q){var rows=[],week=Date.now()-7*864e5,act=0;q.docs.forEach(function(d){var v=d.data()||{},A=v.accounts||{},P=v.progress||{};Object.keys(A).forEach(function(k){var a=A[k]||{},p=P[k]||{};if((Number(p.updated)||0)>week)act++;rows.push({n:String(a.name||k).slice(0,30),xp:Number(p.xp)||0,st:Number(p.streak)||0,last:String(p.last||"").slice(0,10),b:Object.keys(p.badges||{}).length,e:String(a.email||"").slice(0,120)})})});rows.sort(function(x,y){return y.xp-x.xp});$("kAcc").textContent=rows.length;$("kAct").textContent=act;
+ var tb=$("stu");tb.innerHTML="";if(!rows.length){tb.innerHTML='<tr><td colspan="7">لا يوجد بعد.</td></tr>';return}
+ rows.forEach(function(x){var tr=document.createElement("tr");[x.n,x.xp,TM.levelOf(x.xp).name,x.st,x.last,x.b,x.e||"—"].forEach(function(v){var td=document.createElement("td");td.textContent=v;tr.appendChild(td)});tb.appendChild(tr)})}).catch(function(){})}
+})();
+</script>
+</body>
+</html>

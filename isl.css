@@ -1,0 +1,49 @@
+/* العلوم الإسلامية (1) — لون مأخوذ من غلاف الكتاب (أخضر زيتوني ورملي) بدرجات هادئة.
+   يُحمَّل بعد ../site.css فيغيّر اللون المميز فقط */
+:root{
+  --hue:#4d6b45;
+  --accent:#4d6b45; --accent-soft:#eef3ea; --accent-ink:#ffffff;
+  --bg:#f7f6f1; --line:#e3e2d6;
+  --gold:#8a6a2f; --gold-soft:#f6f0e3;
+  --amber-grad:#4d6b45; --amber-ink:#ffffff;
+  --c-brand:#4d6b45;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --hue:#9cc08f; --accent:#9cc08f; --accent-soft:#1f2c1d; --accent-ink:#0f170e;
+  --bg:#141713; --line:#2c3329; --gold:#d9b878; --gold-soft:#2b2617; --amber-grad:#9cc08f; --amber-ink:#0f170e; --c-brand:#9cc08f}}
+:root[data-theme="dark"]{
+  --hue:#9cc08f; --accent:#9cc08f; --accent-soft:#1f2c1d; --accent-ink:#0f170e;
+  --bg:#141713; --line:#2c3329; --gold:#d9b878; --gold-soft:#2b2617; --amber-grad:#9cc08f; --amber-ink:#0f170e; --c-brand:#9cc08f}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+/* شارات المصدر والمهارة */
+.sw{font-size:.72rem;font-weight:700;border-radius:999px;padding:0 9px;white-space:nowrap;display:inline-block}
+.sw.w{background:var(--good-soft);color:var(--good)}
+.sw.b{background:var(--accent-soft);color:var(--accent)}
+.sw.y{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.sk{font-size:.72rem;font-weight:700;border-radius:999px;padding:0 9px;white-space:nowrap;display:inline-block;background:var(--gold-soft);color:var(--gold)}
+
+/* الآيات */
+.ayah{font-family:var(--quote);font-size:1.3rem;line-height:2.15;text-align:justify}
+.ayah .an{font-family:var(--body);font-size:.72rem;color:var(--accent);border:1px solid var(--accent);border-radius:50%;display:inline-grid;place-items:center;width:1.9em;height:1.9em;margin-inline:4px;vertical-align:middle}
+.hadith{font-family:var(--quote);font-size:1.2rem;line-height:2.1;background:var(--gold-soft);border-radius:12px;padding:12px 16px}
+
+/* أسئلة قابلة للكشف */
+.qx{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.qx>summary{cursor:pointer;list-style:none;display:flex;flex-direction:column;gap:4px}
+.qx>summary::-webkit-details-marker{display:none}
+.qx .qt{font-weight:600}
+.qx .tags{display:flex;gap:6px;flex-wrap:wrap}
+.qx .reveal{font-size:.82rem;color:var(--accent);font-weight:700}
+.qx[open] .reveal{display:none}
+.qx .aw{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:4px}
+.qx .aw .src{font-size:.78rem}
+
+.back{display:inline-flex;align-items:center;gap:6px;font:inherit;font-weight:600;font-size:.9rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 14px;text-decoration:none;cursor:pointer;align-self:flex-start}
+.back:hover{border-color:var(--accent)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.chips button{flex:0 0 auto;font:inherit;font-size:.88rem;padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.chips button small{color:var(--muted);font-variant-numeric:tabular-nums;margin-inline-start:4px}
+.chips button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.chips button[aria-pressed="true"] small{color:var(--accent-ink)}
+.flabel{font-size:.8rem;font-weight:700;color:var(--muted)}

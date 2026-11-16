@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لوحتي · طريق المئة</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.guest{background:var(--gold-soft);border-radius:14px;padding:12px 16px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;border-top:4px solid var(--c)}
+.stat .v{font-family:var(--display);font-size:1.9rem;font-variant-numeric:tabular-nums;line-height:1.3}
+.stat .k{color:var(--muted);font-size:.88rem;font-weight:600}
+.lvlbar{height:12px;border-radius:999px;background:var(--line);overflow:hidden}
+.lvlbar i{display:block;height:100%;background:var(--amber-grad);border-radius:999px;transition:width .6s}
+.ring{display:flex;align-items:center;gap:14px}
+.ring svg{width:84px;height:84px;flex:0 0 auto}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.tp{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);border-inline-start:5px solid var(--c)}
+.tp:hover{border-color:var(--c)}
+.tp .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tp b{font-family:var(--display);word-spacing:.18em}
+.tp .n{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.9rem;white-space:nowrap}
+.bar{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--c);border-radius:999px}
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.bd{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;display:flex;flex-direction:column;gap:4px;align-items:center}
+.bd .e{font-size:2rem}
+.bd small{color:var(--muted);font-size:.8rem;line-height:1.5}
+.bd.off{opacity:.42;filter:grayscale(1)}
+.chart{display:flex;align-items:flex-end;gap:5px;height:120px;padding:10px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.chart div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end;min-width:0}
+.chart i{display:block;width:100%;max-width:22px;border-radius:6px 6px 2px 2px;background:var(--c-brand);min-height:2px}
+.chart i.today{background:var(--c-rose)}
+.chart span{font-size:.65rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.mission{background:linear-gradient(90deg,color-mix(in srgb,var(--c-sun) 18%,var(--paper)),var(--paper));border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.mission b{font-family:var(--display);font-size:1.1rem}
+.count{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.count input{font:inherit;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.count .days{font-family:var(--display);font-size:1.6rem;color:var(--c-crimson)}
+.acc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.acc form{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.acc input{font:inherit;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.msg{font-size:.9rem;font-weight:600}
+.msg.ok{color:var(--good)}.msg.bad{color:var(--bad)}
+</style>
+</head>
+<body data-tool="profile">
+<header class="topbar"><div class="wrap"><a class="brand" href="index.html">طريق المئة</a><nav><a href="profile.html" aria-current="page">لوحتي</a></nav></div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">لوحتي وتقدّمي</p>
+  <h1><span class="emo">🏆</span><span id="hi">هلا والله!</span></h1>
+  <p class="lede" id="sub">هنا تشوف وين وصلت، وكم باقي لك على المئة.</p>
+  <div class="guest" id="guest" hidden><p>أنت تذاكر كضيف 👤. تقدّمك محفوظ على هذا الجهاز فقط، وبينتقل لحسابك لما تسجّل.</p><a class="btn" href="login.html">سوّ حساب 🎟️</a></div>
+</header>
+
+<main>
+<section class="stats">
+  <div class="stat" style="--c:var(--c-violet)"><span class="k">مستواك</span><span class="v" id="lvlName">—</span><div class="lvlbar"><i id="lvlBar"></i></div><span class="k" id="lvlNext"></span></div>
+  <div class="stat" style="--c:var(--c-sun)"><span class="k">نقاطك ✨</span><span class="v" id="xp">0</span><span class="k">كل إجابة صحيحة وكل إنجاز يعطيك نقاط</span></div>
+  <div class="stat" style="--c:var(--c-coral)"><span class="k">أيام متتالية 🔥</span><span class="v" id="streak">0</span><span class="k" id="streakTxt"></span></div>
+  <div class="stat" style="--c:var(--c-green)"><span class="k">هدف اليوم</span><div class="ring"><svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="var(--line)" stroke-width="10"/><circle id="ringC" cx="42" cy="42" r="34" fill="none" stroke="var(--c-green)" stroke-width="10" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" transform="rotate(-90 42 42)"/></svg><div><span class="v" id="todayXp" style="font-size:1.5rem">0</span><span class="k" id="goalTxt"></span></div></div></div>
+</section>
+
+<section class="mission" id="mission"><div><span class="label">مهمتك الحين 🎯</span><b id="mTitle">ابدأ بمفكك الأسئلة</b><p id="mWhy" class="lede"></p></div><a class="btn" id="mGo" href="decoder.html">يالله 🚀</a></section>
+
+<section class="block">
+  <h2>كم باقي على الاختبار؟ ⏰</h2>
+  <div class="count"><label for="examDate">تاريخ اختبار العربي:</label><input type="date" id="examDate"><span class="days" id="daysLeft"></span><span id="daysTxt" class="lede"></span></div>
+</section>
+
+<section class="block">
+  <h2>تقدّمك في كل أداة</h2>
+  <div class="tools" id="tools"></div>
+</section>
+
+<section class="block">
+  <h2>نشاطك في آخر 14 يوم</h2>
+  <div class="chart" id="chart" role="img" aria-label="النقاط اليومية في آخر 14 يومًا"></div>
+</section>
+
+<section class="block">
+  <h2>أوسمتك 🎖️</h2>
+  <div class="badges" id="badges"></div>
+</section>
+
+<section class="block" id="accSec">
+  <h2>حسابي</h2>
+  <div class="acc">
+    <form id="fPass"><b>تغيير كلمة المرور 🔑</b><input type="password" id="op" placeholder="كلمة المرور الحالية" autocomplete="current-password"><input type="password" id="np" placeholder="كلمة المرور الجديدة" autocomplete="new-password"><button class="btn" type="submit">غيّرها</button><p class="msg" id="mPass"></p></form>
+    <form id="fMail"><b>الإيميل (اختياري) 📧</b><input type="email" id="em" placeholder="name@example.com" autocomplete="email"><button class="btn" type="submit">احفظ</button><p class="msg" id="mMail"></p></form>
+    <form id="fOut"><b>الخروج والحذف</b><p class="lede">تقدّمك يبقى محفوظ لما ترجع تسجّل دخول.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" type="button" id="out">تسجيل خروج 👋</button><button class="btn ghost" type="button" id="del" style="color:var(--bad)">احذف حسابي من هذا الجهاز</button></div><div id="delConfirm"></div></form>
+  </div>
+</section>
+<div class="motto" data-motto><p>أنت أقرب إلى المئة مما تظن.</p></div>
+</main>
+<footer class="site">تقدّمك محفوظ على هذا الجهاز، ويُنسخ لقاعدة بيانات الموقع إذا كان حسابك في claude.ai يسمح بالحفظ.</footer>
+</div>
+
+<script src="tm.js"></script>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var s=TM.Auth.current(),p=TM.Prog.load(),L=TM.levelOf(p.xp);
+if(s&&s.admin){location.href="admin.html";return}
+$("hi").textContent=TM.pick(TM.lines.hi)+" يا "+(s?s.user:"ضيفنا")+"!";
+$("guest").hidden=!!s;$("accSec").hidden=!s;
+$("lvlName").textContent=L.name;$("xp").textContent=p.xp;
+var pct=L.to?Math.round((p.xp-L.from)/(L.to-L.from)*100):100;$("lvlBar").style.width=pct+"%";
+$("lvlNext").textContent=L.to?("باقي "+(L.to-p.xp)+" نقطة للمستوى الجاي"):"وصلت لأعلى مستوى! 👑";
+var td=TM.today(),alive=p.last===td||(function(){var y=new Date(Date.now()-864e5);return p.last===y.getFullYear()+"-"+("0"+(y.getMonth()+1)).slice(-2)+"-"+("0"+y.getDate()).slice(-2)})();
+var st=alive?p.streak:0;$("streak").textContent=st;$("streakTxt").textContent=st>=7?"أسبوع كامل! ما شاء الله 🌋":st>=3?"حيل زين، لا تقطعها 💪":st>0?"ذاكر بكرة عشان تكبر 🔥":"ابدأ اليوم سلسلة جديدة";
+var goal=p.daily||60,tx=p.days[td]||0;$("todayXp").textContent=tx+" / "+goal;$("goalTxt").textContent=tx>=goal?" خلصت هدف اليوم 🎉":" نقطة اليوم";$("ringC").setAttribute("stroke-dashoffset",(213.6*(1-Math.min(1,tx/goal))).toFixed(1));
+// العد التنازلي
+var ex=TM.LS.get("tm.exam."+(s?s.user.toLowerCase():"guest"),"");$("examDate").value=ex;
+function days(){var v=$("examDate").value;if(!v){$("daysLeft").textContent="";$("daysTxt").textContent="حدد التاريخ ونحسب لك 🗓️";return}var d=Math.ceil((new Date(v+"T08:00:00")-Date.now())/864e5);$("daysLeft").textContent=d>0?d+" يوم":"";$("daysTxt").textContent=d>30?"وقت كافي، بس لا تأجّل 😉":d>7?"دخلنا الجد! ذاكر كل يوم شوي 📚":d>0?"الحين وقت المراجعة والاختبارات التجريبية 🔥":d===0?"اليوم الاختبار! بالتوفيق، توكل على الله 🤲":"عدّى الاختبار. إن شاء الله مئة 🎉"}
+$("examDate").addEventListener("change",function(){TM.LS.set("tm.exam."+(s?s.user.toLowerCase():"guest"),$("examDate").value);days()});days();
+// التقدم في الأدوات
+function cnt(pre){var n=0;for(var k in p.done)if(k.indexOf(pre)===0)n++;return n}
+var cardKey=TM.Prog.key()+".card.",mastered=0;try{for(var i=0;i<200;i++){var v=localStorage.getItem(cardKey+i);if(v&&parseInt(v,10)>=3)mastered++}}catch(e){}
+var exBest=Math.max(TM.getBest("exam:A"),TM.getBest("exam:B"));
+var T=[
+ {f:"decoder.html",t:"🔍 مفكك الأسئلة",c:"--c-coral",n:cnt("try:decoder.html"),of:10,u:"تمرين"},
+ {f:"texts.html",t:"📜 النصوص الثمانية",c:"--c-teal",n:cnt("text:"),of:8,u:"نص"},
+ {f:"memorize.html",t:"🧠 الحفظ بدون أخطاء",c:"--c-sun",n:cnt("memo:"),of:6,u:"مقطع"},
+ {f:"cards.html",t:"🃏 البطاقات المتقنة",c:"--c-rose",n:mastered,of:87,u:"بطاقة"},
+ {f:"schools.html",t:"🎭 المذاهب والمناهج",c:"--c-indigo",n:TM.getBest("schools"),of:12,u:"أفضل نتيجة"},
+ {f:"reading.html",t:"📖 القراءة والنص الخارجي",c:"--c-green",n:cnt("read:"),of:22,u:"سؤال"},
+ {f:"bank.html",t:"🏦 بنك الأسئلة (أفضل اختبار سريع)",c:"--c-orange",n:TM.getBest("bankquiz"),of:10,u:"من 10"},
+ {f:"exams.html",t:"📝 أفضل نتيجة في اختبار تجريبي",c:"--c-crimson",n:exBest,of:70,u:"من 70"}
+];
+var tb=$("tools");T.forEach(function(x){var pc=Math.min(100,Math.round(x.n/x.of*100));var a=document.createElement("a");a.className="tp";a.href=x.f;a.style.setProperty("--c","var("+x.c+")");a.innerHTML='<div class="row"><b></b><span class="n">'+x.n+" / "+x.of+'</span></div><div class="bar"><i style="width:'+pc+'%"></i></div>';a.querySelector("b").textContent=x.t;tb.appendChild(a);x.pc=pc});
+// المهمة
+var weak=T.slice().sort(function(a,b){return a.pc-b.pc})[0];
+var why={"decoder.html":"أساس كل شي: تعرف وش يبغى السؤال 🔍","texts.html":"السؤال الأول 10 درجات من هذي النصوص 📜","memorize.html":"5 درجات مضمونة لو حفظت صح 🧠","cards.html":"30 درجة أدب ونقد تجي من هالمعلومات 🃏","schools.html":"سؤال النقد ما يفوت أي اختبار 🎭","reading.html":"25 درجة من نصوص جديدة، لازم تتدرب 📖","bank.html":"اختبر نفسك في 10 أسئلة سريعة 🏦","exams.html":"جرّب اختبار كامل وشوف وين تضيع الدرجات 📝"};
+$("mTitle").textContent=weak.t;$("mWhy").textContent=why[weak.f]||"";$("mGo").href=weak.f;
+// الرسم
+var ch=$("chart"),max=1,arr=[];for(var d=13;d>=0;d--){var dt=new Date(Date.now()-d*864e5),k=dt.getFullYear()+"-"+("0"+(dt.getMonth()+1)).slice(-2)+"-"+("0"+dt.getDate()).slice(-2);var v2=p.days[k]||0;arr.push([k,v2,dt.getDate()]);if(v2>max)max=v2}
+arr.forEach(function(a,i){var div=document.createElement("div");div.innerHTML='<i class="'+(i===13?"today":"")+'" style="height:'+Math.max(2,a[1]/max*86)+'px" title="'+a[1]+' نقطة"></i><span>'+a[2]+'</span>';ch.appendChild(div)});
+// الأوسمة
+var bg=$("badges");Object.keys(TM.BADGES).forEach(function(id){var b=TM.BADGES[id],on=!!p.badges[id];var div=document.createElement("div");div.className="bd"+(on?"":" off");div.innerHTML='<span class="e">'+b[0]+'</span><b style="font-size:.9rem"></b><small>'+(on?"حصلت عليه "+p.badges[id]:"لسا 🔒")+'</small>';div.querySelector("b").textContent=b[1];bg.appendChild(div)});
+// الحساب
+if(s){$("em").value=TM.Auth.email();
+ $("fPass").onsubmit=function(e){e.preventDefault();TM.Auth.changePassword($("op").value,$("np").value).then(function(){$("mPass").className="msg ok";$("mPass").textContent="تم تغيير كلمة المرور ✅";$("op").value=$("np").value="";TM.sound.correct()}).catch(function(m){$("mPass").className="msg bad";$("mPass").textContent=m;TM.sound.wrong()})};
+ $("fMail").onsubmit=function(e){e.preventDefault();TM.Auth.setEmail($("em").value).then(function(){$("mMail").className="msg ok";$("mMail").textContent="تم الحفظ ✅";TM.sound.correct()}).catch(function(m){$("mMail").className="msg bad";$("mMail").textContent=m})};
+ $("out").onclick=function(){TM.Auth.logout();location.href="login.html"};
+ $("del").onclick=function(){$("delConfirm").innerHTML='<div class="vs"><div class="no"><p>بينحذف حسابك وتقدّمك من هذا الجهاز. متأكد؟ 😢</p><div style="display:flex;gap:8px;margin-top:6px"><button type="button" class="btn" id="dy" style="background:var(--bad);color:#fff">نعم، احذف</button><button type="button" class="btn ghost" id="dn">لا</button></div></div></div>';$("dn").onclick=function(){$("delConfirm").innerHTML=""};$("dy").onclick=function(){TM.Auth.deleteLocal();location.href="login.html"}};}
+})();
+</script>
+</body>
+</html>

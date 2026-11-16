@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تجميعة أسئلة الوزارة · العلوم الإسلامية (1)</title>
+<meta name="description" content="تجميعة أسئلة الوزارة في العلوم الإسلامية (1) من 2014 إلى 2026 مع نماذج الإجابة، مقسمة سهلة ومتوسطة وقدرات عليا. العلوم الإسلامية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="تجميعة أسئلة الوزارة · العلوم الإسلامية (1)">
+<meta property="og:description" content="تجميعة أسئلة الوزارة في العلوم الإسلامية (1) من 2014 إلى 2026 مع نماذج الإجابة، مقسمة سهلة ومتوسطة وقدرات عليا. العلوم الإسلامية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="isl.css">
+<style>
+.filters{display:flex;flex-direction:column;gap:8px}
+select{font:inherit;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%;max-width:520px}
+.lv{display:flex;flex-direction:column;gap:8px}
+.lv>h2{font-size:1.15rem;display:flex;gap:8px;align-items:center}
+.lv>h2 i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.lv.e>h2 i{background:var(--good)}.lv.m>h2 i{background:var(--gold)}.lv.h>h2 i{background:var(--accent)}
+.lv>p{color:var(--muted);font-size:.9rem}
+.qlist{display:flex;flex-direction:column;gap:8px}
+.count{color:var(--muted);font-variant-numeric:tabular-nums}
+.ltitle{font-family:var(--display);font-size:1.25rem;word-spacing:.15em}
+</style>
+</head>
+<body data-tool="isl-bank">
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع"><a href="isl-bank.html" aria-current="page">تجميعة أسئلة الوزارة</a></nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">العلوم الإسلامية (1) · أستعد للاختبار</p>
+  <h1>تجميعة أسئلة الوزارة</h1>
+  <div class="brief"><b class="t">باختصار</b>
+    <p>كل الأسئلة هنا جاءت فعلًا في اختبارات الوزارة من 2014/2015 إلى 2025/2026، مرتبة حسب الدرس، ومقسمة إلى ثلاثة مستويات: <b>سهلة</b> (حفظ وتذكّر)، و<b>متوسطة</b> (فهم وتطبيق على مواقف)، و<b>قدرات عليا</b> (تحليل وتعليل ورد وتقويم). حاول الإجابة أولًا، ثم اضغط على السؤال لترى الجواب.</p>
+    <p>الإجابة المعلّمة <span class="sw w">نموذج الوزارة</span> منقولة من نموذج الإجابة الرسمي. وإذا لم يتوفر نموذج للسنة، فالإجابة من <span class="sw b">الكتاب</span> مع رقم الصفحة، أو من نموذج سنة أخرى جاء فيها السؤال نفسه.</p>
+  </div>
+</header>
+
+<main>
+<section class="filters">
+  <label class="flabel" for="lesson">الدرس</label>
+  <select id="lesson"></select>
+  <span class="flabel">المهارة</span>
+  <div class="chips" id="skills"></div>
+  <span class="count" id="count"></span>
+</section>
+<div data-dl="تجميعة أسئلة الوزارة" data-dl-build="islBankSheet"></div>
+<div id="out" style="display:flex;flex-direction:column;gap:24px"></div>
+</main>
+<footer class="site">المصادر: امتحانات دبلوم التعليم العام والعلوم الإسلامية للعلوم الإسلامية (1) الفصل الأول ونماذج إجاباتها الرسمية (2014/2015، 2015/2016 بدوريه، 2019/2020 بدوريه، 2021/2022)، وامتحانات 2016/2017 و2024/2025 و2025/2026، وكتاب العلوم الإسلامية (1). استُبعد امتحان 2020/2021 لأنه على منهج مختلف.</footer>
+</div>
+
+<script src="isl-lessons-data.js"></script>
+<script src="isl-bank-data.js"></script>
+<script>
+(function(){
+var L=window.ISL_LESSONS,B=window.ISL_BANK,U=window.ISL_UNITS;
+var SK={r:"حفظ",u:"فهم",a:"تطبيق",n:"تحليل",e:"تقويم"},LV={r:"e",u:"m",a:"m",n:"h",e:"h"};
+var LVN={e:["سهلة","حفظ وتذكّر: تعريفات وأسماء ونقاط من الكتاب"],m:["متوسطة","فهم وشرح وتطبيق على مواقف من الحياة"],h:["قدرات عليا","تحليل وتعليل ودلالة واستنتاج، ورد ونقاش وتقويم"]};
+var $=function(id){return document.getElementById(id)},cur=0,sk="all";
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function srcTag(q){if(q.w)return '<span class="sw w">نموذج الوزارة '+esc(q.src.replace(/^و\s*/,"")||q.y)+'</span>';var m=q.src.match(/ك ص\s*([\d\-–]+)/);return '<span class="sw b">الكتاب'+(m?' ص '+m[1]:'')+'</span>'}
+function item(q){return '<details class="qx"><summary><span class="qt">'+esc(q.q)+'</span><span class="tags"><span class="sw y">'+esc(q.y)+'</span><span class="sk">'+SK[q.s]+'</span></span><span class="reveal">اضغط لرؤية الإجابة</span></summary><div class="aw"><p>'+esc(q.a)+'</p><span>'+srcTag(q)+'</span></div></details>'}
+// قائمة الدروس
+var sel=$("lesson");sel.innerHTML='<option value="0">كل الدروس</option>'+U.map(function(u){return '<optgroup label="'+esc(u.t)+'">'+L.filter(function(l){return l.u===u.k}).map(function(l){var c=B.filter(function(q){return q.l===l.n}).length;return '<option value="'+l.n+'">'+l.n+'. '+esc(l.t)+' ('+c+')</option>'}).join("")+'</optgroup>'}).join("");
+function chips(){var c=$("skills");c.innerHTML="";[["all","كل المهارات"]].concat(Object.keys(SK).map(function(k){return [k,SK[k]]})).forEach(function(p){var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed",p[0]===sk?"true":"false");var n=B.filter(function(q){return (!cur||q.l===cur)&&(p[0]==="all"||q.s===p[0])}).length;b.innerHTML=esc(p[1])+'<small>'+n+'</small>';b.onclick=function(){sk=p[0];render()};c.appendChild(b)})}
+function list(){return B.filter(function(q){return (!cur||q.l===cur)&&(sk==="all"||q.s===sk)})}
+function render(){chips();var qs=list();$("count").textContent=qs.length+" سؤالًا";var out=$("out"),h="";
+ var lessons=cur?[cur]:L.map(function(l){return l.n});
+ lessons.forEach(function(n){var lq=qs.filter(function(q){return q.l===n});if(!lq.length)return;var l=L.filter(function(x){return x.n===n})[0];
+  h+='<section class="block"><p class="ltitle">الدرس '+n+': '+esc(l.t)+' <a class="src" href="isl-lessons.html#l'+n+'">بطاقة الدرس</a></p>';
+  ["e","m","h"].forEach(function(v){var vq=lq.filter(function(q){return LV[q.s]===v});if(!vq.length)return;h+='<div class="lv '+v+'"><h2><i></i>'+LVN[v][0]+' ('+vq.length+')</h2><p>'+LVN[v][1]+'</p><div class="qlist">'+vq.map(item).join("")+'</div></div>'});
+  h+='</section>'});
+ out.innerHTML=h||'<p class="srcnote">لا توجد أسئلة بهذا الاختيار.</p>'}
+sel.onchange=function(){cur=+sel.value;try{history.replaceState(null,"",cur?"#l"+cur:location.pathname)}catch(e){}render()};
+var m=(location.hash||"").match(/^#l(\d+)$/);if(m){cur=+m[1];sel.value=String(cur)}
+render();
+// نسخة التنزيل: كل الأسئلة مع الإجابات مكشوفة
+window.islBankSheet=function(){var d=document.createElement("div");var qs=list();var lessons=cur?[cur]:L.map(function(l){return l.n});
+ lessons.forEach(function(n){var lq=qs.filter(function(q){return q.l===n});if(!lq.length)return;var l=L.filter(function(x){return x.n===n})[0];var s=document.createElement("section");s.style.marginBottom="16px";
+  var t=document.createElement("h2");t.textContent="الدرس "+n+": "+l.t;t.style.cssText="font-size:18px;border-bottom:2px solid #e3e2d6;padding-bottom:4px;margin-bottom:8px";s.appendChild(t);
+  ["e","m","h"].forEach(function(v){var vq=lq.filter(function(q){return LV[q.s]===v});if(!vq.length)return;var h3=document.createElement("h3");h3.textContent=LVN[v][0];h3.style.cssText="font-size:15px;color:#4d6b45;margin:8px 0 4px";s.appendChild(h3);
+   vq.forEach(function(q,i){var b=document.createElement("div");b.style.cssText="border:1px solid #e3e2d6;border-radius:8px;padding:6px 10px;margin-bottom:5px;break-inside:avoid";var p=document.createElement("p");p.style.fontWeight="600";p.textContent=(i+1)+". "+q.q;var mt=document.createElement("p");mt.style.cssText="font-size:11px;color:#636979";mt.textContent=q.y+" · "+SK[q.s]+" · "+(q.w?"نموذج الوزارة":"الكتاب");var a=document.createElement("p");a.style.cssText="color:#1f7a3f;margin-top:3px";a.textContent="الإجابة: "+q.a;b.appendChild(p);b.appendChild(mt);b.appendChild(a);s.appendChild(b)})});
+  d.appendChild(s)});return d};
+})();
+</script>
+<script src="dlx.js"></script>
+<script src="tm.js"></script>
+</body>
+</html>

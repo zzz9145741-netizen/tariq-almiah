@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الملخصات · طريق المئة</title>
+<meta name="description" content="ملخصات دروس الأدب والنقد في اللغة العربية (1): القرآن، الحديث، شعر صدر الإسلام، الاعتذار، المذاهب الأدبية، المناهج النقدية. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="الملخصات · طريق المئة">
+<meta property="og:description" content="ملخصات دروس الأدب والنقد في اللغة العربية (1): القرآن، الحديث، شعر صدر الإسلام، الاعتذار، المذاهب الأدبية، المناهج النقدية. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.lesson{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:120px}
+.lesson>header{padding:16px 18px;background:var(--accent-soft);display:flex;flex-direction:column;gap:6px}
+.lesson>header .t{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.lesson>header h2{font-size:1.4rem;border:0;padding:0}
+.lesson>header p{font-size:1rem}
+.lesson .body{padding:16px 18px;display:flex;flex-direction:column;gap:16px}
+.map{display:flex;flex-direction:column;align-items:center;gap:0}
+.map .core{font-family:var(--display);word-spacing:.18em;font-size:1.2rem;background:var(--accent);color:var(--accent-ink);padding:10px 22px;border-radius:999px;text-align:center}
+.map .stem{width:2px;height:18px;background:var(--accent)}
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;width:100%;border-top:2px solid var(--accent);padding-top:14px}
+.br{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.br h3{font-size:1.05rem;color:var(--accent)}
+.br ol,.br ul{gap:3px}
+.br .ex{font-size:.88rem;color:var(--muted)}
+.hot{background:var(--gold-soft);border-radius:12px;padding:12px 16px}
+.hot .label{color:var(--gold)}
+.hot ul{font-size:.95rem}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{text-decoration:none;font-size:.9rem;font-weight:600;padding:5px 14px;border-radius:999px;border:1px solid var(--accent);color:var(--accent)}
+.cmp{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.cmp table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+.cmp th,.cmp td{padding:9px 11px;border-bottom:1px solid var(--line);border-inline-start:1px solid var(--line);text-align:right;vertical-align:top}
+.cmp thead th{background:var(--accent-soft);color:var(--accent);font-family:var(--display);font-size:1rem;word-spacing:.18em}
+.cmp tbody th{background:var(--bg);white-space:nowrap;font-weight:700}
+.cmp tr:last-child td,.cmp tr:last-child th{border-bottom:0}
+.tl{display:flex;flex-direction:column;gap:0;position:relative;padding-inline-start:22px}
+.tl::before{content:"";position:absolute;inset-inline-start:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl div{position:relative;padding:6px 0 10px}
+.tl div::before{content:"";position:absolute;inset-inline-start:-20px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl b{display:block}
+.tl span{color:var(--muted);font-size:.92rem}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:8px}
+.toc a{display:flex;flex-direction:column;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--accent)}
+.toc a b{font-family:var(--display);word-spacing:.18em;color:var(--accent)}
+.toc a span{font-size:.85rem;color:var(--muted)}
+.dl{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,var(--paper)),var(--paper));border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow)}
+.dl-head{display:flex;gap:14px;align-items:center}
+.dl-ic{font-size:2rem;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--paper);box-shadow:var(--shadow);flex:0 0 auto;animation:dlb 2.6s ease-in-out infinite}
+@keyframes dlb{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.dl-head h2{font-size:1.25rem;border:0;padding:0}
+.dl-head p{color:var(--muted);font-size:.94rem}
+.dl-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.dl-row select{font:inherit;padding:9px 12px;border-radius:12px;border:2px solid var(--line);background:var(--paper);color:var(--ink);flex:1 1 220px;min-width:0}
+.dl-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.dl-btns{grid-template-columns:1fr}}
+.dl-btn{font:inherit;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:10px;align-items:center;text-align:right;padding:12px 14px;border-radius:16px;border:2px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .2s,box-shadow .2s}
+.dl-btn:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:var(--shadow)}
+.dl-btn span{grid-row:1/3;font-size:1.7rem}
+.dl-btn b{font-family:var(--display);font-size:1.1rem}
+.dl-btn small{color:var(--muted);font-size:.82rem}
+.dl-btn.pdf span{filter:drop-shadow(0 2px 4px rgba(200,40,60,.3))}
+.dl-btn[disabled]{opacity:.55;cursor:wait;transform:none}
+.dl-prog{position:relative;height:34px;border-radius:999px;background:var(--line);overflow:hidden}
+.dl-prog i{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,#fff));transition:width .3s}
+.dl-prog span{position:relative;display:grid;place-items:center;height:100%;font-weight:700;font-size:.88rem;color:var(--ink)}
+.msg-dl{border-radius:12px;padding:8px 12px;font-weight:600;background:var(--good-soft);color:var(--good)}
+.msg-dl.bad{background:var(--bad-soft);color:var(--bad)}
+.lesson>header .ldl{align-self:flex-start;font:inherit;font-size:.82rem;font-weight:700;border:1px solid var(--accent);color:var(--accent);background:var(--paper);border-radius:999px;padding:3px 12px;cursor:pointer}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع">
+    <a href="index.html">الرئيسية</a>
+    <a href="decoder.html">مفكك الأسئلة</a>
+    <a href="texts.html">النصوص</a>
+    <a href="summaries.html" aria-current="page">الملخصات</a>
+    <a href="memorize.html">الحفظ</a>
+    <a href="cards.html">البطاقات</a>
+    <a href="schools.html">المذاهب والمناهج</a>
+    <a href="reading.html">النص الخارجي والقراءة</a>
+    <a href="bank.html">بنك الأسئلة</a>
+    <a href="exams.html">اختبارات تجريبية</a>
+    <a href="glossary.html">القاموس</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">الأدب والنقد · 30 درجة</p>
+  <h1>الملخصات</h1>
+  <div class="brief"><b class="t">باختصار</b>
+    <p>كل درس من دروس الأدب والنقد في خريطة واحدة: الفكرة في الوسط، وحولها الفروع بعبارة الكتاب، وتحتها أهم ما جاء منه في الاختبارات. اقرأ الملخص أولًا لتفهم الصورة كاملة، ثم احفظ التفاصيل بـ<a href="cards.html">البطاقات</a>.</p>
+  </div>
+  <div class="motto" data-motto><p>ابدأ ولو بصفحة واحدة. المهم أن تبدأ اليوم.</p></div>
+</header>
+
+<main>
+<section class="block">
+  <h2>الدروس</h2>
+  <div class="toc">
+    <a href="#quran"><b>القرآن الكريم</b><span>الوحدة 1 · ص 15–19</span></a>
+    <a href="#hadith"><b>الحديث الشريف</b><span>الوحدة 2 · ص 37–40</span></a>
+    <a href="#sadr"><b>شعر صدر الإسلام</b><span>الوحدة 3 · ص 62–66</span></a>
+    <a href="#itidhar"><b>الأغراض الجاهلية والاعتذار</b><span>الوحدة 4 · ص 82–86</span></a>
+    <a href="#madhahib"><b>المذاهب الأدبية</b><span>الوحدتان 1 و2 · ص 21–26 و42–47</span></a>
+    <a href="#manahij"><b>المناهج النقدية</b><span>الوحدتان 3 و4 · ص 69–73 و89–95</span></a>
+  </div>
+  <p class="srcnote">كل ما في هذه الصفحة من الكتاب المدرسي. السنوات المكتوبة هي اختبارات الوزارة التي جاء فيها الجزء.</p>
+</section>
+
+<section class="dl" id="dl" aria-labelledby="dlT">
+  <div class="dl-head"><span class="dl-ic" aria-hidden="true">📥</span><div><h2 id="dlT">نزّل الملخصات وراجعها بدون نت</h2><p>اطبعها، أو حطها في جوالك، أو راجعها وأنت بعيد عن الشاشة.</p></div></div>
+  <div class="dl-row">
+    <label for="dlWhich" class="label" style="margin:0">أي ملخص؟</label>
+    <select id="dlWhich">
+      <option value="all">كل الملخصات (6 دروس)</option>
+      <option value="quran">القرآن الكريم</option><option value="hadith">الحديث الشريف</option><option value="sadr">شعر صدر الإسلام</option><option value="itidhar">الأغراض الجاهلية والاعتذار</option><option value="madhahib">المذاهب الأدبية</option><option value="manahij">المناهج النقدية</option>
+    </select>
+  </div>
+  <div class="dl-btns">
+    <button type="button" class="dl-btn pdf" id="dlPdf"><span>📄</span><b>PDF</b><small>للطباعة والمراجعة على الجوال</small></button>
+    <button type="button" class="dl-btn web" id="dlHtml"><span>🌐</span><b>صفحة ويب</b><small>تفتح في أي متصفح، بدون نت</small></button>
+  </div>
+  <div class="dl-prog" id="dlProg" hidden><i id="dlBar"></i><span id="dlTxt">نجهّز الملف…</span></div>
+  <p class="msg-dl" id="dlMsg" role="status" hidden></p>
+</section>
+
+<!-- القرآن -->
+<article class="lesson" id="quran">
+  <header><div class="t"><h2>القرآن الكريم</h2><span class="tag hot">يأتي في كل اختبار</span></div><p>نزل بلغة العرب فأدهشهم، وغيّر لغتهم: جمعها وأغناها وهذّبها. وبيانه يقوم على أربعة جوانب.</p></header>
+  <div class="body">
+    <div class="map"><div class="core">القرآن الكريم</div><div class="stem"></div>
+      <div class="branches">
+        <div class="br"><h3>أثره في النفوس</h3><p>نزل بلغة العرب، وتحداهم أن يأتوا بمثله (الإسراء 88).</p><p class="ex">الوليد بن المغيرة: «إن له لحلاوة، وإن عليه لطلاوة...»، شعر بملكته اللغوية أنه يباين كلام الإنس والجن.</p></div>
+        <div class="br"><h3>آثاره في اللغة (3)</h3><ol><li>جمع العرب على لهجة قريش فحفظها ونشرها</li><li>حوّلها إلى لغة دين سماوي: ألفاظ ومعانٍ جديدة</li><li>هذّبها من الحوشي والغريب</li></ol><p class="ex">ألفاظ جديدة: الإيمان، الكفر، النفاق، الصوم، الزكاة، التيمم...</p></div>
+        <div class="br"><h3>الجديد في المكونات والأفكار</h3><p>الوحدانية، وخلق السماوات والأرض، وعظات التاريخ، وقصص الأنبياء، والبعث والنشور، وصور الثواب والعقاب.</p></div>
+        <div class="br"><h3>جوانب البيان (4)</h3><ol><li><b>نظم اللفظ:</b> كل لفظ في موضعه («واشتعل الرأس شيبًا»)</li><li><b>الالتفات:</b> خروج الضمير من صيغة إلى صيغة («إنا أعطيناك... فصلّ لربك»)</li><li><b>التصوير والتمثيل:</b> «مثلهم كمثل الذي استوقد نارًا»</li><li><b>الإيقاع الداخلي:</b> تآلف الحروف وتناسق الكلمات (سيد قطب)</li></ol></div>
+      </div>
+    </div>
+    <div class="hot"><span class="label">أهم ما جاء في الاختبارات</span><ul>
+      <li>وضّح الالتفات في آية: حدّد الضمير الأول والثاني (2018/19، 2019/20، 2022/23)</li>
+      <li>اذكر أثرين للقرآن في اللغة العربية (2018/19، 2022/23)</li>
+      <li>اشرح التصوير في آية فيها تشبيه (2021/22، 2022/23)</li>
+      <li>صاحب «التصوير الفني في القرآن»: سيد قطب (2022/23)</li>
+    </ul></div>
+    <div class="links"><a href="cards.html">بطاقات الدرس</a><a href="decoder.html#s4">كيف تشرح الصورة</a></div>
+  </div>
+</article>
+
+<!-- الحديث -->
+<article class="lesson" id="hadith">
+  <header><div class="t"><h2>الحديث الشريف</h2><span class="tag hot">يأتي في كل اختبار</span></div><p>كلام النبي ﷺ أبلغ كلام البشر، لأسباب أربعة. وبلاغته تظهر في أربعة جوانب: الألفاظ والمعاني والتصوير والإيقاع.</p></header>
+  <div class="body">
+    <div class="map"><div class="core">الحديث الشريف</div><div class="stem"></div>
+      <div class="branches">
+        <div class="br"><h3>تعريفه ومكانته</h3><p>كل ما رُوي عن النبي ﷺ من قول أو فعل أو تقرير. يأتي بعد القرآن، ومصدرهما واحد، والسنة بيان وتفصيل للقرآن.</p></div>
+        <div class="br"><h3>تدوينه</h3><p>بدأ منظمًا في عهد <b>عمر بن عبدالعزيز</b>. أوائل كتبه: <b>مسند الربيع بن حبيب</b> العماني، ثم الموطأ، ثم البخاري ومسلم.</p></div>
+        <div class="br"><h3>عوامل بلاغة الرسول ﷺ (4)</h3><ol><li>بيئته القرشية</li><li>استرضاعه في بني سعد بن بكر</li><li>اتصاله بالنسب والمصاهرة بعدة قبائل</li><li>الإعداد الإلهي، والقرآن معجزته</li></ol></div>
+        <div class="br"><h3>جوانب البلاغة النبوية (4)</h3><ol><li><b>الألفاظ:</b> «الغيث» لا المطر</li><li><b>المعاني:</b> الإيجاز، «المؤمن مرآة المؤمن»</li><li><b>التصوير:</b> «الناس معادن»</li><li><b>الإيقاع:</b> كلمة «يغرغر» · جملة «كالبنيان يشد بعضه بعضًا» · جمل متعددة «إن أصابته سراء شكر...»</li></ol></div>
+      </div>
+    </div>
+    <div class="hot"><span class="label">أهم ما جاء في الاختبارات</span><ul>
+      <li>حدّد جانب البلاغة في حديث جديد (كل الاختبارات تقريبًا)</li>
+      <li>الإيقاع في أي مستوى؟ كلمة أم جملة أم جمل (2018/19، 2022/23)</li>
+      <li>العوامل التي جعلت الرسول ﷺ شخصية بيانية (2018/19، 2019/20)</li>
+      <li>بدأ التدوين في عهد... / أول كتب الحديث (2018/19، 2019/20)</li>
+    </ul></div>
+    <div class="links"><a href="cards.html">بطاقات الدرس</a><a href="text-safina.html">حديث السفينة</a><a href="text-tahur.html">حديث الطهور</a></div>
+  </div>
+</article>
+
+<!-- صدر الإسلام -->
+<article class="lesson" id="sadr">
+  <header><div class="t"><h2>شعر صدر الإسلام</h2><span class="tag hot">يأتي في كل اختبار</span></div><p>ازدهر الشعر في الصراع بين المسلمين والمشركين، فصار سلاحًا. حافظ على شكل القصيدة الجاهلية، وتغيّرت معانيه.</p></header>
+  <div class="body">
+    <div class="map"><div class="core">شعر صدر الإسلام</div><div class="stem"></div>
+      <div class="branches">
+        <div class="br"><h3>الشعراء</h3><p><b>المسلمون:</b> حسان بن ثابت، عبدالله بن رواحة، كعب بن مالك.</p><p><b>المشركون:</b> ابن الزبعرى، أبو سفيان بن الحارث.</p><p class="ex">جمع كثيرًا منه: سيرة ابن هشام.</p></div>
+        <div class="br"><h3>الأغراض (5)</h3><ol><li><b>الفخر:</b> يشبه الجاهلي في المبنى ويختلف في التوجيه</li><li><b>الرثاء:</b> كعب بن مالك يرثي حمزة</li><li><b>النقائض:</b> حسان يرد على أمية بن خلف</li><li><b>المدح:</b> خُصّ به الرسول ﷺ، وامتزج بالاستعطاف</li><li><b>الفتوحات:</b> أناشيد حماسية بعد حروب الردة</li></ol></div>
+        <div class="br"><h3>الخصائص (6)</h3><ol><li>الصورة الجاهلية، والتأثير الإسلامي معنوي</li><li>معظمه مقطوعات</li><li>الهجاء والفخر من الجاهلي، مع التعيير بالشرك</li><li>الإيجاز</li><li>السجية دون تنقيح أو تكلف</li><li>القيم والألفاظ الإسلامية</li></ol></div>
+        <div class="br"><h3>قضية للنقاش</h3><p>ابن خلدون: انصرف العرب عن الشعر أول الإسلام، لانشغالهم بالدين وانبهارهم بأسلوب القرآن.</p><p class="ex">ويقابله أن الشعر ازدهر في الدفاع عن الإسلام («أدب الدفاع عن الإسلام»).</p></div>
+      </div>
+    </div>
+    <div class="hot"><span class="label">أهم ما جاء في الاختبارات</span><ul>
+      <li>استخرج خصيصتين من أبيات جديدة (2014/15، 2017/18، 2022/23)</li>
+      <li>حدّد الغرض: نقائض أم فتوحات أم مدح ممزوج بالاستعطاف (2021/22)</li>
+      <li>علّل: شعر الفتوحات من أغراضه (2018/19)</li>
+      <li>«ما عدا» من شعرائه (2018/19)</li>
+    </ul></div>
+    <div class="links"><a href="cards.html">بطاقات الدرس</a><a href="text-hassan.html">قصيدة حسان</a><a href="text-banat.html">بانت سعاد</a></div>
+  </div>
+</article>
+
+<!-- الاعتذار -->
+<article class="lesson" id="itidhar">
+  <header><div class="t"><h2>الأغراض الجاهلية والاعتذار</h2><span class="tag hot">يأتي في كل اختبار</span></div><p>الشعر الجاهلي مرآة العصر، وأغراضه متعددة يغلب عليها الفخر. والاعتذار نشأ من المدح، وزعيمه النابغة.</p></header>
+  <div class="body">
+    <div class="map"><div class="core">الشعر الجاهلي</div><div class="stem"></div>
+      <div class="branches">
+        <div class="br"><h3>الأغراض</h3><ul><li><b>الفخر والحماسة:</b> يطغى على غيره، لأن الشعراء فرسان</li><li><b>الغزل:</b> لا تخلو منه قصيدة</li><li><b>الرثاء:</b> برعت فيه النساء (الخنساء)</li><li><b>الوصف:</b> الطبيعة والحيوان والأطلال (عنترة يصف فرسه)</li><li><b>الهجاء:</b> ارتبط بالحروب والعصبية القبلية</li></ul></div>
+        <div class="br"><h3>نشأة الاعتذار</h3><p>أواخر الجاهلية صار المدح وسيلة للكسب عند المناذرة والغساسنة، و<b>نشأ الاعتذار من المدح وفي ظلاله</b>.</p><p class="ex">زهير اختص بمدح أشراف قومه، والنابغة بالنعمان.</p></div>
+        <div class="br"><h3>تعريفه وأعلامه</h3><p>استعطاف المرغوب في العفو، ببيان الندم وتقديم العذر.</p><p><b>زعيمه:</b> النابغة الذبياني (للنعمان بن المنذر). <b>والمتلمّس</b> اعتذر لأخواله.</p><p class="ex">العواطف: الخوف مع الشكر والرجاء.</p></div>
+        <div class="br"><h3>خصائص الاعتذار (4)</h3><ol><li>مفرداته ومعانيه وصوره مستمدة من الطبيعة</li><li>الواقعية والوضوح والبساطة في الألفاظ</li><li>يصف المعتذَر إليه بالكرم والشجاعة والنجدة</li><li>يرتبط بأغراض أخرى</li></ol></div>
+      </div>
+    </div>
+    <div class="hot"><span class="label">أهم ما جاء في الاختبارات</span><ul>
+      <li>حدّد الغرض من بيتين جاهليين: فخر أم وصف أم هجاء (2018/19، 2022/23)</li>
+      <li>نشأ الاعتذار من: المدح (2018/19، 2022/23)</li>
+      <li>زعيم الاعتذار: النابغة لا المتلمس (2018/19)</li>
+      <li>استنتج خصيصتين للاعتذار (2020/21، 2021/22)</li>
+    </ul></div>
+    <div class="links"><a href="cards.html">بطاقات الدرس</a><a href="text-nabigha.html">النابغة</a><a href="text-adi.html">عدي بن زيد</a></div>
+  </div>
+</article>
+
+<!-- المذاهب -->
+<article class="lesson" id="madhahib">
+  <header><div class="t"><h2>المذاهب الأدبية</h2><span class="tag hot">يأتي في كل اختبار</span></div><p>المذهب الأدبي اتجاه يتخذ شكلًا خاصًا في مضمونه وأسلوبه. كل مذهب جاء ردّة فعل على الذي قبله.</p></header>
+  <div class="body">
+    <div><span class="label">كيف جاء كل مذهب بعد الآخر</span>
+    <div class="tl">
+      <div><b>الكلاسيكية</b><span>أوروبا: بدأت ق16 وسادت ق17 و18 · العرب: نهاية ق19 (عصر الإحياء)</span></div>
+      <div><b>الرومانسية: ثورة على الكلاسيكية</b><span>أوروبا: مع الثورة الفرنسية أواخر ق18 · العرب: بداية ق20 (مدرسة الديوان، خليل مطران)</span></div>
+      <div><b>الواقعية: لأن الرومانسية أسرفت في الخيال</b><span>أوروبا: مطلع ق19 (بلزاك، دكنز) · العرب: الأربعينيات من ق20 (نجيب محفوظ)</span></div>
+      <div><b>الرمزية: ردة فعل على الواقعية</b><span>أوروبا: ق19 · العرب: لم تظهر مذهبًا محددًا، دخلت مع الشعر الحر</span></div>
+    </div></div>
+    <div class="cmp"><table>
+      <thead><tr><th></th><th>الكلاسيكي</th><th>الرومانسي</th><th>الواقعي</th><th>الرمزي</th></tr></thead>
+      <tbody>
+        <tr><th>الفكرة في جملة</th><td>المحافظة على التراث ومحاكاته</td><td>مناجاة الطبيعة والتجديد في اللغة والإيقاع</td><td>التصريح بالحقيقة والاهتمام بحياة الناس العادية</td><td>التعبير غير المباشر بالرموز والابتعاد عن التسمية</td></tr>
+        <tr><th>الخصائص</th><td>وحدة الوزن والقافية · البدء بالغزل أو مخاطبة المثنى أو الأطلال · معانٍ وألفاظ وصور سابقة · أغراض قديمة</td><td>النزعة الفردية · العواطف الجياشة · وحدة الموضوع · مناجاة الطبيعة · التجديد والتنوع في اللغة والإيقاع · الحزن والشكوى · الشعر الغنائي</td><td>مضمون من حياة الناس العادية · تصوير الحياة بخيرها وشرها · لغة بسيطة تمثل الشخصيات</td><td>الغموض والإبهام · تراسل الحواس · الألفاظ المشعّة الموحية · الصور المفاجئة · الإيقاع الموسيقي</td></tr>
+        <tr><th>الأعلام العرب</th><td>البارودي، شوقي، حافظ إبراهيم، أحمد محرم</td><td>الشابي، مطران، إبراهيم ناجي، جبران، إيليا أبو ماضي</td><td>نجيب محفوظ</td><td>درويش، البياتي، صلاح عبدالصبور، السياب، نازك الملائكة</td></tr>
+        <tr><th>أكثر إنتاجه</th><td>الشعر التمثيلي (لأن الغنائي يحتفل بالعاطفة)</td><td>الشعر الغنائي</td><td>القصة والمسرحية (النثر أنسب لتصوير الواقع)</td><td>الشعر الحر</td></tr>
+      </tbody>
+    </table></div>
+    <div class="hot"><span class="label">أهم ما جاء في الاختبارات</span><ul>
+      <li>حدّد مذهب أبيات جديدة، ثم الخصائص مع القرائن في جدول (كل الاختبارات)</li>
+      <li>علّل: غلب التمثيلي على الكلاسيكيين / القصة على الواقعيين (2018/19، 2021/22)</li>
+      <li>«ما عدا» من خصائص الرمزية: التزام القافية (2021/22، 2022/23)</li>
+    </ul></div>
+    <div class="links"><a href="schools.html">تدرّب على تحديد المذهب</a><a href="cards.html">بطاقات الدرس</a></div>
+  </div>
+</article>
+
+<!-- المناهج -->
+<article class="lesson" id="manahij">
+  <header><div class="t"><h2>المناهج النقدية</h2><span class="tag hot">يأتي في كل اختبار</span></div><p>المنهج طريقة الناقد في دراسة النص. ثلاثة مناهج تنظر إلى ما حول النص (العصر، المجتمع، نفس الأديب)، والبنيوي ينظر إلى النص وحده.</p></header>
+  <div class="body">
+    <div class="cmp"><table>
+      <thead><tr><th></th><th>التاريخي</th><th>الاجتماعي</th><th>النفسي</th><th>البنيوي</th></tr></thead>
+      <tbody>
+        <tr><th>يركّز على</th><td>البيئة والعصر</td><td>المجتمع وطبقاته</td><td>نفسية الأديب ورغباته المكبوتة</td><td>لغة النص وحده، دون أي عنصر خارجي</td></tr>
+        <tr><th>النشأة والرواد</th><td>المؤسس: هيبولت تاين (ق19)، وتبنّاه برونتير ولانسون</td><td>انبثق من التاريخي. رواده: مدام دي ستال، شاتوبريان</td><td>الممهّد: سانت بيف، ثم فرويد وأتباعه</td><td>من المناهج اللسانية الحديثة</td></tr>
+        <tr><th>الأعلام العرب</th><td>طه حسين (حديث الأربعاء، تجديد ذكرى أبي العلاء)</td><td>علوي الهاشمي</td><td>العقاد (أبو نواس، ابن الرومي)</td><td>المسدي، صلاح فضل، كمال أبو ديب</td></tr>
+        <tr><th>عمل الناقد</th><td>1. دراسة تاريخية للبيئة والعصر وصاحب النص · 2. ملاحظة أثر ذلك في العمل</td><td>دراسة الأثر اجتماعيًا (الطبقة والمهنة والاقتصاد) ثم أثره</td><td>1. دراسة شخصية الأديب نفسيًا · 2. تفسير العمل بناءً على الدراسة النفسية</td><td>تحليل الأصوات والحروف والكلمات والجمل، ثم النص متكاملًا</td></tr>
+        <tr><th>المآخذ</th><td>يقلل العناية بالنص · يلغي العبقرية الشخصية · يجعل النصوص شواهد · (سيد قطب) الاستقراء الناقص والأحكام الجازمة والتعميم</td><td>يركز على المجتمع أكثر من العمل</td><td>تحليل بلا ضوابط ومبالغات · الاهتمام بالأديب أكثر من العمل</td><td>يكرّس جهده في لغة النص فقط، ولا يعتني بالظروف الاجتماعية والتاريخية</td></tr>
+      </tbody>
+    </table></div>
+    <div class="hot"><span class="label">أهم ما جاء في الاختبارات</span><ul>
+      <li>مرحلتا الناقد النفسي (2018/19، 2021/22) — احفظهما بلفظ الكتاب</li>
+      <li>حدّد منهج فقرة نقدية جديدة (كل الاختبارات تقريبًا)</li>
+      <li>الأعلام: تاين، سانت بيف، العقاد، طه حسين، علوي الهاشمي، المسدي (كل الاختبارات)</li>
+      <li>المآخذ: التاريخي عند سيد قطب، والبنيوي (2018/19، 2022/23)</li>
+    </ul></div>
+    <div class="links"><a href="schools.html">تدرّب على تحديد المنهج</a><a href="cards.html">بطاقات الدرس</a></div>
+  </div>
+</article>
+
+<section class="block">
+  <h2>دروس لا تُسأل بنفسها</h2>
+  <ul>
+    <li><b>التعبير (محضر الاجتماع، التقرير):</b> لم يأتِ في أي اختبار نهائي.</li>
+    <li><b>دروس القراءة في الكتاب</b> (التأثير النفسي للقرآن، حكم استقبال القبلة، السياحة في عمان، بيئة الصحراء): الاختبار يأتي بمقال جديد، فالمطلوب مهارة القراءة لا حفظ هذه الدروس.</li>
+  </ul>
+</section>
+
+<div class="motto" data-motto><p>تعب ساعة المذاكرة يزول، وفرحة الدرجة الكاملة تبقى.</p></div>
+</main>
+<footer class="site"><b>المصدر:</b> كل ما في الملخصات من الكتاب المدرسي، والسنوات من اختبارات الوزارة 2014/2015 إلى 2022/2023.</footer>
+</div>
+<script src="tm.js"></script>
+<script src="download.js"></script>
+</body>
+</html>

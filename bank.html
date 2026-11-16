@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بنك الأسئلة · طريق المئة</title>
+<meta name="description" content="بنك أسئلة اللغة العربية (1) بثلاثة مستويات مع الإجابات. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:title" content="بنك الأسئلة · طريق المئة">
+<meta property="og:description" content="بنك أسئلة اللغة العربية (1) بثلاثة مستويات مع الإجابات. اللغة العربية (1) للصف الثاني عشر · معاهد العلوم الإسلامية">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_OM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.chips button{flex:0 0 auto;font:inherit;font-size:.9rem;padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:flex;gap:6px;align-items:center}
+.chips button small{color:var(--muted);font-variant-numeric:tabular-nums}
+.chips button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.chips button[aria-pressed="true"] small{color:var(--accent-ink)}
+.filters{display:flex;flex-direction:column;gap:8px}
+.flabel{font-size:.8rem;font-weight:700;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.d1{background:var(--good)}.d2{background:var(--gold)}.d3{background:var(--bad)}
+.bar{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.bar .n{color:var(--muted);font-variant-numeric:tabular-nums}
+.btn{font:inherit;font-weight:600;padding:8px 18px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn.ghost{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.qlist{display:flex;flex-direction:column;gap:8px}
+.qi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.qi summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:flex-start}
+.qi summary::-webkit-details-marker{display:none}
+.qi summary .dot{margin-top:.6em;flex:0 0 auto}
+.qi summary .qt{flex:1;font-weight:500}
+.qi[open] summary .qt{font-weight:600}
+.qi .ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.t{font-size:.74rem;font-weight:700;padding:1px 9px;border-radius:999px}
+.t.w{background:var(--good-soft);color:var(--good)}
+.t.b{background:var(--accent-soft);color:var(--accent)}
+.t.a{background:var(--gold-soft);color:var(--gold)}
+.t.y{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.t.l{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.quiz{background:var(--paper);border:2px solid var(--accent);border-radius:18px;overflow:hidden}
+.quiz .top{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);gap:8px;flex-wrap:wrap}
+.quiz .top b{color:var(--accent)}
+.quiz .q{padding:18px 16px;font-size:1.1rem;font-weight:600;line-height:1.9}
+.quiz .a{padding:14px 16px;background:var(--accent-soft);border-top:2px dashed var(--accent)}
+.quiz .acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 16px}
+.quiz .acts button{font:inherit;font-weight:700;padding:11px;border-radius:12px;border:0;cursor:pointer}
+.quiz .acts .full{grid-column:1/-1;background:var(--accent);color:var(--accent-ink)}
+.quiz .acts .no{background:var(--bad-soft);color:var(--bad)}
+.quiz .acts .yes{background:var(--good-soft);color:var(--good)}
+.quiz .end{padding:24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.quiz .end b{font-family:var(--display);font-size:2rem;color:var(--accent)}
+.more{display:flex;gap:8px;flex-wrap:wrap}
+.more a{text-decoration:none;font-size:.9rem;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">طريق المئة</a>
+  <nav aria-label="أقسام الموقع">
+    <a href="index.html">الرئيسية</a>
+    <a href="decoder.html">مفكك الأسئلة</a>
+    <a href="texts.html">النصوص</a>
+    <a href="summaries.html">الملخصات</a>
+    <a href="memorize.html">الحفظ</a>
+    <a href="cards.html">البطاقات</a>
+    <a href="schools.html">المذاهب والمناهج</a>
+    <a href="reading.html">النص الخارجي والقراءة</a>
+    <a href="bank.html" aria-current="page">بنك الأسئلة</a>
+    <a href="exams.html">اختبارات تجريبية</a>
+    <a href="glossary.html">القاموس</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">تدرّب على كل الدروس</p>
+  <h1>بنك الأسئلة</h1>
+  <div class="brief"><b class="t">باختصار</b>
+    <p>أسئلة لكل درس بثلاثة مستويات: <span class="dot d1"></span> سهلة (تذكّر)، <span class="dot d2"></span> متوسطة (استخراج وتطبيق)، <span class="dot d3"></span> صعبة (تحليل ومقارنة ورأي). أغلبها جاء فعلًا في اختبارات الوزارة، ومكتوب بجانبه السنة ومصدر الإجابة.</p>
+    <p><b>طريقتان:</b> تصفّح الأسئلة وافتح الجواب بعد أن تحاول، أو اضغط «اختبار سريع» ليعطيك 10 أسئلة عشوائية واحدًا واحدًا.</p>
+  </div>
+  <div class="motto" data-motto><p>أنت أقرب إلى المئة مما تظن.</p></div>
+</header>
+
+<main>
+<div data-dl="بنك الأسئلة" data-dl-build="bankSheet"></div>
+<section class="block filters">
+  <span class="flabel">الدرس</span><div class="chips" id="fl"></div>
+  <span class="flabel">المستوى</span><div class="chips" id="fv"></div>
+  <span class="flabel">المصدر</span><div class="chips" id="fs"></div>
+  <div class="bar"><span class="n" id="count"></span><button type="button" class="btn" id="quizBtn">اختبار سريع (10 أسئلة)</button></div>
+</section>
+
+<section id="quizBox" hidden></section>
+<section class="qlist" id="list" aria-live="polite"></section>
+
+<section class="block">
+  <h2>أسئلة أكثر في صفحات النصوص</h2>
+  <p>كل نص من النصوص الثمانية فيه أسئلة سهلة ومتوسطة وصعبة خاصة به، وأسئلة الوزارة عليه:</p>
+  <div class="more"><a href="text-saffat.html#questions">الصافات</a><a href="text-buruj.html#questions">البروج</a><a href="text-safina.html#questions">حديث السفينة</a><a href="text-tahur.html#questions">الطهور</a><a href="text-hassan.html#questions">حسان</a><a href="text-banat.html#questions">بانت سعاد</a><a href="text-nabigha.html#questions">النابغة</a><a href="text-adi.html#questions">عدي بن زيد</a></div>
+</section>
+
+<p class="srcnote"><b>علامات المصدر:</b> «الوزارة» = الإجابة منقولة من نموذج إجابة رسمي · «الكتاب» = الإجابة من الكتاب المدرسي · «تحليلية» = من إعدادنا، ويراجعها المعلم.</p>
+<div class="motto" data-motto><p>من جدّ وجد، ومن زرع حصد.</p></div>
+</main>
+<footer class="site">من موقع طريق المئة · اللغة العربية (1) للصف الثاني عشر</footer>
+</div>
+
+<script src="bank-data.js"></script>
+<script>
+// نسخة قابلة للتنزيل من بنك الأسئلة: كل الأسئلة مع إجاباتها، مرتبة حسب الدرس والمستوى
+window.bankSheet=function(){var L=window.LESSONS,B=window.BANK,VN={1:"سهل",2:"متوسط",3:"صعب"},SN={w:"الوزارة",b:"الكتاب",a:"تحليلية"};
+ var root=document.createElement("div");
+ L.forEach(function(l){var qs=B.filter(function(q){return q.l===l.id}).sort(function(a,b){return a.v-b.v});if(!qs.length)return;
+  var sec=document.createElement("section");sec.style.cssText="margin-bottom:18px";var h=document.createElement("h2");h.textContent=l.t+" ("+qs.length+")";h.style.cssText="font-size:19px;border-bottom:2px solid #e6e2d9;padding-bottom:4px;margin-bottom:8px";sec.appendChild(h);
+  qs.forEach(function(q,i){var d=document.createElement("div");d.style.cssText="border:1px solid #e6e2d9;border-radius:10px;padding:8px 12px;margin-bottom:6px;break-inside:avoid";
+   var p=document.createElement("p");p.style.fontWeight="600";p.textContent=(i+1)+". "+q.q;var m=document.createElement("p");m.style.cssText="font-size:12px;color:#636979";m.textContent="المستوى: "+VN[q.v]+" · المصدر: "+SN[q.s]+(q.y?" · جاء في "+q.y:"");var a=document.createElement("p");a.style.cssText="margin-top:4px;color:#1f7a3f";a.textContent="الإجابة: "+q.a;
+   d.appendChild(p);d.appendChild(m);d.appendChild(a);sec.appendChild(d)});root.appendChild(sec)});return root};
+</script>
+<script>
+(function(){
+var B=window.BANK,L=window.LESSONS,fl="all",fv=0,fs="all";
+var VN={1:"سهل",2:"متوسط",3:"صعب"},SN={w:"الوزارة",b:"الكتاب",a:"تحليلية"};
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function lname(id){for(var i=0;i<L.length;i++)if(L[i].id===id)return L[i].t;return""}
+function match(q,ign){return (ign==="l"||fl==="all"||q.l===fl)&&(ign==="v"||!fv||q.v===fv)&&(ign==="s"||fs==="all"||q.s===fs)}
+function chips(el,items,cur,set,ign){el.innerHTML="";items.forEach(function(it){var n=B.filter(function(q){return match(q,ign)&&(it.k==="all"||it.k===0||q[ign]===it.k)}).length;var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed",it.k===cur?"true":"false");b.innerHTML=(it.dot?'<span class="dot d'+it.dot+'"></span>':"")+esc(it.t)+' <small>'+n+'</small>';b.onclick=function(){set(it.k);render()};el.appendChild(b);});}
+function tags(q){return '<div class="tags"><span class="t '+q.s+'">'+SN[q.s]+'</span>'+(q.y?'<span class="t y">جاء في '+esc(q.y)+'</span>':'')+'<span class="t l">'+esc(lname(q.l))+'</span></div>'}
+function list(){return B.filter(function(q){return match(q)})}
+function render(){
+ chips($("fl"),[{k:"all",t:"كل الدروس"}].concat(L.map(function(x){return{k:x.id,t:x.t}})),fl,function(k){fl=k},"l");
+ chips($("fv"),[{k:0,t:"كل المستويات"},{k:1,t:"سهل",dot:1},{k:2,t:"متوسط",dot:2},{k:3,t:"صعب",dot:3}],fv,function(k){fv=k},"v");
+ chips($("fs"),[{k:"all",t:"كل المصادر"},{k:"w",t:"الوزارة"},{k:"b",t:"الكتاب"},{k:"a",t:"تحليلية"}],fs,function(k){fs=k},"s");
+ ["fl","fv","fs"].forEach(function(id){var c=$(id),a=c.querySelector('[aria-pressed="true"]');if(!a||c.scrollWidth<=c.clientWidth)return;var cr=c.getBoundingClientRect(),ar=a.getBoundingClientRect();if(ar.left<cr.left||ar.right>cr.right)c.scrollLeft+=(ar.left+ar.width/2)-(cr.left+cr.width/2);});
+ var qs=list();$("count").textContent=qs.length+" سؤالًا";
+ var el=$("list");el.innerHTML="";
+ if(!qs.length){el.innerHTML='<p class="srcnote">لا توجد أسئلة بهذه التصفية. جرّب مستوى أو مصدرًا آخر.</p>';return}
+ qs.forEach(function(q){var d=document.createElement("details");d.className="qi";d.innerHTML='<summary><span class="dot d'+q.v+'" title="'+VN[q.v]+'"></span><span class="qt">'+esc(q.q)+'</span></summary><div class="ans"><p>'+esc(q.a)+'</p>'+tags(q)+'</div>';el.appendChild(d);});}
+var pool=[],pos=0,score=0,open=false;
+function startQuiz(){var qs=list().slice();for(var i=qs.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=qs[i];qs[i]=qs[j];qs[j]=t}pool=qs.slice(0,10);pos=0;score=0;open=false;$("quizBox").hidden=false;$("list").hidden=true;$("quizBtn").textContent="إنهاء الاختبار والعودة للقائمة";drawQuiz();$("quizBox").scrollIntoView({behavior:"smooth",block:"start"});}
+function endQuiz(){$("quizBox").hidden=true;$("list").hidden=false;$("quizBtn").textContent="اختبار سريع (10 أسئلة)";}
+function drawQuiz(){var box=$("quizBox");
+ if(!pool.length){box.innerHTML='<div class="quiz"><div class="end"><b>لا توجد أسئلة</b><p>غيّر التصفية ثم ابدأ.</p></div></div>';return}
+ if(pos>=pool.length){var pct=Math.round(score/pool.length*100);if(window.TM){if(pool.length>=10){TM.best("bankquiz",score);if(score===10)TM.badge("quiz")}if(pct>=80){TM.sound.win();TM.confetti(120)}}box.innerHTML='<div class="quiz"><div class="end"><span>نتيجتك</span><b>'+score+' / '+pool.length+'</b><p>'+(pct>=90?"ممتاز! استمر على هذا المستوى.":pct>=60?"جيد. راجع الأسئلة التي أخطأت فيها، ثم أعد الاختبار.":"لا بأس. ارجع إلى الملخصات والبطاقات لهذا الدرس، ثم جرّب مرة ثانية.")+'</p><button type="button" class="btn" id="again">اختبار جديد</button></div></div>';$("again").onclick=startQuiz;return}
+ var q=pool[pos];
+ box.innerHTML='<div class="quiz"><div class="top"><b>اختبار سريع</b><span>'+(pos+1)+' من '+pool.length+' · صحيح: '+score+'</span></div><div class="q"><span class="dot d'+q.v+'"></span> '+esc(q.q)+'</div>'+(open?'<div class="a"><p>'+esc(q.a)+'</p>'+tags(q)+'</div>':'')+'<div class="acts">'+(open?'<button type="button" class="no" id="qn">✗ أخطأت</button><button type="button" class="yes" id="qy">✓ أصبت</button>':'<button type="button" class="full" id="qs">فكّر في الجواب، ثم اضغط لتراه</button>')+'</div></div>';
+ if(open){$("qy").onclick=function(){score++;window.TM&&TM.correct("bank:"+B.indexOf(q),4,$("qy"));pos++;open=false;drawQuiz()};$("qn").onclick=function(){window.TM&&TM.wrong($("qn"));pos++;open=false;drawQuiz()};}
+ else{$("qs").onclick=function(){open=true;drawQuiz()};}}
+$("quizBtn").onclick=function(){if($("quizBox").hidden)startQuiz();else endQuiz();};
+render();
+})();
+</script>
+<script src="dlx.js"></script>
+<script src="tm.js"></script>
+</body>
+</html>

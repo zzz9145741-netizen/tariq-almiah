@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بلّغ عن خطأ · طريق المئة</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.fcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label,.field>.label{font-weight:700}
+select,textarea,input[type=text]{font:inherit;padding:10px 12px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+select:focus,textarea:focus,input:focus{outline:none;border-color:var(--accent)}
+textarea{min-height:120px;resize:vertical}
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:8px}
+.types label{display:flex;gap:8px;align-items:center;background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;font-weight:600}
+.types input{accent-color:var(--accent);width:18px;height:18px}
+.types label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.drop{border:2px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;gap:8px;align-items:center}
+.drop.over{border-color:var(--accent);background:var(--accent-soft)}
+.drop img{max-width:100%;max-height:260px;border-radius:10px;border:1px solid var(--line)}
+.sendrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.send{font:inherit;font-weight:800;padding:12px;border-radius:14px;border:0;cursor:pointer;color:#fff;display:flex;gap:8px;justify-content:center;align-items:center;text-decoration:none}
+.send.wa{background:#1f9d55}.send.cp{background:var(--c-indigo)}.send.db{background:var(--c-slate)}
+.msg{font-weight:700;border-radius:10px;padding:8px 12px}
+.msg.ok{background:var(--good-soft);color:var(--good)}.msg.bad{background:var(--bad-soft);color:var(--bad)}
+.hist{display:flex;flex-direction:column;gap:8px}
+.hist div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.92rem}
+.hist small{color:var(--muted)}
+</style>
+</head>
+<body data-tool="feedback">
+<header class="topbar"><div class="wrap"><a class="brand" href="index.html">طريق المئة</a><nav><a href="feedback.html" aria-current="page">بلّغ عن خطأ</a></nav></div></header>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">ساعدنا نخلّي الموقع مئة بالمئة</p>
+  <h1><span class="emo">🐞</span>بلّغ عن خطأ</h1>
+  <div class="brief"><b class="t">باختصار</b><p>لقيت معلومة غلط، أو كلمة مكتوبة خطأ، أو شي ما يشتغل؟ اكتب لنا هنا وأرفق صورة إن تقدر. كل بلاغ يساعد كل الطلاب، وتاخذ عليه وسام 🐞.</p></div>
+</header>
+
+<main>
+<form class="fcard" id="form" novalidate>
+  <div class="field"><label for="page">في أي صفحة؟</label><select id="page"></select></div>
+  <div class="field"><span class="label">نوع المشكلة</span>
+    <div class="types">
+      <label><input type="radio" name="type" value="معلومة أو إجابة غلط" checked> معلومة أو إجابة غلط ❌</label>
+      <label><input type="radio" name="type" value="خطأ إملائي أو نص ناقص"> خطأ إملائي أو نص ناقص ✏️</label>
+      <label><input type="radio" name="type" value="شي ما يشتغل"> شي ما يشتغل ⚙️</label>
+      <label><input type="radio" name="type" value="اقتراح"> اقتراح 💡</label>
+    </div></div>
+  <div class="field"><label for="desc">اشرح لنا المشكلة</label><textarea id="desc" placeholder="مثال: في صفحة النابغة، معنى كلمة «أنصب» مكتوب غلط، والصحيح..."></textarea></div>
+  <div class="field"><span class="label">صورة للخطأ (اختياري)</span>
+    <label class="drop" id="drop" for="file"><span id="dropTxt">📷 اضغط هنا لاختيار صورة، أو اسحبها هنا، أو الصقها (Ctrl+V)</span><img id="prev" alt="معاينة الصورة" hidden><input type="file" id="file" accept="image/*" hidden></label>
+    <button type="button" class="btn ghost" id="rmImg" hidden>شيل الصورة</button></div>
+  <div class="field"><label for="name">اسمك (اختياري)</label><input type="text" id="name" maxlength="40" placeholder="عشان نشكرك 😄"></div>
+  <p class="msg bad" id="err" hidden></p>
+  <div class="sendrow">
+    <a class="send wa" id="wa" href="#" target="_blank" rel="noopener">📲 أرسل عبر واتساب</a>
+    <button type="button" class="send cp" id="cp">📋 انسخ البلاغ</button>
+    <button type="button" class="send db" id="db" hidden>📤 أرسل للمشرف مباشرة</button>
+  </div>
+  <p class="srcnote" id="how">واتساب: يفتح المحادثة والبلاغ مكتوب جاهز، وأرفق الصورة بنفسك داخل واتساب. النسخ: انسخ البلاغ والصقه وين ما تبغى.</p>
+  <p class="msg ok" id="ok" hidden></p>
+</form>
+
+<section class="block" id="histSec" hidden>
+  <h2>بلاغاتي السابقة</h2>
+  <div class="hist" id="hist"></div>
+</section>
+</main>
+<footer class="site">البلاغات المرسلة مباشرة تصل لوحة المدير. بلاغات واتساب تصل للرقم الذي يحدده المشرف.</footer>
+</div>
+
+<script src="tm.js"></script>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var img=null,cfg={};
+var from=TM.LS.get("tm.from",null);
+TM.TOOLS.concat([{f:"text-saffat.html",t:"نص: إبراهيم الخليل"},{f:"text-buruj.html",t:"نص: البروج"},{f:"text-safina.html",t:"نص: حديث السفينة"},{f:"text-tahur.html",t:"نص: الطهور"},{f:"text-hassan.html",t:"نص: حسان"},{f:"text-banat.html",t:"نص: بانت سعاد"},{f:"text-nabigha.html",t:"نص: النابغة"},{f:"text-adi.html",t:"نص: عدي بن زيد"},{f:"other",t:"صفحة ثانية"}]).forEach(function(t){if(t.f==="feedback.html"||t.f==="profile.html")return;var o=document.createElement("option");o.value=t.f;o.textContent=t.t;$("page").appendChild(o)});
+if(from&&Date.now()-from.at<36e5){$("page").value=from.file}
+var s=TM.Auth.current();if(s&&!s.admin)$("name").value=s.user;
+function text(){var pg=$("page").options[$("page").selectedIndex].textContent,ty=document.querySelector("input[name=type]:checked").value;
+ return "🐞 بلاغ — طريق المئة\nالصفحة: "+pg+"\nالنوع: "+ty+"\nالوصف: "+$("desc").value.trim()+($("name").value.trim()?"\nالاسم: "+$("name").value.trim():"")+(img?"\n📷 مرفق صورة":"")+"\nالتاريخ: "+new Date().toLocaleDateString("ar-OM");}
+function valid(){$("desc").value=TM.clean($("desc").value,2000);$("name").value=TM.clean($("name").value,40);if($("desc").value.trim().length<5){$("err").textContent="اكتب وصف المشكلة أول (5 أحرف على الأقل) ✍️";$("err").hidden=false;TM.wrong($("desc"));return false}$("err").hidden=true;return true}
+function waHref(){var n=String(cfg.whatsapp||"").replace(/[^0-9]/g,"").slice(0,15);return "https://wa.me/"+n+"?text="+encodeURIComponent(text())}
+function remember(via){var h=TM.LS.get("tm.reports",[]);h.unshift({at:Date.now(),page:$("page").value,type:document.querySelector("input[name=type]:checked").value,desc:$("desc").value.trim().slice(0,300),via:via});TM.LS.set("tm.reports",h.slice(0,30));hist();TM.badge("report");}
+function success(m){$("ok").textContent=m;$("ok").hidden=false;TM.sound.win();TM.confetti(100);}
+$("wa").addEventListener("click",function(e){if(!valid()){e.preventDefault();return}this.href=waHref();remember("واتساب");success("انفتح واتساب ✅ "+(img?"لا تنسى ترفق الصورة هناك 📷":"")+" شكرًا لك يا بطل 🙏")});
+$("cp").addEventListener("click",function(){if(!valid())return;var t=text();var done=function(){remember("نسخ");success("انسخ البلاغ ✅ الصقه وأرسله للمعلم. شكرًا لك 🙏")};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done).catch(fallback)}else fallback();
+ function fallback(){$("desc").value=t;$("desc").select();$("err").hidden=false;$("err").className="msg ok";$("err").textContent="ما قدرنا ننسخ تلقائيًا، البلاغ صار في خانة الوصف ومحدد، انسخه بنفسك (Ctrl+C)";}});
+// الصورة
+function setImg(f){if(!f||!/^image\/(png|jpe?g|webp|gif|heic|heif|bmp)$/i.test(f.type)){if(f){$("err").textContent="ارفع صورة فقط (PNG أو JPG) 📷";$("err").hidden=false}return}if(f.size>15*1024*1024){$("err").textContent="الصورة كبيرة واجد. اختر صورة أصغر من 15 ميجا.";$("err").hidden=false;return}var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var sc=Math.min(1,1400/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*sc;c.height=im.height*sc;c.getContext("2d").drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){img=b;$("prev").src=URL.createObjectURL(b);$("prev").hidden=false;$("dropTxt").textContent="✅ تم إرفاق الصورة. اضغط لتغييرها";$("rmImg").hidden=false;TM.click()},"image/jpeg",.85)};im.src=r.result};r.readAsDataURL(f)}
+$("file").addEventListener("change",function(){setImg(this.files[0])});
+var drop=$("drop");["dragenter","dragover"].forEach(function(t){drop.addEventListener(t,function(e){e.preventDefault();drop.classList.add("over")})});["dragleave","drop"].forEach(function(t){drop.addEventListener(t,function(e){e.preventDefault();drop.classList.remove("over")})});
+drop.addEventListener("drop",function(e){var f=e.dataTransfer&&e.dataTransfer.files[0];setImg(f)});
+document.addEventListener("paste",function(e){var it=(e.clipboardData||{}).items||[];for(var i=0;i<it.length;i++)if(it[i].type.indexOf("image")===0){setImg(it[i].getAsFile());break}});
+$("rmImg").onclick=function(){img=null;$("prev").hidden=true;$("rmImg").hidden=true;$("file").value="";$("dropTxt").textContent="📷 اضغط هنا لاختيار صورة، أو اسحبها هنا، أو الصقها (Ctrl+V)"};
+// الإرسال المباشر (لمن يملك صلاحية الحفظ)
+TM.cloud.ready.then(function(c){TM.config().then(function(x){cfg=x||{}});if(c.db&&c.write!==false&&c.vid){$("db").hidden=false;$("how").textContent+=" الإرسال المباشر: يصل البلاغ والصورة للوحة المدير فورًا."}});
+$("db").addEventListener("click",function(){if(!valid())return;var wait=TM.rate("fb",60000);if(wait){$("err").className="msg bad";$("err").textContent="أرسلت بلاغ قبل شوي 😊 انتظر "+wait+" ثانية قبل البلاغ الجاي.";$("err").hidden=false;return}var btn=this;btn.disabled=true;btn.textContent="جاري الإرسال… ⏳";
+ var c=TM.cloud,up=img&&window.claude?claude.use("assets").then(function(a){return a?a.upload(img).then(function(r){return r.id}).catch(function(){return null}):null}):Promise.resolve(null);
+ up.then(function(aid){var path="feedback/"+c.vid;return c.db.doc(path).get().then(function(sn){var d=sn.exists?JSON.parse(JSON.stringify(sn.data())):{reports:[]};d.reports=(d.reports||[]).slice(-40);d.reports.push({at:Date.now(),page:$("page").value,type:document.querySelector("input[name=type]:checked").value,desc:$("desc").value.trim().slice(0,2000),name:$("name").value.trim().slice(0,40),user:s?s.user:"",img:aid||"",status:"new"});return c.db.doc(path).set(d)})})
+ .then(function(){remember("مباشر");success("وصل البلاغ للمشرف ✅ شكرًا لك 🙏");$("desc").value=""}).catch(function(){$("err").className="msg bad";$("err").textContent="ما قدرنا نرسله مباشرة. استخدم واتساب أو النسخ.";$("err").hidden=false;$("db").hidden=true})
+ .then(function(){btn.disabled=false;btn.textContent="📤 أرسل للمشرف مباشرة"})});
+function hist(){var h=TM.LS.get("tm.reports",[]);$("histSec").hidden=!h.length;var el=$("hist");el.innerHTML="";h.forEach(function(r){var d=document.createElement("div");d.innerHTML="<b></b> <small></small><p></p>";d.querySelector("b").textContent=r.type;d.querySelector("small").textContent="· "+new Date(r.at).toLocaleDateString("ar-OM")+" · عبر "+r.via;d.querySelector("p").textContent=r.desc;el.appendChild(d)})}
+hist();
+})();
+</script>
+</body>
+</html>

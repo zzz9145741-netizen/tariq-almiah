@@ -1,0 +1,42 @@
+rules_version = '2';
+// قواعد حماية قاعدة بيانات طريق المئة.
+// الصقها في: Firebase Console ← Firestore Database ← Rules ← ثم Publish
+// غيّر zxzx9145741@gmail.com إلى إيميل حساب المدير نفسه الموجود في fb-config.js
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isAdmin() { return signedIn() && request.auth.token.email == "zxzx9145741@gmail.com"; }
+    function small() { return request.resource.size() < 200; }
+
+    // إعدادات الموقع (رقم واتساب البلاغات): يقرؤها الجميع، ويعدّلها المدير فقط
+    match /config/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // حجز أسماء المستخدمين: لا يُسرق اسم طالب
+    match /names/{nameId} {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.owner == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    // حساب الطالب وتقدّمه: يقرؤه ويكتبه صاحبه فقط، والمدير يقرأ
+    match /vault/{userId} {
+      allow read, write: if signedIn() && request.auth.uid == userId;
+      allow read: if isAdmin();
+    }
+
+    // البلاغات: كل طالب يكتب في مستنده فقط، والمدير يقرأ ويعدّل الحالة
+    match /feedback/{userId} {
+      allow read, write: if signedIn() && request.auth.uid == userId;
+      allow read, write: if isAdmin();
+    }
+
+    // أي شيء آخر: ممنوع
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
