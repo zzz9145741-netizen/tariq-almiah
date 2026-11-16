@@ -384,7 +384,7 @@ $("altLink").onclick=function(e){e.preventDefault();setMode(mode==="login"?"reg"
 /* ===== الإرسال ===== */
 function clearErr(){$("err").hidden=true;["fUser","fPass","fPass2"].forEach(function(i){$(i).classList.remove("bad")})}
 function fail(msg,field){$("err").textContent=msg;$("err").hidden=false;if(field)$(field).classList.add("bad");$("card").classList.remove("shake");void $("card").offsetWidth;$("card").classList.add("shake");owl.classList.remove("shake");void owl.offsetWidth;owl.classList.add("shake");cover(false);setMood("sad");talk(/انتظر/.test(msg)?"lock":"err");window.TM&&TM.sound.wrong();setTimeout(function(){if(mood==="sad")setMood("")},2200)}
-function success(s){cover(false);setMood("happy");owl.classList.add("jump");setBright(1);spawn(46,true);shooting();talk("ok");if(window.TM){TM.sound.win();TM.confetti(140)}setTimeout(function(){location.href=s.admin?"admin.html":"profile.html"},1500)}
+function success(s){cover(false);setMood("happy");owl.classList.add("jump");setBright(1);spawn(46,true);shooting();talk("ok");if(window.TM){TM.sound.win();TM.confetti(140)}setTimeout(function(){location.href=s.admin?"admin.html":(mode==="login"?"profile.html":"index.html")},1500)}
 $("form").addEventListener("submit",function(e){e.preventDefault();clearErr();if(!window.TM)return fail("ما قدرنا نحمّل الموقع. حدّث الصفحة.");
  var u=$("user").value.trim(),p=$("pass").value,rem=$("remember").checked;
  if(!u)return fail("اكتب اسم المستخدم 👤","fUser");if(!p)return fail("اكتب كلمة المرور 🔒","fPass");
